@@ -93,100 +93,107 @@ selected_date = filters["date_filter"]
 brief_date = selected_date or dates[-1]
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# TOP POSTS
+# TABS
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 st.markdown("---")
-period_label = f"do dia {selected_date}" if selected_date else "de todos os dias"
-st.subheader(f"Top Posts {period_label}")
 
-has_clinical_filter = bool(filters["selected_tumors"] or filters["selected_drugs"])
+tab_posts, tab_abstracts, tab_brief = st.tabs([
+    ":fire: Destaques do Dia",
+    ":page_facing_up: Abstracts em Alta",
+    ":memo: Resumo IA",
+])
 
-tweets = get_top_tweets(
-    conn,
-    date=selected_date,
-    limit=50,
-    selected_tumors=filters["selected_tumors"],
-    selected_drugs=filters["selected_drugs"],
-)
+# ── Tab 1: Destaques do Dia ──
+with tab_posts:
+    period_label = f"do dia {selected_date}" if selected_date else "de todos os dias"
+    st.subheader(f"Top Posts {period_label}")
 
-if filters["curated_only"]:
-    tweets = [t for t in tweets if t.get("is_curated")]
+    has_clinical_filter = bool(filters["selected_tumors"] or filters["selected_drugs"])
 
-if tweets:
-    ranked = rank_tweets_by_relevance(tweets)
+    tweets = get_top_tweets(
+        conn,
+        date=selected_date,
+        limit=50,
+        selected_tumors=filters["selected_tumors"],
+        selected_drugs=filters["selected_drugs"],
+    )
 
-    filter_parts = []
-    if has_clinical_filter:
-        active = []
-        if filters["selected_tumors"]:
-            active.extend(filters["selected_tumors"])
-        if filters["selected_drugs"]:
-            active.extend(filters["selected_drugs"])
-        filter_parts.append(f"Filtrando por: {', '.join(active)}")
-    filter_parts.append(f"{len(ranked)} posts encontrados")
-    st.caption(" — ".join(filter_parts))
+    if filters["curated_only"]:
+        tweets = [t for t in tweets if t.get("is_curated")]
 
-    for i, t in enumerate(ranked[:15], 1):
-        render_tweet_card(t, rank=i, show_relevance=True)
+    if tweets:
+        ranked = rank_tweets_by_relevance(tweets)
 
-    if len(ranked) > 15:
-        with st.expander(f"Ver mais {len(ranked) - 15} posts"):
-            for i, t in enumerate(ranked[15:], 16):
-                render_tweet_card(t, rank=i, compact=True)
-else:
-    if has_clinical_filter:
-        st.info("Nenhum post encontrado com esses filtros. Tente ampliar a busca.")
+        filter_parts = []
+        if has_clinical_filter:
+            active = []
+            if filters["selected_tumors"]:
+                active.extend(filters["selected_tumors"])
+            if filters["selected_drugs"]:
+                active.extend(filters["selected_drugs"])
+            filter_parts.append(f"Filtrando por: {', '.join(active)}")
+        filter_parts.append(f"{len(ranked)} posts encontrados")
+        st.caption(" — ".join(filter_parts))
+
+        for i, t in enumerate(ranked[:15], 1):
+            render_tweet_card(t, rank=i, show_relevance=True)
+
+        if len(ranked) > 15:
+            with st.expander(f"Ver mais {len(ranked) - 15} posts"):
+                for i, t in enumerate(ranked[15:], 16):
+                    render_tweet_card(t, rank=i, compact=True)
     else:
-        st.info(":calendar: Nenhum tweet para esta data. Tente selecionar outra data no painel lateral.")
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# ABSTRACTS EM DESTAQUE
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-try:
-    abs_count = conn.execute("SELECT COUNT(*) FROM abstracts").fetchone()[0]
-except Exception:
-    abs_count = 0
-
-if abs_count > 0:
-    st.markdown("---")
-    st.subheader(":page_facing_up: Abstracts em Destaque")
-
-    try:
-        from src.abstract_aggregator import get_abstracts_with_buzz, get_all_abstracts
-
-        buzz_abstracts = get_abstracts_with_buzz(conn, min_tweets=1, limit=5)
-        if buzz_abstracts:
-            st.caption("Abstracts mais discutidos nos tweets")
-            for i, a in enumerate(buzz_abstracts, 1):
-                render_abstract_card(a, rank=i, compact=True)
+        if has_clinical_filter:
+            st.info("Nenhum post encontrado com esses filtros. Tente ampliar a busca.")
         else:
-            top_abstracts = get_all_abstracts(
-                conn,
-                session_types=["Oral Abstract Session", "Rapid Oral Abstract Session"],
-                selected_tumors=filters["selected_tumors"] or None,
-                selected_drugs=filters["selected_drugs"] or None,
-                sort_by="session_rank",
-                limit=5,
-            )
-            if top_abstracts:
-                st.caption("Abstracts em sessoes orais (Oral + Rapid Oral)")
-                for i, a in enumerate(top_abstracts, 1):
-                    render_abstract_card(a, rank=i, compact=True)
-            else:
-                st.caption("Nenhum abstract oral encontrado com os filtros atuais.")
-    except Exception:
-        pass
+            st.info(":calendar: Nenhum tweet para esta data. Tente selecionar outra data no painel lateral.")
 
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# BRIEF DO DIA
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-st.markdown("---")
-with st.expander(f"Resumo do Dia — {brief_date} (gerado por IA)", expanded=False):
+# ── Tab 2: Abstracts em Alta ──
+with tab_abstracts:
+    try:
+        abs_count = conn.execute("SELECT COUNT(*) FROM abstracts").fetchone()[0]
+    except Exception:
+        abs_count = 0
+
+    if abs_count > 0:
+        try:
+            from src.abstract_aggregator import get_abstracts_with_buzz, get_all_abstracts
+
+            buzz_abstracts = get_abstracts_with_buzz(conn, min_tweets=1, limit=10)
+            if buzz_abstracts:
+                st.subheader("Abstracts mais discutidos")
+                st.caption(f"{len(buzz_abstracts)} abstracts com tweets linkados")
+                for i, a in enumerate(buzz_abstracts, 1):
+                    render_abstract_card(a, rank=i)
+            else:
+                top_abstracts = get_all_abstracts(
+                    conn,
+                    session_types=["Oral Abstract Session", "Rapid Oral Abstract Session"],
+                    selected_tumors=filters["selected_tumors"] or None,
+                    selected_drugs=filters["selected_drugs"] or None,
+                    sort_by="session_rank",
+                    limit=10,
+                )
+                if top_abstracts:
+                    st.subheader("Abstracts em sessoes orais")
+                    st.caption("Oral + Rapid Oral sessions")
+                    for i, a in enumerate(top_abstracts, 1):
+                        render_abstract_card(a, rank=i)
+                else:
+                    st.info(":microscope: Nenhum abstract oral encontrado com os filtros atuais.")
+        except Exception:
+            st.info(":microscope: Erro ao carregar abstracts.")
+    else:
+        st.info(":microscope: Nenhum abstract importado ainda.")
+
+# ── Tab 3: Resumo IA ──
+with tab_brief:
+    st.subheader(f"Resumo do Dia — {brief_date}")
     brief = get_daily_brief(conn, brief_date, lang_code)
     if brief:
         render_brief_section(brief)
     else:
-        st.info(f"Brief nao gerado para {brief_date}.")
+        st.info(f":memo: Brief nao gerado para {brief_date}.")
         if os.environ.get("ANTHROPIC_API_KEY"):
             if st.button("Gerar Brief Agora"):
                 with st.spinner("Gerando brief via Claude API..."):

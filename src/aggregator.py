@@ -298,6 +298,7 @@ def get_all_tweets(
     selected_drugs: list[str] | None = None,
     text_search: str | None = None,
     limit: int = 200,
+    offset: int = 0,
 ) -> list[dict]:
     """Get all tweets with full user info, filtered and limited.
 
@@ -324,11 +325,44 @@ def get_all_tweets(
 
     if conditions:
         query += " WHERE " + " AND ".join(conditions)
-    query += " ORDER BY t.created_at DESC LIMIT ?"
+    query += " ORDER BY t.created_at DESC LIMIT ? OFFSET ?"
     params.append(limit)
+    params.append(offset)
 
     rows = conn.execute(query, params).fetchall()
     return [dict(r) for r in rows]
+
+
+def count_tweets(
+    conn: sqlite3.Connection,
+    date: str | None = None,
+    selected_tumors: list[str] | None = None,
+    selected_drugs: list[str] | None = None,
+    text_search: str | None = None,
+    curated_only: bool = False,
+) -> int:
+    """Count tweets matching the given filters (for pagination)."""
+    query = """
+        SELECT COUNT(*) as cnt
+        FROM tweets t
+        JOIN users u ON t.author_id = u.user_id
+    """
+    conditions: list[str] = []
+    params: list = []
+    _build_where(conditions, params, date, selected_tumors, selected_drugs)
+
+    if text_search and text_search.strip():
+        conditions.append("LOWER(t.text) LIKE ?")
+        params.append(f"%{text_search.strip().lower()}%")
+
+    if curated_only:
+        conditions.append("u.is_curated = 1")
+
+    if conditions:
+        query += " WHERE " + " AND ".join(conditions)
+
+    row = conn.execute(query, params).fetchone()
+    return row["cnt"]
 
 
 def get_quick_stats(
