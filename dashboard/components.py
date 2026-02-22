@@ -96,6 +96,14 @@ CUSTOM_CSS = """
     [data-testid="stMetricValue"] {
         font-size: 32px !important;
     }
+    /* ── Card container ── */
+    .card-container {
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 16px 20px;
+        margin-bottom: 12px;
+        background: #fafbfc;
+    }
 </style>
 """
 
@@ -146,6 +154,7 @@ def render_tweet_card(
     tweet_url = f"https://x.com/{tweet.get('username', '')}/status/{tweet.get('tweet_id', '')}"
     clinical = tweet.get("clinical_tags") or classify_tweet_text(tweet.get("text", ""))
 
+    st.markdown('<div class="card-container">', unsafe_allow_html=True)
     with st.container():
         # Header: author + time
         curated = " :star:" if tweet.get("is_curated") else ""
@@ -228,7 +237,7 @@ def render_tweet_card(
                 unsafe_allow_html=True,
             )
 
-        st.divider()
+    st.markdown('</div>', unsafe_allow_html=True)
 
 
 def render_brief_section(brief_markdown: str) -> None:
@@ -287,7 +296,7 @@ def render_mini_stats(
 # ── Session type badge colors ──
 SESSION_BADGE = {
     "Oral Abstract Session": ":red-background[Oral]",
-    "Rapid Oral Abstract Session": ":orange-background[Rapid Oral]",
+    "Rapid Oral Abstract Session": ":rainbow-background[Rapid Oral]",
     "General Session": ":violet-background[General]",
     "Poster Walks": ":blue-background[Poster Walk]",
     "Poster Session": ":gray-background[Poster]",
@@ -309,6 +318,7 @@ def render_abstract_card(
     drugs_raw = abstract.get("drugs", "")
     buzz = linked_tweet_count if linked_tweet_count is not None else abstract.get("linked_tweet_count", 0)
 
+    st.markdown('<div class="card-container">', unsafe_allow_html=True)
     with st.container():
         # Header: number + session badge + buzz
         header_parts = []
@@ -318,7 +328,7 @@ def render_abstract_card(
         session_badge = SESSION_BADGE.get(session_type, f":gray-background[{session_type}]")
         header_parts.append(session_badge)
         if buzz:
-            header_parts.append(f":orange-background[{buzz} tweets]")
+            header_parts.append(f":violet-background[{buzz} tweets]")
 
         st.markdown(
             '<div class="author-header">\n\n' + " &nbsp; ".join(header_parts) + "\n\n</div>",
@@ -365,4 +375,4 @@ def render_abstract_card(
         if url and not compact:
             st.markdown(f"[:link: **Ver no ASCO**]({url})")
 
-        st.divider()
+    st.markdown('</div>', unsafe_allow_html=True)

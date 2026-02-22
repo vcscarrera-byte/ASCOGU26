@@ -15,7 +15,7 @@ from src.db import create_tables, get_connection, get_linked_tweets
 
 st.set_page_config(page_title="Abstracts | ASCO GU RADAR", page_icon=":satellite:", layout="wide")
 inject_custom_css()
-st.title(":page_facing_up: Abstracts — ASCO GU 2026")
+st.title(":microscope: Abstracts — ASCO GU 2026")
 
 db_path = get_db_path()
 if not db_path.exists():

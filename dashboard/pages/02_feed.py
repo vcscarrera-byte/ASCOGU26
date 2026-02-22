@@ -16,7 +16,7 @@ from src.relevance import rank_tweets_by_relevance
 
 st.set_page_config(page_title="Principais postagens | ASCO GU RADAR", page_icon=":satellite:", layout="wide")
 inject_custom_css()
-st.title(":scroll: Principais postagens")
+st.title(":newspaper: Principais postagens")
 
 db_path = get_db_path()
 if not db_path.exists():
@@ -94,7 +94,7 @@ for i, t in enumerate(tweets, 1):
     linked_abs = _linked_cache.get(tid, [])
     if linked_abs:
         abs_badges = " ".join(
-            f":orange-background[Abs #{la['abstract_number']}]" for la in linked_abs
+            f":violet-background[Abs #{la['abstract_number']}]" for la in linked_abs
         )
         st.markdown(abs_badges)
 

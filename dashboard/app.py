@@ -29,36 +29,12 @@ from src.db import create_tables, get_connection, get_daily_brief
 from src.relevance import rank_tweets_by_relevance
 
 inject_custom_css()
+st.logo(":satellite: ASCO GU RADAR 2026")
 
 # ── Hero ──
 st.title(":satellite: ASCO GU RADAR")
 st.caption("2026")
-st.markdown("**ASCO GU 2026 highlights from GU KOLs — ranked by relevance.**")
-
-st.markdown(
-    "One feed. Every GU KOL. Relevance-first ranking.\n\n"
-    "ASCO GU Radar aggregates real-time posts from genitourinary oncology "
-    "opinion leaders at ASCO GU 2026 and surfaces what matters most — scored "
-    "by clinical signal, not vanity metrics. Plus: the complete ASCO GU 2026 "
-    "abstract library with filters for disease site, drug, phase, biomarker, "
-    "session type, and more."
-)
-
-st.markdown(
-    "**Navigate:**\n"
-    "- **ASCO GU RADAR** — Daily highlights, start here.\n"
-    "- **Principais postagens** — All posts — filter by disease, drug, abstract, author.\n"
-    "- **Authors** — KOL rankings & key voices.\n"
-    "- **Abstracts** — Full catalog, searchable."
-)
-
-st.sidebar.markdown("### Navigate")
-st.sidebar.markdown(
-    "- **ASCO GU RADAR** — Daily highlights\n"
-    "- **Principais postagens** — All posts with filters\n"
-    "- **Authors** — KOL rankings\n"
-    "- **Abstracts** — Abstract browser"
-)
+st.markdown("*Destaques dos KOLs de uro-oncologia no ASCO GU 2026, ranqueados por relevancia clinica.*")
 
 # ── Data check ──
 db_path = get_db_path()
@@ -95,8 +71,8 @@ except Exception:
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Tweets", f"{total_tweets:,}")
-col2.metric("Authors", f"{total_authors:,}")
-col3.metric("Active KOLs", f"{curated_active:,}")
+col2.metric("Autores", f"{total_authors:,}")
+col3.metric("KOLs Ativos", f"{curated_active:,}")
 col4.metric("Abstracts", f"{total_abstracts:,}")
 
 # ── Sidebar filters ──
@@ -164,7 +140,7 @@ else:
         st.info("Nenhum tweet para esta data.")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# TOP ABSTRACTS
+# ABSTRACTS EM DESTAQUE
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 try:
     abs_count = conn.execute("SELECT COUNT(*) FROM abstracts").fetchone()[0]
@@ -173,7 +149,7 @@ except Exception:
 
 if abs_count > 0:
     st.markdown("---")
-    st.subheader(":page_facing_up: Top Abstracts")
+    st.subheader(":page_facing_up: Abstracts em Destaque")
 
     try:
         from src.abstract_aggregator import get_abstracts_with_buzz, get_all_abstracts
