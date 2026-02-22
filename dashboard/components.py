@@ -12,52 +12,89 @@ import streamlit as st
 
 from src.clinical_filters import classify_tweet_text
 
-# ── Global CSS for readability ──
+# ── Global CSS — typographic scale: 48 → 32 → 24 → 20 → 18 (min) ──
 CUSTOM_CSS = """
 <style>
-    /* Larger base font */
-    .stMarkdown p, .stMarkdown li {
-        font-size: 1.12rem !important;
-        line-height: 1.65 !important;
+    /* ── Title: 48px ── */
+    [data-testid="stAppViewBlockContainer"] h1 {
+        font-size: 48px !important;
+        line-height: 1.15 !important;
+        font-weight: 700 !important;
     }
-    /* Tweet text even larger */
+    /* ── Subtitle / h2: 32px ── */
+    [data-testid="stAppViewBlockContainer"] h2 {
+        font-size: 32px !important;
+        line-height: 1.25 !important;
+        font-weight: 600 !important;
+    }
+    /* ── Section header / h3: 24px ── */
+    [data-testid="stAppViewBlockContainer"] h3 {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        font-weight: 600 !important;
+    }
+    /* ── Body text: 20px ── */
+    .stMarkdown p, .stMarkdown li {
+        font-size: 20px !important;
+        line-height: 1.6 !important;
+    }
+    /* Tweet text: 20px */
     .tweet-text p {
-        font-size: 1.18rem !important;
-        line-height: 1.7 !important;
+        font-size: 20px !important;
+        line-height: 1.65 !important;
         color: #1a1a1a !important;
     }
-    /* Author header */
+    /* Abstract title: 20px */
+    .abstract-title p {
+        font-size: 20px !important;
+        line-height: 1.55 !important;
+        color: #1a1a1a !important;
+    }
+    /* Author header: 18px */
     .author-header p {
-        font-size: 1.05rem !important;
+        font-size: 18px !important;
         font-weight: 500 !important;
     }
-    /* Metrics smaller but still readable */
+    /* Brief content: 18px */
+    .brief-content p, .brief-content li {
+        font-size: 18px !important;
+        line-height: 1.6 !important;
+    }
+    /* ── Secondary / smallest: 18px ── */
     .tweet-metrics p {
-        font-size: 0.95rem !important;
+        font-size: 18px !important;
         color: #555 !important;
     }
-    /* Badge styling */
     .badge-row p {
-        font-size: 0.95rem !important;
+        font-size: 18px !important;
     }
-    /* Sidebar text slightly smaller */
-    section[data-testid="stSidebar"] .stMarkdown p {
-        font-size: 0.95rem !important;
+    .abstract-meta p {
+        font-size: 18px !important;
+        color: #555 !important;
     }
-    /* Brief sections */
-    .brief-content p, .brief-content li {
-        font-size: 1.1rem !important;
-        line-height: 1.65 !important;
+    .stats-bar p {
+        font-size: 18px !important;
+        color: #666 !important;
     }
-    /* Better link styling */
+    section[data-testid="stSidebar"] .stMarkdown p,
+    section[data-testid="stSidebar"] .stMarkdown li {
+        font-size: 18px !important;
+    }
+    /* Captions */
+    .stCaption, [data-testid="stCaptionContainer"] p {
+        font-size: 18px !important;
+    }
+    /* ── Links ── */
     a {
         text-decoration: none !important;
         font-weight: 500 !important;
     }
-    /* Stats bar */
-    .stats-bar p {
-        font-size: 1.0rem !important;
-        color: #666 !important;
+    /* ── Metric labels & values ── */
+    [data-testid="stMetricLabel"] p {
+        font-size: 18px !important;
+    }
+    [data-testid="stMetricValue"] {
+        font-size: 32px !important;
     }
 </style>
 """
@@ -245,3 +282,87 @@ def render_mini_stats(
         '<div class="stats-bar">\n\n' + " · ".join(parts) + "\n\n</div>",
         unsafe_allow_html=True,
     )
+
+
+# ── Session type badge colors ──
+SESSION_BADGE = {
+    "Oral Abstract Session": ":red-background[Oral]",
+    "Rapid Oral Abstract Session": ":orange-background[Rapid Oral]",
+    "General Session": ":violet-background[General]",
+    "Poster Walks": ":blue-background[Poster Walk]",
+    "Poster Session": ":gray-background[Poster]",
+    "Trials in Progress Poster Session": ":gray-background[TIP]",
+    "Networking Event": ":gray-background[Networking]",
+}
+
+
+def render_abstract_card(
+    abstract: dict,
+    rank: int | None = None,
+    compact: bool = False,
+    linked_tweet_count: int | None = None,
+) -> None:
+    """Render an abstract card with clinical badges and metadata."""
+    abs_num = abstract.get("abstract_number", "")
+    session_type = abstract.get("session_type", "")
+    tumor = abstract.get("tumor_type", "")
+    drugs_raw = abstract.get("drugs", "")
+    buzz = linked_tweet_count if linked_tweet_count is not None else abstract.get("linked_tweet_count", 0)
+
+    with st.container():
+        # Header: number + session badge + buzz
+        header_parts = []
+        if rank:
+            header_parts.append(f"**#{rank}**")
+        header_parts.append(f"**#{abs_num}**")
+        session_badge = SESSION_BADGE.get(session_type, f":gray-background[{session_type}]")
+        header_parts.append(session_badge)
+        if buzz:
+            header_parts.append(f":orange-background[{buzz} tweets]")
+
+        st.markdown(
+            '<div class="author-header">\n\n' + " &nbsp; ".join(header_parts) + "\n\n</div>",
+            unsafe_allow_html=True,
+        )
+
+        # Title
+        title = abstract.get("title", "")
+        display_title = title[:200] + "..." if len(title) > 200 else title
+        st.markdown(
+            f'<div class="abstract-title">\n\n**{display_title}**\n\n</div>',
+            unsafe_allow_html=True,
+        )
+
+        # Presenter + tumor
+        presenter = abstract.get("presenter", "")
+        meta_parts = []
+        if presenter:
+            meta_parts.append(presenter)
+        if tumor:
+            meta_parts.append(tumor)
+        if meta_parts:
+            st.markdown(
+                '<div class="abstract-meta">\n\n' + " · ".join(meta_parts) + "\n\n</div>",
+                unsafe_allow_html=True,
+            )
+
+        # Clinical badges
+        badges = []
+        if tumor:
+            badges.append(f":blue-background[{tumor}]")
+        for d in drugs_raw.split("; "):
+            d = d.strip()
+            if d:
+                badges.append(f":green-background[{d}]")
+        if badges:
+            st.markdown(
+                '<div class="badge-row">\n\n' + " ".join(badges) + "\n\n</div>",
+                unsafe_allow_html=True,
+            )
+
+        # Link to ASCO
+        url = abstract.get("url", "")
+        if url and not compact:
+            st.markdown(f"[:link: **Ver no ASCO**]({url})")
+
+        st.divider()

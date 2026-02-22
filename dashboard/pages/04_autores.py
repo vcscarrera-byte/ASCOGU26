@@ -15,9 +15,9 @@ from src.aggregator import get_available_dates, get_top_authors
 from src.config import get_db_path
 from src.db import create_tables, get_connection
 
-st.set_page_config(page_title="Autores | ASCO GU 2026", layout="wide")
+st.set_page_config(page_title="Authors | ASCO GU RADAR", page_icon=":satellite:", layout="wide")
 inject_custom_css()
-st.title(":bust_in_silhouette: Autores")
+st.title(":satellite: Authors")
 
 db_path = get_db_path()
 if not db_path.exists():

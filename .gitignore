@@ -13,3 +13,6 @@ build/
 # Data — keep db for deploy, exclude exports/briefs
 data/exports/
 data/briefs/
+
+# Temp
+tmp_abstracts/

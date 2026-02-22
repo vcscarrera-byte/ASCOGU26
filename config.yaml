@@ -179,6 +179,11 @@ clinical_filters:
       - "ccRCC"
       - "RCC"
       - "mRCC"
+    Testicular / Germ Cell:
+      - "testicular"
+      - "germ cell"
+      - "seminoma"
+      - "nonseminoma"
 
   drugs:
     enzalutamide: ["enzalutamide", "xtandi"]
@@ -208,6 +213,17 @@ clinical_filters:
     ipilimumab: ["ipilimumab", "yervoy"]
     atezolizumab: ["atezolizumab", "tecentriq"]
     avelumab: ["avelumab", "bavencio"]
+    gemcitabine: ["gemcitabine", "gemzar"]
+    cisplatin: ["cisplatin", "platinol"]
+    carboplatin: ["carboplatin", "paraplatin"]
+    durvalumab: ["durvalumab", "imfinzi"]
+    trastuzumab deruxtecan: ["trastuzumab deruxtecan", "t-dxd", "enhertu"]
+    cemiplimab: ["cemiplimab", "libtayo"]
+    bacillus Calmette-Guerin: ["bcg", "calmette"]
+    relugolix: ["relugolix", "orgovyx"]
+
+abstracts:
+  json_path: "data/abstracts_raw.json"
 
 summarizer:
   model: "claude-sonnet-4-20250514"

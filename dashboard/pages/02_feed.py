@@ -11,12 +11,12 @@ from dashboard.components import inject_custom_css, render_tweet_card
 from dashboard.sidebar_filters import render_sidebar_filters
 from src.aggregator import get_all_tweets, get_available_dates
 from src.config import get_db_path
-from src.db import create_tables, get_connection
+from src.db import create_tables, get_connection, get_linked_abstracts
 from src.relevance import rank_tweets_by_relevance
 
-st.set_page_config(page_title="Feed | ASCO GU 2026", layout="wide")
+st.set_page_config(page_title="Principais postagens | ASCO GU RADAR", page_icon=":satellite:", layout="wide")
 inject_custom_css()
-st.title(":scroll: Feed")
+st.title(":scroll: Principais postagens")
 
 db_path = get_db_path()
 if not db_path.exists():
@@ -32,15 +32,13 @@ if not dates:
     conn.close()
     st.stop()
 
-# Sidebar with full filters
+# Sidebar with full filters (no limit — show all)
 filters = render_sidebar_filters(
     conn,
     show_search=True,
     show_sort=True,
     show_curated=True,
-    show_limit=True,
-    default_limit=30,
-    max_limit=100,
+    show_limit=False,
 )
 
 # Fetch tweets
@@ -50,9 +48,8 @@ tweets = get_all_tweets(
     selected_tumors=filters["selected_tumors"],
     selected_drugs=filters["selected_drugs"],
     text_search=filters["text_search"],
-    limit=filters["limit"],
+    limit=9999,
 )
-conn.close()
 
 # Apply curated filter
 if filters["curated_only"]:
@@ -76,8 +73,31 @@ elif filters["sort_by"] == "recent":
 # Count header
 st.caption(f"Mostrando {len(tweets)} tweets")
 
+# Pre-fetch linked abstracts for all tweets (batch-friendly)
+try:
+    _linked_cache = {}
+    for t in tweets:
+        tid = t.get("tweet_id", "")
+        if tid:
+            linked = get_linked_abstracts(conn, tid)
+            if linked:
+                _linked_cache[tid] = linked
+except Exception:
+    _linked_cache = {}
+
+conn.close()
+
 # Render tweets
 for i, t in enumerate(tweets, 1):
+    # Show linked abstract badges before the card
+    tid = t.get("tweet_id", "")
+    linked_abs = _linked_cache.get(tid, [])
+    if linked_abs:
+        abs_badges = " ".join(
+            f":orange-background[Abs #{la['abstract_number']}]" for la in linked_abs
+        )
+        st.markdown(abs_badges)
+
     render_tweet_card(
         t,
         rank=i if filters["sort_by"] != "recent" else None,

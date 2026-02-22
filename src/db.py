@@ -89,6 +89,42 @@ def create_tables(conn: sqlite3.Connection) -> None:
         );
         CREATE INDEX IF NOT EXISTS idx_daily_metrics_date ON daily_metrics(date);
 
+        CREATE TABLE IF NOT EXISTS abstracts (
+            abstract_number     TEXT PRIMARY KEY,
+            title               TEXT NOT NULL,
+            body                TEXT DEFAULT '',
+            presenter           TEXT DEFAULT '',
+            presenter_role      TEXT DEFAULT '',
+            session_type        TEXT DEFAULT '',
+            session_title       TEXT DEFAULT '',
+            poster_board_number TEXT DEFAULT '',
+            doi                 TEXT DEFAULT '',
+            date                TEXT DEFAULT '',
+            url                 TEXT DEFAULT '',
+            subjects            TEXT DEFAULT '',
+            genes               TEXT DEFAULT '',
+            drugs               TEXT DEFAULT '',
+            organizations       TEXT DEFAULT '',
+            countries           TEXT DEFAULT '',
+            tumor_type          TEXT DEFAULT '',
+            session_rank        INTEGER DEFAULT 1,
+            imported_at         TEXT NOT NULL,
+            updated_at          TEXT NOT NULL
+        );
+        CREATE INDEX IF NOT EXISTS idx_abstracts_session_type ON abstracts(session_type);
+        CREATE INDEX IF NOT EXISTS idx_abstracts_tumor_type ON abstracts(tumor_type);
+
+        CREATE TABLE IF NOT EXISTS tweet_abstract_links (
+            tweet_id            TEXT NOT NULL,
+            abstract_number     TEXT NOT NULL,
+            match_type          TEXT DEFAULT 'auto',
+            confidence          REAL DEFAULT 1.0,
+            created_at          TEXT NOT NULL,
+            PRIMARY KEY (tweet_id, abstract_number)
+        );
+        CREATE INDEX IF NOT EXISTS idx_tal_abstract ON tweet_abstract_links(abstract_number);
+        CREATE INDEX IF NOT EXISTS idx_tal_tweet ON tweet_abstract_links(tweet_id);
+
         CREATE TABLE IF NOT EXISTS daily_briefs (
             date                TEXT NOT NULL,
             language            TEXT NOT NULL DEFAULT 'en',
@@ -278,3 +314,107 @@ def get_daily_brief(conn: sqlite3.Connection, date: str, language: str = "en") -
         (date, language),
     ).fetchone()
     return row["brief_markdown"] if row else None
+
+
+# --- Abstracts ---
+
+def upsert_abstract(conn: sqlite3.Connection, row: dict) -> None:
+    """Insert or replace an abstract record."""
+    now = _now_iso()
+    conn.execute(
+        """INSERT OR REPLACE INTO abstracts
+           (abstract_number, title, body, presenter, presenter_role,
+            session_type, session_title, poster_board_number, doi, date, url,
+            subjects, genes, drugs, organizations, countries,
+            tumor_type, session_rank, imported_at, updated_at)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+        (
+            row["abstract_number"],
+            row.get("title", ""),
+            row.get("body", ""),
+            row.get("presenter", ""),
+            row.get("presenter_role", ""),
+            row.get("session_type", ""),
+            row.get("session_title", ""),
+            row.get("poster_board_number", ""),
+            row.get("doi", ""),
+            row.get("date", ""),
+            row.get("url", ""),
+            row.get("subjects", ""),
+            row.get("genes", ""),
+            row.get("drugs", ""),
+            row.get("organizations", ""),
+            row.get("countries", ""),
+            row.get("tumor_type", ""),
+            row.get("session_rank", 1),
+            row.get("imported_at", now),
+            now,
+        ),
+    )
+
+
+def upsert_abstracts_batch(
+    conn: sqlite3.Connection, rows: list[dict]
+) -> tuple[int, int]:
+    """Batch upsert abstracts. Returns (total, new_count)."""
+    before = conn.execute("SELECT COUNT(*) FROM abstracts").fetchone()[0]
+    for row in rows:
+        upsert_abstract(conn, row)
+    conn.commit()
+    after = conn.execute("SELECT COUNT(*) FROM abstracts").fetchone()[0]
+    return len(rows), after - before
+
+
+# --- Tweet-Abstract links ---
+
+def link_tweet_to_abstract(
+    conn: sqlite3.Connection,
+    tweet_id: str,
+    abstract_number: str,
+    match_type: str = "auto",
+    confidence: float = 1.0,
+) -> bool:
+    """Create a tweet-abstract link. Returns True if new."""
+    try:
+        conn.execute(
+            """INSERT OR IGNORE INTO tweet_abstract_links
+               (tweet_id, abstract_number, match_type, confidence, created_at)
+               VALUES (?, ?, ?, ?, ?)""",
+            (tweet_id, abstract_number, match_type, confidence, _now_iso()),
+        )
+        return conn.total_changes > 0
+    except sqlite3.IntegrityError:
+        return False
+
+
+def get_linked_tweets(conn: sqlite3.Connection, abstract_number: str) -> list[dict]:
+    """Get tweets linked to an abstract, with user info."""
+    rows = conn.execute(
+        """SELECT t.tweet_id, t.text, t.created_at, t.author_id,
+                  t.like_count, t.retweet_count, t.reply_count, t.quote_count,
+                  t.impression_count,
+                  (t.like_count + t.retweet_count + t.reply_count + t.quote_count) as total_engagement,
+                  u.name, u.username, u.profile_image_url, u.is_curated,
+                  tal.confidence, tal.match_type
+           FROM tweet_abstract_links tal
+           JOIN tweets t ON tal.tweet_id = t.tweet_id
+           JOIN users u ON t.author_id = u.user_id
+           WHERE tal.abstract_number = ?
+           ORDER BY total_engagement DESC""",
+        (abstract_number,),
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_linked_abstracts(conn: sqlite3.Connection, tweet_id: str) -> list[dict]:
+    """Get abstracts linked to a tweet."""
+    rows = conn.execute(
+        """SELECT a.abstract_number, a.title, a.session_type, a.tumor_type,
+                  a.presenter, a.url, tal.confidence
+           FROM tweet_abstract_links tal
+           JOIN abstracts a ON tal.abstract_number = a.abstract_number
+           WHERE tal.tweet_id = ?
+           ORDER BY a.session_rank DESC""",
+        (tweet_id,),
+    ).fetchall()
+    return [dict(r) for r in rows]

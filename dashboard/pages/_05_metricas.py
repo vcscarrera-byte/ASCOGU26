@@ -17,9 +17,9 @@ from src.config import get_db_path
 from src.db import create_tables, get_connection
 from src.export import export_tweets_csv
 
-st.set_page_config(page_title="Metricas | ASCO GU 2026", layout="wide")
+st.set_page_config(page_title="Metrics | ASCO GU RADAR", page_icon=":satellite:", layout="wide")
 inject_custom_css()
-st.title(":bar_chart: Metricas")
+st.title(":satellite: Metrics")
 
 db_path = get_db_path()
 if not db_path.exists():

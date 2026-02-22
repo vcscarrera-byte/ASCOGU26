@@ -15,6 +15,7 @@ def render_sidebar_filters(
     show_limit: bool = True,
     show_search: bool = False,
     show_sort: bool = False,
+    show_session_type: bool = False,
     default_limit: int = 20,
     max_limit: int = 50,
 ) -> dict:
@@ -25,6 +26,7 @@ def render_sidebar_filters(
         curated_only: bool
         selected_tumors: list[str]
         selected_drugs: list[str]
+        selected_session_types: list[str]
         limit: int
         text_search: str
         sort_by: str
@@ -34,6 +36,7 @@ def render_sidebar_filters(
         "curated_only": False,
         "selected_tumors": [],
         "selected_drugs": [],
+        "selected_session_types": [],
         "limit": default_limit,
         "text_search": "",
         "sort_by": "relevance",
@@ -95,12 +98,32 @@ def render_sidebar_filters(
             help="Deixe vazio para mostrar todos",
         )
 
+    # Session type filter (for abstracts page)
+    if show_session_type:
+        try:
+            from src.abstract_aggregator import get_session_type_names
+            session_options = get_session_type_names(conn)
+            if session_options:
+                result["selected_session_types"] = st.sidebar.multiselect(
+                    "Tipo de Sessao",
+                    options=session_options,
+                    default=[],
+                    help="Oral, Poster, Trials in Progress...",
+                )
+        except Exception:
+            pass
+
     # Limit slider
     if show_limit:
         result["limit"] = st.sidebar.slider("Limite", 5, max_limit, default_limit)
 
     # Clear filters button
-    has_active = result["selected_tumors"] or result["selected_drugs"] or result["text_search"]
+    has_active = (
+        result["selected_tumors"]
+        or result["selected_drugs"]
+        or result["selected_session_types"]
+        or result["text_search"]
+    )
     if has_active:
         if st.sidebar.button("Limpar filtros"):
             st.session_state.clear()
@@ -112,6 +135,8 @@ def render_sidebar_filters(
         active_filters.append(f"Tumor: {', '.join(result['selected_tumors'])}")
     if result["selected_drugs"]:
         active_filters.append(f"Droga: {', '.join(result['selected_drugs'])}")
+    if result["selected_session_types"]:
+        active_filters.append(f"Sessao: {', '.join(result['selected_session_types'])}")
     if result["text_search"]:
         active_filters.append(f"Busca: \"{result['text_search']}\"")
     if active_filters:
