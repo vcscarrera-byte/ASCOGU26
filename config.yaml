@@ -1,0 +1,215 @@
+project:
+  name: "ASCO GU 2026 Monitor"
+  db_path: "data/ascogu26.db"
+  exports_dir: "data/exports"
+  briefs_dir: "data/briefs"
+
+collection:
+  hashtags:
+    - "#ASCOGU26"
+    - "#ASCOGU2026"
+    - "#ASCOGU"
+
+  keywords:
+    - "ASCO GU 2026"
+
+  # Filtros para queries de contas curadas (tweets GU-relevantes mesmo sem hashtag)
+  account_filters:
+    - "prostate"
+    - "bladder"
+    - "kidney"
+    - "renal"
+    - "urothelial"
+    - "GU"
+    - "ASCO"
+
+  curated_accounts:
+    # =========================
+    # BRASIL (8 verificados)
+    # =========================
+    - FabioSchutz78       # Fabio A. Schutz - GU Onc
+    - SoaresAndrey        # Andrey Soares - GU Onc (Einstein)
+    - DiogoAssed          # Diogo Assed Bastos - GU Onc (AC Camargo)
+    - igorpmorbeck        # Igor Protzner Morbeck - GU Onc
+    - crisbergerot        # Cristiane Bergerot - Psycho-Onc/GU
+    - nataliagandur       # Natalia Gandur - GU Onc
+    - DrKarineTawagi      # Karine Tawagi - GU Onc
+    - shilpaonc           # Shilpa Gupta - GU Onc (Cleveland Clinic)
+    # =========================
+    # EUA — Prostate (22 verificados)
+    # =========================
+    - neerajaiims         # Neeraj Agarwal - Huntsman/Utah
+    - nealshore           # Neal Shore - Carolina Urologic
+    - ChrisSweens1        # Christopher Sweeney - Lilly/Dana-Farber
+    - AarmstrongDuke      # Andrew Armstrong - Duke
+    - TomBeer             # Tomasz Beer - OHSU
+    - mishabeltran        # Himisha Beltran - Dana-Farber
+    - heatherhcheng       # Heather Cheng - Fred Hutch/UW
+    - _evanyu             # Evan Yu - UW/Fred Hutch
+    - morr316             # Michael Morris - MSKCC
+    - DRathkopf           # Dana Rathkopf - MSKCC
+    - DrSpratticus        # Daniel Spratt - Rad Onc
+    - sandysrimd          # Sandy Srinivas - Stanford
+    - DrPaulNguyen        # Paul Nguyen - Dana-Farber Rad Onc
+    - drjefstathiou       # Jason Efstathiou - MGH Rad Onc
+    - RobertReiterMD      # Robert Reiter - UCLA Uro
+    - aaparicioMD         # Ana Aparicio - MD Anderson
+    - OJSartor            # Oliver Sartor - Mayo Clinic
+    - CaPsurvivorship     # Alicia Morgans - Dana-Farber
+    - LoebStacy           # Stacy Loeb - NYU Langone
+    - Beam_Doc            # Brandon Mahal - U Miami/Harvard
+    - zklaassen_md        # Zachary Klaassen - Georgia Cancer
+    - williamohmd         # William Oh - Mount Sinai
+    # =========================
+    # EUA — Bladder (5 verificados)
+    # =========================
+    - PGrivasMDPhD        # Petros Grivas - UW/Fred Hutch
+    - MattGalsky          # Matthew Galsky - Mount Sinai
+    - UroDocAsh           # Ashish Kamat - MD Anderson
+    - DrRosenbergMSK      # Jonathan Rosenberg - MSKCC
+    - DanielPetrylak      # Daniel Petrylak - Yale
+    # =========================
+    # EUA — Kidney (5 verificados)
+    # =========================
+    - DrChoueiri          # Toni Choueiri - Dana-Farber
+    - DrRanaMcKay         # Rana McKay - UC San Diego
+    - BradMcG04           # Bradley McGregor - Dana-Farber
+    - naomidsxx           # Naomi Haas - UPenn
+    - elizabethdkatz      # Elizabeth Katz - U Michigan
+    # =========================
+    # EUROPA — Prostate (9 verificados)
+    # =========================
+    - Silke_Gillessen     # Silke Gillessen - APCCC organizer
+    - AttardLab           # Gerhardt Attard - UCL
+    - PCaParker           # Chris Parker - Royal Marsden
+    - BertrandTOMBAL      # Bertrand Tombal - Brussels
+    - piet_ost            # Piet Ost - Ghent
+    - NivenMehra          # Niven Mehra - Radboudumc
+    - AOmlin              # Aurelius Omlin - St. Gallen
+    - bjartell            # Anders Bjartell - Malmo
+    - Albert0Briganti     # Alberto Briganti - San Raffaele
+    # =========================
+    # EUROPA — Bladder (4 verificados)
+    # =========================
+    - OncoBellmunt        # Joaquim Bellmunt - Barcelona
+    - robert_huddart      # Robert Huddart - Royal Marsden
+    - balazsszabados      # Balazs Szabados - Barts
+    - MichvdHeijden       # Michiel van der Heijden - NKI
+    # =========================
+    # EUROPA — Kidney + Multi (5 verificados)
+    # =========================
+    - ViktorGruenwald     # Viktor Grunwald - Essen
+    - CPRT65              # Camillo Porta - Bari
+    - TomPowlesMD         # Tom Powles - Barts
+    - KarimFizazi         # Karim Fizazi - Gustave Roussy
+    - AndreaNecchi        # Andrea Necchi - San Raffaele
+    # =========================
+    # Previos mantidos
+    # =========================
+    - amerseburger        # Axel Merseburger - Schleswig-Holstein
+    - cnsternberg         # Cora Sternberg - Weill Cornell
+    - TiansterZhang       # Tian Zhang - UT Southwestern
+    - sonpavde            # Guru Sonpavde - AdventHealth
+    - daniel_j_george     # Daniel George - Duke
+    - MTBourlon           # Maria Teresa Bourlon - Mexico
+    - monaborea           # Sumanta Pal - City of Hope
+    # =========================
+    # Organizacoes / Media / Institucional (10)
+    # =========================
+    - ASCO                # American Society of Clinical Oncology
+    - urotoday            # UroToday
+    - OncLive             # OncLive
+    - OncoAlert           # OncoAlert
+    - ASCOPost            # ASCO Post
+    - GUOncologyNow       # GU Oncology Now
+    - DanaFarberNews      # Dana-Farber Institucional
+    - Prof_IanD           # Ian Davis - Monash (Australia)
+    - LACOG_group         # LACOG
+    - SBOC_Oncologia      # SBOC
+
+  max_query_length: 512
+  max_results_per_page: 100
+  rate_limit_requests: 450
+  rate_limit_window_seconds: 900
+
+api:
+  base_url: "https://api.x.com/2"
+  tweet_fields: "id,text,created_at,public_metrics,conversation_id,author_id,referenced_tweets,entities,context_annotations,lang,in_reply_to_user_id,source"
+  user_fields: "id,name,username,profile_image_url,public_metrics,description,verified"
+  expansions: "author_id"
+
+topic_modeling:
+  method: "tfidf_kmeans"
+  min_cluster_size: 5
+  num_topics: 8
+  stop_words_extra:
+    - "asco"
+    - "ascogu26"
+    - "ascogu2026"
+    - "ascogu"
+    - "gu"
+    - "cancer"
+    - "patient"
+    - "patients"
+    - "treatment"
+    - "data"
+    - "trial"
+    - "study"
+    - "abstract"
+
+clinical_filters:
+  tumor_types:
+    Prostate:
+      - "prostate"
+      - "mCRPC"
+      - "mHSPC"
+      - "nmCRPC"
+      - "CRPC"
+      - "HSPC"
+    Bladder / Urothelial:
+      - "bladder"
+      - "urothelial"
+      - "MIBC"
+      - "NMIBC"
+      - "mUC"
+      - "muscle-invasive"
+    Kidney / RCC:
+      - "kidney"
+      - "renal"
+      - "ccRCC"
+      - "RCC"
+      - "mRCC"
+
+  drugs:
+    enzalutamide: ["enzalutamide", "xtandi"]
+    abiraterone: ["abiraterone", "zytiga"]
+    darolutamide: ["darolutamide", "nubeqa"]
+    apalutamide: ["apalutamide", "erleada"]
+    docetaxel: ["docetaxel", "taxotere"]
+    cabazitaxel: ["cabazitaxel", "jevtana"]
+    radium-223: ["radium-223", "radium223", "xofigo"]
+    Lu-PSMA: ["lu-psma", "lutetium", "pluvicto", "177lu"]
+    olaparib: ["olaparib", "lynparza"]
+    talazoparib: ["talazoparib", "talzenna"]
+    niraparib: ["niraparib", "zejula"]
+    enfortumab vedotin: ["enfortumab", "padcev"]
+    erdafitinib: ["erdafitinib", "balversa"]
+    sacituzumab govitecan: ["sacituzumab", "trodelvy"]
+    disitamab vedotin: ["disitamab"]
+    cabozantinib: ["cabozantinib", "cabometyx", "cometriq"]
+    lenvatinib: ["lenvatinib", "lenvima"]
+    axitinib: ["axitinib", "inlyta"]
+    sunitinib: ["sunitinib", "sutent"]
+    pazopanib: ["pazopanib", "votrient"]
+    belzutifan: ["belzutifan", "welireg"]
+    tivozanib: ["tivozanib", "fotivda"]
+    pembrolizumab: ["pembrolizumab", "keytruda"]
+    nivolumab: ["nivolumab", "opdivo"]
+    ipilimumab: ["ipilimumab", "yervoy"]
+    atezolizumab: ["atezolizumab", "tecentriq"]
+    avelumab: ["avelumab", "bavencio"]
+
+summarizer:
+  model: "claude-sonnet-4-20250514"
+  max_tokens: 4096
+  temperature: 0.3
