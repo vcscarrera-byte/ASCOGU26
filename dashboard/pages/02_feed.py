@@ -20,7 +20,7 @@ st.title(":newspaper: Principais postagens")
 
 db_path = get_db_path()
 if not db_path.exists():
-    st.warning("Database nao encontrada.")
+    st.warning(":construction: Base de dados nao encontrada.")
     st.stop()
 
 conn = get_connection(db_path)
@@ -28,7 +28,7 @@ create_tables(conn)
 
 dates = get_available_dates(conn)
 if not dates:
-    st.info("Nenhum dado coletado ainda.")
+    st.info(":inbox_tray: Nenhum dado coletado ainda.")
     conn.close()
     st.stop()
 
@@ -56,18 +56,37 @@ if filters["curated_only"]:
     tweets = [t for t in tweets if t.get("is_curated")]
 
 if not tweets:
-    st.info("Nenhum tweet encontrado com esses filtros.")
+    st.markdown("---")
+    st.markdown(":mag: **Nenhum tweet encontrado com esses filtros.**")
+    st.markdown("Tente remover alguns filtros ou buscar por outro termo.")
+    if st.button("Limpar filtros", type="secondary"):
+        st.session_state.clear()
+        st.rerun()
     st.stop()
 
+# Inline sort bar
+sort_selection = st.segmented_control(
+    "Ordenar",
+    options=["Relevância", "Engagement", "Recentes"],
+    default="Relevância",
+    label_visibility="collapsed",
+)
+sort_map = {
+    "Relevância": "relevance",
+    "Engagement": "engagement",
+    "Recentes": "recent",
+}
+active_sort = sort_map.get(sort_selection, "relevance")
+
 # Sort
-if filters["sort_by"] == "relevance":
+if active_sort == "relevance":
     tweets = rank_tweets_by_relevance(tweets)
-elif filters["sort_by"] == "engagement":
+elif active_sort == "engagement":
     tweets.sort(
         key=lambda t: t.get("like_count", 0) + t.get("retweet_count", 0) + t.get("reply_count", 0) + t.get("quote_count", 0),
         reverse=True,
     )
-elif filters["sort_by"] == "recent":
+elif active_sort == "recent":
     tweets.sort(key=lambda t: t.get("created_at", ""), reverse=True)
 
 # Count header
@@ -100,7 +119,7 @@ for i, t in enumerate(tweets, 1):
 
     render_tweet_card(
         t,
-        rank=i if filters["sort_by"] != "recent" else None,
+        rank=i if active_sort != "recent" else None,
         compact=True,
-        show_relevance=filters["sort_by"] == "relevance",
+        show_relevance=active_sort == "relevance",
     )

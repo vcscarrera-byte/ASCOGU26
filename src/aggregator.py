@@ -165,7 +165,8 @@ def get_top_tweets(
                t.like_count, t.retweet_count, t.reply_count, t.quote_count,
                t.impression_count, t.conversation_id,
                (t.like_count + t.retweet_count + t.reply_count + t.quote_count) as total_engagement,
-               u.name, u.username, u.profile_image_url, u.is_curated
+               u.name, u.username, u.profile_image_url, u.is_curated,
+               u.description as user_bio, u.verified, u.followers_count
         FROM tweets t
         JOIN users u ON t.author_id = u.user_id
     """

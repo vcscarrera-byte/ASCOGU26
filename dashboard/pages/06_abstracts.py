@@ -19,7 +19,7 @@ st.title(":microscope: Abstracts — ASCO GU 2026")
 
 db_path = get_db_path()
 if not db_path.exists():
-    st.warning("Database nao encontrada.")
+    st.warning(":construction: Base de dados nao encontrada.")
     st.stop()
 
 conn = get_connection(db_path)
@@ -28,10 +28,7 @@ create_tables(conn)
 # Check if abstracts exist
 abs_count = conn.execute("SELECT COUNT(*) FROM abstracts").fetchone()[0]
 if not abs_count:
-    st.info(
-        "Nenhum abstract importado. Execute:\n\n"
-        "`python scripts/import_abstracts.py`"
-    )
+    st.info(":microscope: Nenhum abstract importado. Execute `python scripts/import_abstracts.py`")
     conn.close()
     st.stop()
 
@@ -79,7 +76,12 @@ abstracts = get_all_abstracts(
 )
 
 if not abstracts:
-    st.info("Nenhum abstract encontrado com esses filtros.")
+    st.markdown("---")
+    st.markdown(":microscope: **Nenhum abstract encontrado com esses filtros.**")
+    st.markdown("Tente remover filtros de tumor, droga ou sessao.")
+    if st.button("Limpar filtros", type="secondary"):
+        st.session_state.clear()
+        st.rerun()
     conn.close()
     st.stop()
 

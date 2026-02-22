@@ -39,7 +39,7 @@ st.markdown("*Destaques dos KOLs de uro-oncologia no ASCO GU 2026, ranqueados po
 # ── Data check ──
 db_path = get_db_path()
 if not db_path.exists():
-    st.warning("Database not found. Run a collection first.")
+    st.warning(":construction: Base de dados nao encontrada. Execute uma coleta primeiro.")
     st.stop()
 
 conn = get_connection(db_path)
@@ -47,7 +47,7 @@ create_tables(conn)
 
 dates = get_available_dates(conn)
 if not dates:
-    st.info("No tweets collected yet. Run `python scripts/collect.py --date today` to start.")
+    st.info(":inbox_tray: Nenhum tweet coletado ainda. Execute `python scripts/collect.py --date today` para iniciar.")
     conn.close()
     st.stop()
 
@@ -137,7 +137,7 @@ else:
     if has_clinical_filter:
         st.info("Nenhum post encontrado com esses filtros. Tente ampliar a busca.")
     else:
-        st.info("Nenhum tweet para esta data.")
+        st.info(":calendar: Nenhum tweet para esta data. Tente selecionar outra data no painel lateral.")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # ABSTRACTS EM DESTAQUE

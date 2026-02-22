@@ -174,6 +174,25 @@ def render_tweet_card(
             unsafe_allow_html=True,
         )
 
+        # Author bio popover
+        bio = tweet.get("user_bio", "")
+        followers = tweet.get("followers_count", 0)
+        verified = tweet.get("verified", False)
+        if bio or followers:
+            with st.popover(f"Sobre @{username}"):
+                profile_badges = []
+                if tweet.get("is_curated"):
+                    profile_badges.append(":star: KOL Curado")
+                if verified:
+                    profile_badges.append(":white_check_mark: Verificado")
+                if profile_badges:
+                    st.markdown(" · ".join(profile_badges))
+                if followers:
+                    st.markdown(f"**{followers:,}** seguidores")
+                if bio:
+                    st.markdown(bio)
+                st.markdown(f"[:link: Perfil no X](https://x.com/{username})")
+
         # Clinical badges
         badges = []
         for tumor in clinical.get("tumor_types", []):
@@ -211,12 +230,14 @@ def render_tweet_card(
         rts = _format_number(tweet.get("retweet_count", 0))
         replies = _format_number(tweet.get("reply_count", 0))
         impressions = _format_number(tweet.get("impression_count", 0))
+        bookmarks = _format_number(tweet.get("bookmark_count", 0))
 
         if not compact:
             st.markdown(
                 f'<div class="tweet-metrics">\n\n'
                 f":heart: {likes}  &nbsp; :repeat: {rts}  &nbsp; "
-                f":speech_balloon: {replies}  &nbsp; :eyes: {impressions}  &nbsp;&nbsp; "
+                f":speech_balloon: {replies}  &nbsp; :eyes: {impressions}  &nbsp; "
+                f":bookmark: {bookmarks}  &nbsp;&nbsp; "
                 f"[:link: **Ver no X**]({tweet_url})"
                 f"\n\n</div>",
                 unsafe_allow_html=True,
@@ -231,7 +252,7 @@ def render_tweet_card(
             st.markdown(
                 f'<div class="tweet-metrics">\n\n'
                 f":heart: {likes} · :repeat: {rts} · :speech_balloon: {replies} · "
-                f"Total: {_format_number(eng)} · "
+                f":eyes: {impressions} · :bookmark: {bookmarks} · "
                 f"[:link: Ver no X]({tweet_url})"
                 f"\n\n</div>",
                 unsafe_allow_html=True,
@@ -243,7 +264,7 @@ def render_tweet_card(
 def render_brief_section(brief_markdown: str) -> None:
     """Render the daily brief as structured sections (no expanders — safe to nest)."""
     if not brief_markdown:
-        st.info("Nenhum brief disponivel para esta data.")
+        st.info(":memo: Nenhum brief disponivel para esta data.")
         return
 
     sections = []
@@ -318,13 +339,18 @@ def render_abstract_card(
     drugs_raw = abstract.get("drugs", "")
     buzz = linked_tweet_count if linked_tweet_count is not None else abstract.get("linked_tweet_count", 0)
 
+    genes_raw = abstract.get("genes", "")
+    poster_board = abstract.get("poster_board_number", "")
+
     st.markdown('<div class="card-container">', unsafe_allow_html=True)
     with st.container():
-        # Header: number + session badge + buzz
+        # Header: number + poster board + session badge + buzz
         header_parts = []
         if rank:
             header_parts.append(f"**#{rank}**")
         header_parts.append(f"**#{abs_num}**")
+        if poster_board:
+            header_parts.append(f"**{poster_board}**")
         session_badge = SESSION_BADGE.get(session_type, f":gray-background[{session_type}]")
         header_parts.append(session_badge)
         if buzz:
@@ -364,6 +390,10 @@ def render_abstract_card(
             d = d.strip()
             if d:
                 badges.append(f":green-background[{d}]")
+        for g in genes_raw.split("; "):
+            g = g.strip()
+            if g:
+                badges.append(f":violet-background[{g}]")
         if badges:
             st.markdown(
                 '<div class="badge-row">\n\n' + " ".join(badges) + "\n\n</div>",

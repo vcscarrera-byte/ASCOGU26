@@ -21,7 +21,7 @@ st.title(":bust_in_silhouette: Autores")
 
 db_path = get_db_path()
 if not db_path.exists():
-    st.warning("Database nao encontrada.")
+    st.warning(":construction: Base de dados nao encontrada.")
     st.stop()
 
 conn = get_connection(db_path)
@@ -29,7 +29,7 @@ create_tables(conn)
 
 dates = get_available_dates(conn)
 if not dates:
-    st.info("Nenhum dado coletado ainda.")
+    st.info(":inbox_tray: Nenhum dado coletado ainda.")
     conn.close()
     st.stop()
 
@@ -49,7 +49,12 @@ if filters["curated_only"]:
     authors = [a for a in authors if a.get("is_curated")]
 
 if not authors:
-    st.info("Nenhum autor encontrado com esses filtros.")
+    st.markdown("---")
+    st.markdown(":bust_in_silhouette: **Nenhum autor encontrado com esses filtros.**")
+    st.markdown("Tente remover os filtros clinicos.")
+    if st.button("Limpar filtros", type="secondary"):
+        st.session_state.clear()
+        st.rerun()
     st.stop()
 
 # Author cards
