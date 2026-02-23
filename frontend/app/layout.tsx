@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
 import NavBar from "@/components/NavBar";
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             ASCO GU RADAR 2026 &middot; Feb 26-28, San Francisco
           </footer>
         </I18nProvider>
+        <Analytics />
       </body>
     </html>
   );
