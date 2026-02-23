@@ -2,12 +2,15 @@
 
 import { useEffect, useState, useMemo } from "react";
 import { Tweet } from "@/lib/types";
+import { useI18n } from "@/lib/i18n";
+import { deduplicateRTs } from "@/lib/utils";
 import TweetCard from "@/components/TweetCard";
 import Pagination from "@/components/Pagination";
 import EmptyState from "@/components/EmptyState";
 import FilterSidebar, { ActiveFilters } from "@/components/FilterSidebar";
 
 export default function FeedPage() {
+  const { t } = useI18n();
   const [allTweets, setAllTweets] = useState<Tweet[]>([]);
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState("relevance");
@@ -32,8 +35,8 @@ export default function FeedPage() {
     load();
   }, []);
 
-  // Client-side filter, sort, paginate
-  const { tweets, total, totalPages } = useMemo(() => {
+  // Client-side filter, sort, deduplicate, paginate
+  const { items, total, totalPages } = useMemo(() => {
     let filtered = allTweets;
 
     // Text search
@@ -61,7 +64,7 @@ export default function FeedPage() {
       });
     }
 
-    // Sort
+    // Sort before dedup
     const sorted = [...filtered];
     switch (sort) {
       case "relevance":
@@ -79,10 +82,13 @@ export default function FeedPage() {
         break;
     }
 
-    const total = sorted.length;
+    // Deduplicate RTs
+    const deduped = deduplicateRTs(sorted);
+
+    const total = deduped.length;
     const totalPages = Math.max(1, Math.ceil(total / size));
     const start = (page - 1) * size;
-    return { tweets: sorted.slice(start, start + size), total, totalPages };
+    return { items: deduped.slice(start, start + size), total, totalPages };
   }, [allTweets, search, sort, page, filters]);
 
   // Reset page when search, sort, or filters change
@@ -91,14 +97,16 @@ export default function FeedPage() {
   }, [search, sort, filters]);
 
   const sortOptions = [
-    { value: "relevance", label: "Relevancia" },
+    { value: "relevance", label: t("Relevância", "Relevance") },
     { value: "engagement", label: "Engagement" },
-    { value: "recent", label: "Recentes" },
+    { value: "recent", label: t("Recentes", "Recent") },
   ];
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-6">📰 Principais postagens</h1>
+      <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-6">
+        {t("📰 Principais postagens", "📰 Top Posts")}
+      </h1>
 
       {/* Clinical Filters */}
       <FilterSidebar onFilterChange={setFilters} />
@@ -107,7 +115,7 @@ export default function FeedPage() {
       <div className="flex flex-wrap items-center gap-3 mb-6">
         <input
           type="text"
-          placeholder="Buscar tweets..."
+          placeholder={t("Buscar tweets...", "Search tweets...")}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="px-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-64"
@@ -128,7 +136,7 @@ export default function FeedPage() {
           ))}
         </div>
         <span className="text-sm text-slate-500 ml-auto">
-          {total.toLocaleString()} tweets
+          {total.toLocaleString()} {t("posts", "posts")}
         </span>
       </div>
 
@@ -143,19 +151,38 @@ export default function FeedPage() {
             </div>
           ))}
         </div>
-      ) : tweets.length > 0 ? (
+      ) : items.length > 0 ? (
         <div className="space-y-4">
-          {tweets.map((t, i) => (
-            <TweetCard
-              key={t.tweet_id}
-              tweet={t}
-              rank={sort !== "recent" ? (page - 1) * size + i + 1 : undefined}
-              showRelevance={sort === "relevance"}
-            />
+          {items.map((item, i) => (
+            <div key={item.tweet.tweet_id}>
+              <TweetCard
+                tweet={item.tweet}
+                rank={sort !== "recent" ? (page - 1) * size + i + 1 : undefined}
+                showRelevance={sort === "relevance"}
+              />
+              {item.retweetCount > 1 && (
+                <div className="ml-4 mt-1 text-xs text-slate-400 flex items-center gap-1">
+                  🔁 {t(
+                    `Retweetado por ${item.retweetCount} pessoas`,
+                    `Retweeted by ${item.retweetCount} people`
+                  )}
+                  {item.retweetedBy.length > 0 && (
+                    <span className="text-slate-300">
+                      ({item.retweetedBy.slice(0, 5).map(u => `@${u}`).join(", ")}
+                      {item.retweetedBy.length > 5 && ` +${item.retweetedBy.length - 5}`})
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       ) : (
-        <EmptyState icon="🔍" title="Nenhum tweet encontrado" subtitle="Tente outro termo de busca ou ajuste os filtros." />
+        <EmptyState
+          icon="🔍"
+          title={t("Nenhum tweet encontrado", "No tweets found")}
+          subtitle={t("Tente outro termo de busca ou ajuste os filtros.", "Try another search term or adjust the filters.")}
+        />
       )}
 
       <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />

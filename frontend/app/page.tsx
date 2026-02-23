@@ -6,6 +6,7 @@ import Link from "next/link";
 import { api } from "@/lib/api";
 import { Stats, Tweet, Abstract } from "@/lib/types";
 import { useI18n } from "@/lib/i18n";
+import { deduplicateRTs } from "@/lib/utils";
 import MetricCard from "@/components/MetricCard";
 import TweetCard from "@/components/TweetCard";
 import AbstractCard from "@/components/AbstractCard";
@@ -61,8 +62,8 @@ export default function Home() {
     load();
   }, []);
 
-  // Filter tweets for "day" tab
-  const dayTweets = useMemo(() => {
+  // Filter and deduplicate tweets for "day" tab
+  const dayDeduped = useMemo(() => {
     let filtered = allTopTweets.filter((tw) => {
       const tweetDate = tw.created_at?.slice(0, 10);
       return tweetDate === selectedDate;
@@ -88,11 +89,11 @@ export default function Home() {
         return filters.drugs.some((f) => tags.includes(f));
       });
     }
-    return filtered;
+    return deduplicateRTs(filtered);
   }, [allTopTweets, selectedDate, search, filters]);
 
-  // Filter tweets for "congress" tab (all dates)
-  const congressTweets = useMemo(() => {
+  // Filter and deduplicate tweets for "congress" tab (all dates)
+  const congressDeduped = useMemo(() => {
     let filtered = allTopTweets;
     if (search) {
       const q = search.toLowerCase();
@@ -115,7 +116,7 @@ export default function Home() {
         return filters.drugs.some((f) => tags.includes(f));
       });
     }
-    return filtered.slice(0, 20);
+    return deduplicateRTs(filtered).slice(0, 20);
   }, [allTopTweets, search, filters]);
 
   const currentBrief = lang === "pt" ? briefPt : briefEn;
@@ -252,8 +253,8 @@ export default function Home() {
             )}
             <span className="text-sm text-slate-400">
               {activeTab === "day"
-                ? `${dayTweets.length} ${t("posts", "posts")}`
-                : `${congressTweets.length} ${t("posts", "posts")}`}
+                ? `${dayDeduped.length} ${t("posts", "posts")}`
+                : `${congressDeduped.length} ${t("posts", "posts")}`}
             </span>
           </div>
           <FilterSidebar onFilterChange={setFilters} />
@@ -285,9 +286,25 @@ export default function Home() {
           <h2 className="text-lg font-semibold text-slate-700">
             {t(`Destaques de ${formatDate(selectedDate)}`, `Highlights from ${formatDate(selectedDate)}`)}
           </h2>
-          {dayTweets.length > 0 ? (
-            dayTweets.map((tw, i) => (
-              <TweetCard key={tw.tweet_id} tweet={tw} rank={i + 1} showRelevance />
+          {dayDeduped.length > 0 ? (
+            dayDeduped.map((item, i) => (
+              <div key={item.tweet.tweet_id}>
+                <TweetCard tweet={item.tweet} rank={i + 1} showRelevance />
+                {item.retweetCount > 1 && (
+                  <div className="ml-4 mt-1 text-xs text-slate-400 flex items-center gap-1">
+                    🔁 {t(
+                      `Retweetado por ${item.retweetCount} pessoas`,
+                      `Retweeted by ${item.retweetCount} people`
+                    )}
+                    {item.retweetedBy.length > 0 && (
+                      <span className="text-slate-300">
+                        ({item.retweetedBy.slice(0, 5).map(u => `@${u}`).join(", ")}
+                        {item.retweetedBy.length > 5 && ` +${item.retweetedBy.length - 5}`})
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
             ))
           ) : (
             <EmptyState
@@ -305,9 +322,25 @@ export default function Home() {
           <h2 className="text-lg font-semibold text-slate-700">
             {t("Top 20 — Todos os dias", "Top 20 — All dates")}
           </h2>
-          {congressTweets.length > 0 ? (
-            congressTweets.map((tw, i) => (
-              <TweetCard key={tw.tweet_id} tweet={tw} rank={i + 1} showRelevance />
+          {congressDeduped.length > 0 ? (
+            congressDeduped.map((item, i) => (
+              <div key={item.tweet.tweet_id}>
+                <TweetCard tweet={item.tweet} rank={i + 1} showRelevance />
+                {item.retweetCount > 1 && (
+                  <div className="ml-4 mt-1 text-xs text-slate-400 flex items-center gap-1">
+                    🔁 {t(
+                      `Retweetado por ${item.retweetCount} pessoas`,
+                      `Retweeted by ${item.retweetCount} people`
+                    )}
+                    {item.retweetedBy.length > 0 && (
+                      <span className="text-slate-300">
+                        ({item.retweetedBy.slice(0, 5).map(u => `@${u}`).join(", ")}
+                        {item.retweetedBy.length > 5 && ` +${item.retweetedBy.length - 5}`})
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
             ))
           ) : (
             <EmptyState

@@ -48,7 +48,8 @@ cite the corresponding abstract if available.
 Quick stats: total tweets, top author, most-engaged post, etc.
 
 IMPORTANT: Every claim must have a tweet link or abstract reference. Do not fabricate or hallucinate content.
-Only summarize what is actually in the provided data. Maintain professional, scientific tone."""
+Only summarize what is actually in the provided data. Maintain professional, scientific tone throughout.
+Do NOT use informal expressions such as "blew up", "went viral", "buzz", "hot takes" etc. Use formal academic language."""
 
 PROMPT_PT = """Voce e um analista de congressos de oncologia medica, escrevendo para urologistas e oncologistas. \
 Com base nos seguintes dados do Twitter/X e abstracts do ASCO GU 2026 (Simposio de Canceres Genitourinarios) em {date}, \

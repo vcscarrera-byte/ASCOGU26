@@ -45,8 +45,8 @@ export default function AbstractCard({ abstract, rank, compact, onDetailClick }:
       {/* Clinical badges */}
       <div className="flex flex-wrap gap-1.5 mb-3">
         {abstract.tumor_type && <Badge label={abstract.tumor_type} variant="tumor" />}
-        {drugs.map((d) => <Badge key={d} label={d} variant="drug" />)}
-        {genes.map((g) => <Badge key={g} label={g} variant="gene" />)}
+        {drugs.map((d, i) => <Badge key={`drug-${i}-${d}`} label={d} variant="drug" />)}
+        {genes.map((g, i) => <Badge key={`gene-${i}-${g}`} label={g} variant="gene" />)}
       </div>
 
       {/* Actions */}
