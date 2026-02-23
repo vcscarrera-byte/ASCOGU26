@@ -34,7 +34,7 @@ if not dates:
     st.stop()
 
 # Sidebar
-filters = render_sidebar_filters(conn, show_curated=True, show_search=False)
+filters = render_sidebar_filters(conn, show_date=False, show_curated=True, show_search=False)
 
 authors = get_top_authors(
     conn,

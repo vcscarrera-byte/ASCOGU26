@@ -35,6 +35,7 @@ if not dates:
 # Sidebar with full filters
 filters = render_sidebar_filters(
     conn,
+    show_date=False,
     show_search=True,
     show_sort=True,
     show_curated=True,

@@ -78,7 +78,7 @@ col4.metric("Abstracts", f"{total_abstracts:,}")
 # ── Sidebar filters ──
 filters = render_sidebar_filters(
     conn,
-    show_date=True,
+    show_date=False,
     show_curated=True,
     show_limit=False,
     show_search=False,
