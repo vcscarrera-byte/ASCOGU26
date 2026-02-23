@@ -61,12 +61,22 @@
   },
   {
     "date": "2026-02-22",
-    "tweets": 22,
-    "authors": 21,
-    "likes": 61,
-    "retweets": 714,
-    "replies": 5,
-    "quotes": 0,
-    "engagement": 780
+    "tweets": 67,
+    "authors": 53,
+    "likes": 267,
+    "retweets": 2484,
+    "replies": 13,
+    "quotes": 5,
+    "engagement": 2769
+  },
+  {
+    "date": "2026-02-23",
+    "tweets": 138,
+    "authors": 108,
+    "likes": 167,
+    "retweets": 3683,
+    "replies": 7,
+    "quotes": 3,
+    "engagement": 3860
   }
 ]
