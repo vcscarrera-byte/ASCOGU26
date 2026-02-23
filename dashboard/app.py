@@ -29,7 +29,7 @@ from src.db import create_tables, get_connection, get_daily_brief
 from src.relevance import rank_tweets_by_relevance
 
 inject_custom_css()
-st.logo(":satellite: ASCO GU RADAR 2026")
+# st.logo requires an image file — skipped for Streamlit Cloud compatibility
 
 # ── Hero ──
 st.title(":satellite: ASCO GU RADAR")
