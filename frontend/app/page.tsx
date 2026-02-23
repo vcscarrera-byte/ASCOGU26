@@ -214,16 +214,15 @@ export default function Home() {
       {/* Metrics */}
       {stats && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <MetricCard icon="📡" label={t("Tweets", "Tweets")} value={stats.total_tweets} />
-          <MetricCard icon="👥" label={t("Autores", "Authors")} value={stats.unique_authors} />
-          <Link href="/autores" className="block">
-            <MetricCard
-              icon="⭐"
-              label={t("Líderes de Opinião", "Opinion Leaders")}
-              value={stats.curated_active}
-            />
-          </Link>
-          <MetricCard icon="🔬" label="Abstracts" value={stats.abstract_count} />
+          <MetricCard icon="📡" label={t("Tweets", "Tweets")} value={stats.total_tweets} href="/feed" />
+          <MetricCard icon="👥" label={t("Autores", "Authors")} value={stats.unique_authors} href="/autores" />
+          <MetricCard
+            icon="⭐"
+            label={t("Líderes de Opinião", "Opinion Leaders")}
+            value={stats.curated_active}
+            href="/autores"
+          />
+          <MetricCard icon="🔬" label="Abstracts" value={stats.abstract_count} href="/abstracts" />
         </div>
       )}
 
