@@ -12,8 +12,8 @@ export default function MetricasPage() {
   useEffect(() => {
     async function load() {
       try {
-        const res = await api.getVolume();
-        setData(res.data);
+        const volumeData = await api.getVolume();
+        setData(volumeData);
       } catch (err) {
         console.error(err);
       } finally {

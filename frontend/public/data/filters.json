@@ -1,0 +1,52 @@
+{
+  "tumor_types": [
+    "Prostate",
+    "Bladder / Urothelial",
+    "Kidney / RCC",
+    "Testicular / Germ Cell"
+  ],
+  "drug_names": [
+    "Lu-PSMA",
+    "abiraterone",
+    "apalutamide",
+    "atezolizumab",
+    "avelumab",
+    "axitinib",
+    "bacillus Calmette-Guerin",
+    "belzutifan",
+    "cabazitaxel",
+    "cabozantinib",
+    "carboplatin",
+    "cemiplimab",
+    "cisplatin",
+    "darolutamide",
+    "disitamab vedotin",
+    "docetaxel",
+    "durvalumab",
+    "enfortumab vedotin",
+    "enzalutamide",
+    "erdafitinib",
+    "gemcitabine",
+    "ipilimumab",
+    "lenvatinib",
+    "niraparib",
+    "nivolumab",
+    "olaparib",
+    "pazopanib",
+    "pembrolizumab",
+    "radium-223",
+    "relugolix",
+    "sacituzumab govitecan",
+    "sunitinib",
+    "talazoparib",
+    "tivozanib",
+    "trastuzumab deruxtecan"
+  ],
+  "session_types": [
+    "General Session",
+    "Oral Abstract Session",
+    "Poster Session",
+    "Rapid Oral Abstract Session",
+    "Trials in Progress Poster Session"
+  ]
+}

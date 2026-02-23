@@ -1,0 +1,38 @@
+{
+  "total": 892,
+  "by_session_type": {
+    "Poster Session": 756,
+    "Trials in Progress Poster Session": 102,
+    "Rapid Oral Abstract Session": 18,
+    "Oral Abstract Session": 12,
+    "General Session": 4
+  },
+  "by_tumor": {
+    "Prostate": 627,
+    "Kidney / RCC": 218,
+    "Bladder / Urothelial": 47
+  },
+  "top_drugs": {
+    "enfortumab vedotin": 41,
+    "pembrolizumab": 35,
+    "docetaxel": 15,
+    "gemcitabine": 13,
+    "darolutamide": 10,
+    "enzalutamide": 9,
+    "belzutifan": 8,
+    "apalutamide": 7,
+    "cisplatin": 7,
+    "bacillus Calmette-Guérin": 7,
+    "nivolumab": 6,
+    "nivolumab plus ipilimumab": 6,
+    "disitamab vedotin": 6,
+    "nivolumab plus cabozantinib": 5,
+    "abiraterone": 5,
+    "toripalimab": 5,
+    "avelumab": 4,
+    "olaparib": 3,
+    "opevesostat": 3,
+    "axitinib": 3
+  },
+  "with_buzz": 0
+}

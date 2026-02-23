@@ -61,7 +61,7 @@ export interface Stats {
   unique_authors: number;
   total_engagement: number;
   curated_active: number;
-  total_abstracts: number;
+  abstract_count: number;
 }
 
 export interface VolumeDay {
@@ -76,7 +76,18 @@ export interface VolumeDay {
 }
 
 export interface FilterOptions {
-  tumors: string[];
-  drugs: string[];
+  tumor_types: string[];
+  drug_names: string[];
   session_types: string[];
+}
+
+export interface AbstractDetail extends Abstract {
+  linked_tweets: Tweet[];
+}
+
+export interface Briefs {
+  [date: string]: {
+    pt: string;
+    en: string;
+  };
 }

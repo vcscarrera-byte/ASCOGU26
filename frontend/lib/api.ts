@@ -1,51 +1,188 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+import type { Stats, Tweet, Abstract, Author, VolumeDay, FilterOptions, AbstractDetail, Briefs } from "./types";
 
-async function fetchAPI<T>(path: string, params?: Record<string, string | number | boolean | undefined>): Promise<T> {
-  const url = new URL(`${API_BASE}${path}`);
-  if (params) {
-    Object.entries(params).forEach(([key, value]) => {
-      if (value !== undefined && value !== null && value !== "") {
-        url.searchParams.set(key, String(value));
-      }
-    });
-  }
-  const res = await fetch(url.toString(), { next: { revalidate: 120 } });
-  if (!res.ok) throw new Error(`API error: ${res.status}`);
+async function fetchJSON<T>(path: string): Promise<T> {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to fetch ${path}: ${res.status}`);
   return res.json();
 }
 
+// --------------- helpers for client-side filtering ---------------
+
+function matchSearch(text: string, query: string): boolean {
+  return text.toLowerCase().includes(query.toLowerCase());
+}
+
+function sortTweets(tweets: Tweet[], sort: string): Tweet[] {
+  const sorted = [...tweets];
+  switch (sort) {
+    case "relevance":
+      return sorted.sort((a, b) => (b.relevance_score ?? 0) - (a.relevance_score ?? 0));
+    case "engagement":
+      return sorted.sort(
+        (a, b) =>
+          (b.like_count + b.retweet_count + b.reply_count + b.quote_count) -
+          (a.like_count + a.retweet_count + a.reply_count + a.quote_count)
+      );
+    case "recent":
+      return sorted.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+    default:
+      return sorted;
+  }
+}
+
+function filterTweets(
+  tweets: Tweet[],
+  opts: { search?: string; tumors?: string; drugs?: string; curated?: boolean }
+): Tweet[] {
+  let result = tweets;
+  if (opts.search) {
+    const q = opts.search;
+    result = result.filter((t) => matchSearch(t.text, q) || matchSearch(t.name, q) || matchSearch(t.username, q));
+  }
+  if (opts.tumors) {
+    const tumorList = opts.tumors.split(",").map((s) => s.trim().toLowerCase());
+    result = result.filter((t) =>
+      t.clinical_tags?.tumor_types?.some((tt) => tumorList.includes(tt.toLowerCase()))
+    );
+  }
+  if (opts.drugs) {
+    const drugList = opts.drugs.split(",").map((s) => s.trim().toLowerCase());
+    result = result.filter((t) =>
+      t.clinical_tags?.drugs?.some((d) => drugList.includes(d.toLowerCase()))
+    );
+  }
+  if (opts.curated) {
+    result = result.filter((t) => t.is_curated === 1);
+  }
+  return result;
+}
+
+// --------------- public API (same shape the pages expect) ---------------
+
 export const api = {
-  getStats: () => fetchAPI<import("./types").Stats>("/api/stats"),
-  getDates: () => fetchAPI<{ dates: string[] }>("/api/dates"),
-  getFilters: () => fetchAPI<import("./types").FilterOptions>("/api/filters"),
+  getStats: () => fetchJSON<Stats>("/data/stats.json"),
 
-  getTopTweets: (params?: { limit?: number; tumors?: string; drugs?: string }) =>
-    fetchAPI<{ tweets: import("./types").Tweet[]; total: number }>("/api/tweets/top", params),
+  getDates: async (): Promise<string[]> => {
+    return fetchJSON<string[]>("/data/dates.json");
+  },
 
-  getTweets: (params?: { page?: number; size?: number; search?: string; sort?: string; tumors?: string; drugs?: string; curated?: boolean }) =>
-    fetchAPI<{ tweets: import("./types").Tweet[]; total: number; page: number; total_pages: number }>("/api/tweets", params),
+  getFilters: () => fetchJSON<FilterOptions>("/data/filters.json"),
 
-  getTweetAbstracts: (tweetId: string) =>
-    fetchAPI<{ abstracts: import("./types").Abstract[] }>(`/api/tweets/${tweetId}/abstracts`),
+  getTopTweets: async (params?: { limit?: number; tumors?: string; drugs?: string }): Promise<Tweet[]> => {
+    let tweets = await fetchJSON<Tweet[]>("/data/tweets_top.json");
+    if (params?.tumors || params?.drugs) {
+      tweets = filterTweets(tweets, { tumors: params.tumors, drugs: params.drugs });
+    }
+    const limit = params?.limit ?? 15;
+    return tweets.slice(0, limit);
+  },
 
-  getAuthors: (params?: { limit?: number; tumors?: string; drugs?: string; curated?: boolean }) =>
-    fetchAPI<{ authors: import("./types").Author[]; total: number }>("/api/authors", params),
+  getTweets: async (params?: {
+    page?: number;
+    size?: number;
+    search?: string;
+    sort?: string;
+    tumors?: string;
+    drugs?: string;
+    curated?: boolean;
+  }): Promise<{ tweets: Tweet[]; total: number; page: number; total_pages: number }> => {
+    let tweets = await fetchJSON<Tweet[]>("/data/tweets_all.json");
+    tweets = filterTweets(tweets, {
+      search: params?.search,
+      tumors: params?.tumors,
+      drugs: params?.drugs,
+      curated: params?.curated,
+    });
+    tweets = sortTweets(tweets, params?.sort ?? "relevance");
+    const page = params?.page ?? 1;
+    const size = params?.size ?? 20;
+    const total = tweets.length;
+    const total_pages = Math.max(1, Math.ceil(total / size));
+    const start = (page - 1) * size;
+    return { tweets: tweets.slice(start, start + size), total, page, total_pages };
+  },
 
-  getAbstracts: (params?: { page?: number; size?: number; tumors?: string; drugs?: string; sessions?: string; search?: string; sort?: string }) =>
-    fetchAPI<{ abstracts: import("./types").Abstract[]; total: number }>("/api/abstracts", params),
+  getAuthors: async (params?: {
+    limit?: number;
+    tumors?: string;
+    drugs?: string;
+    curated?: boolean;
+  }): Promise<Author[]> => {
+    const authors = await fetchJSON<Author[]>("/data/authors.json");
+    const limit = params?.limit ?? 50;
+    return authors.slice(0, limit);
+  },
 
-  getAbstractDetail: (id: string) =>
-    fetchAPI<{ abstract: import("./types").Abstract; linked_tweets: import("./types").Tweet[] }>(`/api/abstracts/${id}`),
+  getAbstracts: async (params?: {
+    page?: number;
+    size?: number;
+    tumors?: string;
+    drugs?: string;
+    sessions?: string;
+    search?: string;
+    sort?: string;
+  }): Promise<{ abstracts: Abstract[]; total: number }> => {
+    let abstracts = await fetchJSON<Abstract[]>("/data/abstracts_all.json");
+    if (params?.search) {
+      const q = params.search;
+      abstracts = abstracts.filter(
+        (a) =>
+          matchSearch(a.title, q) ||
+          matchSearch(a.abstract_number, q) ||
+          matchSearch(a.presenter || "", q) ||
+          matchSearch(a.drugs || "", q) ||
+          matchSearch(a.tumor_type || "", q) ||
+          matchSearch(a.body || "", q)
+      );
+    }
+    if (params?.tumors) {
+      const tumorList = params.tumors.split(",").map((s) => s.trim().toLowerCase());
+      abstracts = abstracts.filter((a) => tumorList.includes((a.tumor_type || "").toLowerCase()));
+    }
+    if (params?.drugs) {
+      const drugList = params.drugs.split(",").map((s) => s.trim().toLowerCase());
+      abstracts = abstracts.filter((a) =>
+        drugList.some((d) => (a.drugs || "").toLowerCase().includes(d))
+      );
+    }
+    if (params?.sessions) {
+      const sessionList = params.sessions.split(",").map((s) => s.trim().toLowerCase());
+      abstracts = abstracts.filter((a) => sessionList.includes((a.session_type || "").toLowerCase()));
+    }
+    const size = params?.size ?? 50;
+    const page = params?.page ?? 1;
+    const total = abstracts.length;
+    const start = (page - 1) * size;
+    return { abstracts: abstracts.slice(start, start + size), total };
+  },
+
+  getAbstractDetail: async (id: string): Promise<{ abstract: Abstract; linked_tweets: Tweet[] }> => {
+    const details = await fetchJSON<Record<string, AbstractDetail>>("/data/abstracts_detail.json");
+    const detail = details[id];
+    if (!detail) throw new Error(`Abstract ${id} not found`);
+    const { linked_tweets, ...abstractData } = detail;
+    return { abstract: abstractData as Abstract, linked_tweets: linked_tweets || [] };
+  },
 
   getAbstractStats: () =>
-    fetchAPI<{ total: number; by_session_type: Record<string, number>; by_tumor: Record<string, number>; with_buzz: number }>("/api/abstracts/stats"),
+    fetchJSON<{ total: number; by_session_type: Record<string, number>; by_tumor: Record<string, number>; top_drugs: Record<string, number>; with_buzz: number }>(
+      "/data/abstracts_stats.json"
+    ),
 
-  getBuzzAbstracts: (limit?: number) =>
-    fetchAPI<{ abstracts: import("./types").Abstract[] }>("/api/abstracts/buzz", { limit }),
+  getBuzzAbstracts: async (limit?: number): Promise<Abstract[]> => {
+    const abstracts = await fetchJSON<Abstract[]>("/data/abstracts_buzz.json");
+    return limit ? abstracts.slice(0, limit) : abstracts;
+  },
 
-  getVolume: (params?: { tumors?: string; drugs?: string }) =>
-    fetchAPI<{ data: import("./types").VolumeDay[] }>("/api/metrics/volume", params),
+  getVolume: async (): Promise<VolumeDay[]> => {
+    return fetchJSON<VolumeDay[]>("/data/metrics_volume.json");
+  },
 
-  getBrief: (date: string, lang?: string) =>
-    fetchAPI<{ brief: string | null; date: string }>(`/api/briefs/${date}`, { lang: lang || "pt" }),
+  getBrief: async (date: string, lang?: string): Promise<string | null> => {
+    const briefs = await fetchJSON<Briefs>("/data/briefs.json");
+    const entry = briefs[date];
+    if (!entry) return null;
+    const language = lang || "pt";
+    return entry[language as keyof typeof entry] || null;
+  },
 };

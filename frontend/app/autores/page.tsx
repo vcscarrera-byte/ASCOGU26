@@ -13,8 +13,8 @@ export default function AutoresPage() {
   useEffect(() => {
     async function load() {
       try {
-        const res = await api.getAuthors({ limit: 50 });
-        setAuthors(res.authors);
+        const authors = await api.getAuthors({ limit: 50 });
+        setAuthors(authors);
       } catch (err) {
         console.error(err);
       } finally {

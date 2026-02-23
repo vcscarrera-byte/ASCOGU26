@@ -26,13 +26,13 @@ export default function Home() {
           api.getDates(),
         ]);
         setStats(s);
-        setTopTweets(t.tweets);
-        setBuzzAbstracts(a.abstracts);
+        setTopTweets(t);
+        setBuzzAbstracts(a);
 
-        if (dates.dates.length > 0) {
-          const latestDate = dates.dates[dates.dates.length - 1];
+        if (dates.length > 0) {
+          const latestDate = dates[dates.length - 1];
           const b = await api.getBrief(latestDate, "pt");
-          setBrief(b.brief);
+          setBrief(b);
         }
       } catch (err) {
         console.error("Failed to load:", err);
@@ -76,7 +76,7 @@ export default function Home() {
           <MetricCard icon={"\uD83D\uDCE1"} label="Tweets" value={stats.total_tweets} />
           <MetricCard icon={"\uD83D\uDC64"} label="Autores" value={stats.unique_authors} />
           <MetricCard icon="\u2B50" label="KOLs Ativos" value={stats.curated_active} />
-          <MetricCard icon={"\uD83D\uDD2C"} label="Abstracts" value={stats.total_abstracts} />
+          <MetricCard icon={"\uD83D\uDD2C"} label="Abstracts" value={stats.abstract_count} />
         </div>
       )}
 

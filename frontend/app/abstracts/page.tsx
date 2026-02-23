@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { api } from "@/lib/api";
 import { Abstract, Tweet } from "@/lib/types";
 import AbstractCard from "@/components/AbstractCard";
@@ -8,7 +8,7 @@ import TweetCard from "@/components/TweetCard";
 import EmptyState from "@/components/EmptyState";
 
 export default function AbstractsPage() {
-  const [abstracts, setAbstracts] = useState<Abstract[]>([]);
+  const [allAbstracts, setAllAbstracts] = useState<Abstract[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [selectedAbstract, setSelectedAbstract] = useState<Abstract | null>(null);
@@ -17,10 +17,9 @@ export default function AbstractsPage() {
 
   useEffect(() => {
     async function load() {
-      setLoading(true);
       try {
-        const res = await api.getAbstracts({ size: 50, search: search || undefined });
-        setAbstracts(res.abstracts);
+        const abstracts = await fetch("/data/abstracts_all.json").then((r) => r.json());
+        setAllAbstracts(abstracts);
       } catch (err) {
         console.error(err);
       } finally {
@@ -28,7 +27,21 @@ export default function AbstractsPage() {
       }
     }
     load();
-  }, [search]);
+  }, []);
+
+  const abstracts = useMemo(() => {
+    if (!search) return allAbstracts;
+    const q = search.toLowerCase();
+    return allAbstracts.filter(
+      (a) =>
+        a.title.toLowerCase().includes(q) ||
+        a.abstract_number.toLowerCase().includes(q) ||
+        (a.presenter || "").toLowerCase().includes(q) ||
+        (a.drugs || "").toLowerCase().includes(q) ||
+        (a.tumor_type || "").toLowerCase().includes(q) ||
+        (a.body || "").toLowerCase().includes(q)
+    );
+  }, [allAbstracts, search]);
 
   async function openDetail(abstractNumber: string) {
     try {
