@@ -11,57 +11,76 @@ from src.config import ANTHROPIC_API_KEY, get_briefs_dir, get_summarizer_config
 from src.db import save_daily_brief
 from src.topic_model import cluster_and_summarize
 
+try:
+    from src.abstract_aggregator import get_abstracts_with_buzz, get_all_abstracts
+except ImportError:
+    get_abstracts_with_buzz = None
+    get_all_abstracts = None
+
 logger = logging.getLogger(__name__)
 
-PROMPT_EN = """You are a medical oncology conference analyst. Based on the following Twitter/X data \
-from ASCO GU 2026 (Genitourinary Cancers Symposium) on {date}, generate a daily brief.
+PROMPT_EN = """You are a medical oncology conference analyst, writing for urologists and oncologists. \
+Based on the following Twitter/X data and abstracts from ASCO GU 2026 (Genitourinary Cancers Symposium) on {date}, \
+generate a professional daily brief.
 
 {context}
 
 Generate a brief with these sections:
 
-## What Blew Up Today
-Identify the 3-5 highest-engagement posts and explain WHY they got attention.
-Include the direct link to each tweet.
+# Daily Brief — ASCO GU 2026 | {date}
 
-## Main Themes
-Based on the topic clusters and top tweets, identify 3-5 main discussion themes.
+## Today's Highlights
+Identify the 3-5 highest-engagement posts and explain WHY they got attention from the medical community.
+Include the direct link to each tweet. Focus on clinical content, not engagement metrics.
+
+## Key Discussion Themes
+Based on the topic clusters, tweets, and related abstracts, identify 3-5 main discussion themes.
 For each theme, provide 1-2 representative tweet links.
+If abstracts are related, mention the abstract number and relevant PICO data \
+(Population, Intervention, Comparator, Outcome).
 
-## Key Takeaways and Opinions
+## Clinical Evidence and Expert Opinions
 Summarize the most notable clinical data points, expert opinions, or controversies.
-For EACH point, include the source tweet link for auditability.
+For EACH point, include the source tweet link. When referencing study data, \
+cite the corresponding abstract if available.
 
 ## By the Numbers
 Quick stats: total tweets, top author, most-engaged post, etc.
 
-IMPORTANT: Every claim must have a tweet link. Do not fabricate or hallucinate content.
-Only summarize what is actually in the provided data."""
+IMPORTANT: Every claim must have a tweet link or abstract reference. Do not fabricate or hallucinate content.
+Only summarize what is actually in the provided data. Maintain professional, scientific tone."""
 
-PROMPT_PT = """Voce e um analista de congressos de oncologia medica. Com base nos seguintes dados do Twitter/X \
-do ASCO GU 2026 (Simposio de Canceres Genitourinarios) em {date}, gere um resumo diario em portugues brasileiro.
+PROMPT_PT = """Voce e um analista de congressos de oncologia medica, escrevendo para urologistas e oncologistas. \
+Com base nos seguintes dados do Twitter/X e abstracts do ASCO GU 2026 (Simposio de Canceres Genitourinarios) em {date}, \
+gere um resumo diario em portugues brasileiro. Use tom profissional e tecnico, adequado para medicos especialistas.
 
 {context}
 
 Gere um resumo com estas secoes:
 
-## O Que Bombou Hoje
-Identifique os 3-5 posts com maior engajamento e explique POR QUE chamaram atencao.
-Inclua o link direto para cada tweet.
+# Resumo Diario — ASCO GU 2026 | {date}
 
-## Principais Temas
-Com base nos clusters de topicos e top tweets, identifique 3-5 temas principais de discussao.
-Para cada tema, inclua 1-2 links de tweets representativos.
+## Destaques do Dia
+Identifique os 3-5 posts com maior engajamento e explique POR QUE chamaram atencao da comunidade medica.
+Inclua o link direto para cada tweet. Foque no conteudo clinico, nao em metricas de engajamento.
 
-## Pontos-Chave e Opinioes
+## Principais Temas em Discussao
+Com base nos clusters de topicos, tweets e abstracts relacionados, identifique 3-5 temas principais.
+Para cada tema, inclua links de tweets representativos.
+Se houver abstracts relacionados ao tema, mencione o numero do abstract e os dados PICO relevantes \
+(Populacao, Intervencao, Comparador, Desfecho).
+
+## Evidencias Clinicas e Opinioes de Especialistas
 Resuma os dados clinicos mais notaveis, opinioes de especialistas ou controversias.
-Para CADA ponto, inclua o link do tweet fonte para auditabilidade.
+Para CADA ponto, inclua o link do tweet fonte. Quando mencionar dados de estudos, \
+referencie o abstract correspondente se disponivel.
 
 ## Numeros do Dia
 Estatisticas rapidas: total de tweets, top autor, post mais engajado, etc.
 
-IMPORTANTE: Cada afirmacao deve ter um link de tweet. Nao fabrique ou alucine conteudo.
-Resuma apenas o que esta nos dados fornecidos."""
+IMPORTANTE: Cada afirmacao deve ter um link de tweet ou referencia a abstract. Nao fabrique ou alucine conteudo.
+Resuma apenas o que esta nos dados fornecidos. Mantenha tom profissional e cientifico — \
+evite girias ou expressoes coloquiais como "bombou", "viralizou" etc."""
 
 
 def _build_context(
@@ -95,6 +114,69 @@ def _build_context(
     ctx += "\n### Topic Clusters\n"
     for cid, terms in cluster_topics.items():
         ctx += f"- Cluster {cid}: {', '.join(terms[:5])}\n"
+
+    # Add abstract context if available
+    ctx += _build_abstract_context(conn)
+
+    return ctx
+
+
+def _build_abstract_context(conn: sqlite3.Connection) -> str:
+    """Add relevant abstracts to the context for richer summaries."""
+    ctx = ""
+
+    # Abstracts with buzz (mentioned in tweets)
+    if get_abstracts_with_buzz:
+        try:
+            buzz = get_abstracts_with_buzz(conn, min_tweets=1, limit=10)
+            if buzz:
+                ctx += "\n### Abstracts Discussed in Tweets\n"
+                for a in buzz:
+                    num = a.get("abstract_number", "?")
+                    title = a.get("title", "")[:200]
+                    session = a.get("session_type", "")
+                    tumor = a.get("tumor_type", "")
+                    drugs = a.get("drugs", "")
+                    tweet_count = a.get("linked_tweet_count", 0)
+                    ctx += f"\n- Abstract #{num} ({session}): {title}\n"
+                    if tumor:
+                        ctx += f"  Population: {tumor}\n"
+                    if drugs:
+                        ctx += f"  Intervention/Drugs: {drugs}\n"
+                    ctx += f"  Referenced in {tweet_count} tweets\n"
+        except Exception:
+            pass
+
+    # Top oral abstracts (most important presentations)
+    if get_all_abstracts:
+        try:
+            orals = get_all_abstracts(
+                conn,
+                session_types=["Oral Abstract Session", "Rapid Oral Abstract Session"],
+                sort_by="session_rank",
+                limit=10,
+            )
+            if orals:
+                ctx += "\n### Key Oral Presentations\n"
+                for a in orals:
+                    num = a.get("abstract_number", "?")
+                    title = a.get("title", "")[:200]
+                    session = a.get("session_type", "")
+                    tumor = a.get("tumor_type", "")
+                    drugs = a.get("drugs", "")
+                    presenter = a.get("presenter", "")
+                    body = a.get("body", "")
+                    ctx += f"\n- Abstract #{num} ({session}): {title}\n"
+                    if presenter:
+                        ctx += f"  Presenter: {presenter}\n"
+                    if tumor:
+                        ctx += f"  Population: {tumor}\n"
+                    if drugs:
+                        ctx += f"  Intervention/Drugs: {drugs}\n"
+                    if body and "full, final text" not in body.lower() and len(body) > 50:
+                        ctx += f"  Summary: {body[:500]}\n"
+        except Exception:
+            pass
 
     return ctx
 

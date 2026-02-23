@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { api } from "@/lib/api";
 import { Stats, Tweet, Abstract } from "@/lib/types";
 import MetricCard from "@/components/MetricCard";
@@ -12,7 +13,9 @@ export default function Home() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [topTweets, setTopTweets] = useState<Tweet[]>([]);
   const [buzzAbstracts, setBuzzAbstracts] = useState<Abstract[]>([]);
-  const [brief, setBrief] = useState<string | null>(null);
+  const [briefPt, setBriefPt] = useState<string | null>(null);
+  const [briefEn, setBriefEn] = useState<string | null>(null);
+  const [briefLang, setBriefLang] = useState<"pt" | "en">("pt");
   const [activeTab, setActiveTab] = useState<"posts" | "abstracts" | "brief">("posts");
   const [loading, setLoading] = useState(true);
 
@@ -31,8 +34,12 @@ export default function Home() {
 
         if (dates.length > 0) {
           const latestDate = dates[dates.length - 1];
-          const b = await api.getBrief(latestDate, "pt");
-          setBrief(b);
+          const [bPt, bEn] = await Promise.all([
+            api.getBrief(latestDate, "pt"),
+            api.getBrief(latestDate, "en"),
+          ]);
+          setBriefPt(bPt);
+          setBriefEn(bEn);
         }
       } catch (err) {
         console.error("Failed to load:", err);
@@ -42,6 +49,8 @@ export default function Home() {
     }
     load();
   }, []);
+
+  const currentBrief = briefLang === "pt" ? briefPt : briefEn;
 
   if (loading) {
     return (
@@ -73,10 +82,10 @@ export default function Home() {
       {/* Metrics */}
       {stats && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <MetricCard icon={"\uD83D\uDCE1"} label="Tweets" value={stats.total_tweets} />
-          <MetricCard icon={"\uD83D\uDC64"} label="Autores" value={stats.unique_authors} />
-          <MetricCard icon="\u2B50" label="KOLs Ativos" value={stats.curated_active} />
-          <MetricCard icon={"\uD83D\uDD2C"} label="Abstracts" value={stats.abstract_count} />
+          <MetricCard icon="📡" label="Tweets" value={stats.total_tweets} />
+          <MetricCard icon="👥" label="Autores" value={stats.unique_authors} />
+          <MetricCard icon="⭐" label="KOLs Ativos" value={stats.curated_active} />
+          <MetricCard icon="🔬" label="Abstracts" value={stats.abstract_count} />
         </div>
       )}
 
@@ -129,10 +138,39 @@ export default function Home() {
 
       {activeTab === "brief" && (
         <div>
-          {brief ? (
-            <div className="prose prose-slate max-w-none bg-white border border-slate-200 rounded-xl p-6 shadow-sm" dangerouslySetInnerHTML={{ __html: brief.replace(/\n/g, "<br/>") }} />
+          {/* Language selector */}
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-sm text-slate-500 font-medium">Idioma:</span>
+            <div className="inline-flex rounded-lg border border-slate-200 overflow-hidden">
+              <button
+                onClick={() => setBriefLang("pt")}
+                className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+                  briefLang === "pt"
+                    ? "bg-primary text-white"
+                    : "bg-white text-slate-600 hover:bg-slate-50"
+                }`}
+              >
+                PT-BR
+              </button>
+              <button
+                onClick={() => setBriefLang("en")}
+                className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+                  briefLang === "en"
+                    ? "bg-primary text-white"
+                    : "bg-white text-slate-600 hover:bg-slate-50"
+                }`}
+              >
+                EN
+              </button>
+            </div>
+          </div>
+
+          {currentBrief ? (
+            <article className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm prose prose-slate max-w-none prose-headings:text-slate-900 prose-h1:text-2xl prose-h1:font-bold prose-h1:border-b prose-h1:border-slate-200 prose-h1:pb-3 prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-8 prose-h2:mb-3 prose-h2:text-primary-dark prose-strong:text-slate-800 prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-li:marker:text-primary">
+              <ReactMarkdown>{currentBrief}</ReactMarkdown>
+            </article>
           ) : (
-            <EmptyState icon={"\uD83D\uDCDD"} title="Nenhum brief disponivel" subtitle="O resumo IA sera gerado apos a coleta de dados." />
+            <EmptyState icon="📝" title="Nenhum brief disponivel" subtitle="O resumo IA sera gerado apos a coleta de dados." />
           )}
         </div>
       )}

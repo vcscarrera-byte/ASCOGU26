@@ -6,11 +6,13 @@ import { Abstract, Tweet } from "@/lib/types";
 import AbstractCard from "@/components/AbstractCard";
 import TweetCard from "@/components/TweetCard";
 import EmptyState from "@/components/EmptyState";
+import FilterSidebar, { ActiveFilters } from "@/components/FilterSidebar";
 
 export default function AbstractsPage() {
   const [allAbstracts, setAllAbstracts] = useState<Abstract[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [filters, setFilters] = useState<ActiveFilters>({ tumors: [], drugs: [], sessionTypes: [] });
   const [selectedAbstract, setSelectedAbstract] = useState<Abstract | null>(null);
   const [linkedTweets, setLinkedTweets] = useState<Tweet[]>([]);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -30,18 +32,48 @@ export default function AbstractsPage() {
   }, []);
 
   const abstracts = useMemo(() => {
-    if (!search) return allAbstracts;
-    const q = search.toLowerCase();
-    return allAbstracts.filter(
-      (a) =>
-        a.title.toLowerCase().includes(q) ||
-        a.abstract_number.toLowerCase().includes(q) ||
-        (a.presenter || "").toLowerCase().includes(q) ||
-        (a.drugs || "").toLowerCase().includes(q) ||
-        (a.tumor_type || "").toLowerCase().includes(q) ||
-        (a.body || "").toLowerCase().includes(q)
-    );
-  }, [allAbstracts, search]);
+    let filtered = allAbstracts;
+
+    // Text search
+    if (search) {
+      const q = search.toLowerCase();
+      filtered = filtered.filter(
+        (a) =>
+          a.title.toLowerCase().includes(q) ||
+          a.abstract_number.toLowerCase().includes(q) ||
+          (a.presenter || "").toLowerCase().includes(q) ||
+          (a.drugs || "").toLowerCase().includes(q) ||
+          (a.tumor_type || "").toLowerCase().includes(q) ||
+          (a.body || "").toLowerCase().includes(q)
+      );
+    }
+
+    // Tumor filter
+    if (filters.tumors.length > 0) {
+      filtered = filtered.filter((a) =>
+        filters.tumors.some((t) => (a.tumor_type || "").toLowerCase().includes(t.toLowerCase()))
+      );
+    }
+
+    // Drug filter
+    if (filters.drugs.length > 0) {
+      filtered = filtered.filter((a) =>
+        filters.drugs.some((d) =>
+          (a.drugs || "").toLowerCase().includes(d.toLowerCase()) ||
+          a.title.toLowerCase().includes(d.toLowerCase())
+        )
+      );
+    }
+
+    // Session type filter
+    if (filters.sessionTypes.length > 0) {
+      filtered = filtered.filter((a) =>
+        filters.sessionTypes.includes(a.session_type || "")
+      );
+    }
+
+    return filtered;
+  }, [allAbstracts, search, filters]);
 
   async function openDetail(abstractNumber: string) {
     try {
@@ -56,10 +88,13 @@ export default function AbstractsPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-6">{"\uD83D\uDD2C"} Abstracts &mdash; ASCO GU 2026</h1>
+      <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-6">🔬 Abstracts &mdash; ASCO GU 2026</h1>
+
+      {/* Clinical Filters */}
+      <FilterSidebar onFilterChange={setFilters} showSessionType />
 
       {/* Search */}
-      <div className="mb-6">
+      <div className="flex items-center gap-3 mb-6">
         <input
           type="text"
           placeholder="Buscar abstracts..."
@@ -67,7 +102,7 @@ export default function AbstractsPage() {
           onChange={(e) => setSearch(e.target.value)}
           className="px-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-80"
         />
-        <span className="text-sm text-slate-500 ml-3">{abstracts.length} resultados</span>
+        <span className="text-sm text-slate-500">{abstracts.length} resultados</span>
       </div>
 
       {/* List */}
@@ -85,7 +120,7 @@ export default function AbstractsPage() {
           ))}
         </div>
       ) : (
-        <EmptyState icon={"\uD83D\uDD2C"} title="Nenhum abstract encontrado" subtitle="Tente outro termo de busca." />
+        <EmptyState icon="🔬" title="Nenhum abstract encontrado" subtitle="Tente outro termo de busca ou ajuste os filtros." />
       )}
 
       {/* Detail Modal */}

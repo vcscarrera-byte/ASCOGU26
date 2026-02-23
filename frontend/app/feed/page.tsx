@@ -5,12 +5,14 @@ import { Tweet } from "@/lib/types";
 import TweetCard from "@/components/TweetCard";
 import Pagination from "@/components/Pagination";
 import EmptyState from "@/components/EmptyState";
+import FilterSidebar, { ActiveFilters } from "@/components/FilterSidebar";
 
 export default function FeedPage() {
   const [allTweets, setAllTweets] = useState<Tweet[]>([]);
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState("relevance");
   const [search, setSearch] = useState("");
+  const [filters, setFilters] = useState<ActiveFilters>({ tumors: [], drugs: [], sessionTypes: [] });
   const [loading, setLoading] = useState(true);
 
   const size = 20;
@@ -34,6 +36,7 @@ export default function FeedPage() {
   const { tweets, total, totalPages } = useMemo(() => {
     let filtered = allTweets;
 
+    // Text search
     if (search) {
       const q = search.toLowerCase();
       filtered = filtered.filter(
@@ -42,6 +45,20 @@ export default function FeedPage() {
           t.name.toLowerCase().includes(q) ||
           t.username.toLowerCase().includes(q)
       );
+    }
+
+    // Clinical filters
+    if (filters.tumors.length > 0) {
+      filtered = filtered.filter((t) => {
+        const tags = t.clinical_tags?.tumor_types || [];
+        return filters.tumors.some((f) => tags.includes(f));
+      });
+    }
+    if (filters.drugs.length > 0) {
+      filtered = filtered.filter((t) => {
+        const tags = t.clinical_tags?.drugs || [];
+        return filters.drugs.some((f) => tags.includes(f));
+      });
     }
 
     // Sort
@@ -66,12 +83,12 @@ export default function FeedPage() {
     const totalPages = Math.max(1, Math.ceil(total / size));
     const start = (page - 1) * size;
     return { tweets: sorted.slice(start, start + size), total, totalPages };
-  }, [allTweets, search, sort, page]);
+  }, [allTweets, search, sort, page, filters]);
 
-  // Reset page when search or sort changes
+  // Reset page when search, sort, or filters change
   useEffect(() => {
     setPage(1);
-  }, [search, sort]);
+  }, [search, sort, filters]);
 
   const sortOptions = [
     { value: "relevance", label: "Relevancia" },
@@ -81,7 +98,10 @@ export default function FeedPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-6">{"\uD83D\uDCF0"} Principais postagens</h1>
+      <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-6">📰 Principais postagens</h1>
+
+      {/* Clinical Filters */}
+      <FilterSidebar onFilterChange={setFilters} />
 
       {/* Controls */}
       <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -135,7 +155,7 @@ export default function FeedPage() {
           ))}
         </div>
       ) : (
-        <EmptyState icon={"\uD83D\uDD0D"} title="Nenhum tweet encontrado" subtitle="Tente outro termo de busca." />
+        <EmptyState icon="🔍" title="Nenhum tweet encontrado" subtitle="Tente outro termo de busca ou ajuste os filtros." />
       )}
 
       <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />
