@@ -14,16 +14,16 @@ export default function TweetCard({ tweet, rank, compact, showRelevance }: Tweet
   const isRT = tweet.text.startsWith("RT @");
 
   return (
-    <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-200 hover:border-slate-300">
+    <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-all duration-200 hover:border-slate-300">
       {/* Header */}
-      <div className="flex items-center gap-2 text-sm text-slate-600 mb-3">
+      <div className="flex items-start sm:items-center gap-2 text-sm text-slate-600 mb-3 flex-wrap">
         {rank && <span className="font-bold text-primary text-base">#{rank}</span>}
-        <span className="font-semibold text-slate-900">{tweet.name}</span>
-        <span className="text-slate-400">@{tweet.username}</span>
+        <span className="font-semibold text-slate-900 break-all">{tweet.name}</span>
+        <span className="text-slate-400 break-all">@{tweet.username}</span>
         {tweet.is_curated === 1 && <span title="KOL Curado">&#11088;</span>}
         {tweet.verified === 1 && <span title="Verificado" className="text-blue-500">&#10003;</span>}
-        <span className="text-slate-400">&middot;</span>
-        <span className="text-slate-400">{relativeTime(tweet.created_at)}</span>
+        <span className="hidden sm:inline text-slate-400">&middot;</span>
+        <span className="text-slate-400 text-xs sm:text-sm">{relativeTime(tweet.created_at)}</span>
       </div>
 
       {/* Badges */}
@@ -42,26 +42,26 @@ export default function TweetCard({ tweet, rank, compact, showRelevance }: Tweet
       )}
 
       {/* Text */}
-      <p className={`text-base leading-relaxed text-slate-800 mb-3 ${isRT ? "italic" : ""}`}>
+      <p className={`text-sm sm:text-base leading-relaxed text-slate-800 mb-3 break-words ${isRT ? "italic" : ""}`}>
         {tweet.text}
       </p>
 
       {/* Metrics */}
-      <div className="flex items-center gap-4 text-sm text-slate-500">
+      <div className="flex items-center flex-wrap gap-x-3 gap-y-1 text-xs sm:text-sm text-slate-500">
         <span title="Likes">&#10084;&#65039; {formatNumber(tweet.like_count)}</span>
         <span title="Retweets">&#128257; {formatNumber(tweet.retweet_count)}</span>
         <span title="Respostas">&#128172; {formatNumber(tweet.reply_count)}</span>
         {!compact && (
           <>
-            <span title="Impressoes">&#128065; {formatNumber(tweet.impression_count)}</span>
-            <span title="Favoritos">&#128278; {formatNumber(tweet.bookmark_count)}</span>
+            <span className="hidden sm:inline" title="Impressoes">&#128065; {formatNumber(tweet.impression_count)}</span>
+            <span className="hidden sm:inline" title="Favoritos">&#128278; {formatNumber(tweet.bookmark_count)}</span>
           </>
         )}
         <a
           href={tweetUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-auto text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
+          className="ml-auto text-primary hover:text-primary-dark font-medium hover:underline transition-colors py-1 min-h-[44px] flex items-center"
         >
           Ver no X &rarr;
         </a>

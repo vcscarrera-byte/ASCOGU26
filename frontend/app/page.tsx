@@ -161,7 +161,7 @@ export default function Home() {
         {/* How it works toggle */}
         <button
           onClick={() => setShowMethodology(!showMethodology)}
-          className="mt-2 text-sm text-primary hover:text-primary-dark font-medium flex items-center gap-1"
+          className="mt-2 text-sm text-primary hover:text-primary-dark font-medium flex items-center gap-1 py-2 min-h-[44px]"
         >
           {t("ℹ️ Como funciona este radar?", "ℹ️ How does this radar work?")}
           <svg className={`w-3.5 h-3.5 transition-transform ${showMethodology ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -170,7 +170,7 @@ export default function Home() {
         </button>
 
         {showMethodology && (
-          <div className="mt-3 bg-white border border-slate-200 rounded-xl p-5 text-sm text-slate-600 space-y-2 max-w-3xl">
+          <div className="mt-3 bg-white border border-slate-200 rounded-xl p-4 sm:p-5 text-sm text-slate-600 space-y-2 max-w-3xl">
             <p className="font-semibold text-slate-800">
               {t("📋 Metodologia de coleta", "📋 Collection methodology")}
             </p>
@@ -230,45 +230,47 @@ export default function Home() {
       {/* Search + Filters for highlights */}
       {(activeTab === "day" || activeTab === "congress") && (
         <div className="mb-4 space-y-3">
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3">
             <input
               type="text"
               placeholder={t("Buscar por médico, droga ou estudo...", "Search by physician, drug or study...")}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="px-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-72"
+              className="w-full sm:w-72 px-4 py-3 sm:py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
             />
-            {activeTab === "day" && dates.length > 0 && (
-              <select
-                value={selectedDate}
-                onChange={(e) => setSelectedDate(e.target.value)}
-                className="px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/20"
-              >
-                {dates.map((d) => (
-                  <option key={d} value={d}>
-                    {formatDate(d)}
-                  </option>
-                ))}
-              </select>
-            )}
-            <span className="text-sm text-slate-400">
-              {activeTab === "day"
-                ? `${dayDeduped.length} ${t("posts", "posts")}`
-                : `${congressDeduped.length} ${t("posts", "posts")}`}
-            </span>
+            <div className="flex items-center gap-3">
+              {activeTab === "day" && dates.length > 0 && (
+                <select
+                  value={selectedDate}
+                  onChange={(e) => setSelectedDate(e.target.value)}
+                  className="px-3 py-3 sm:py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/20"
+                >
+                  {dates.map((d) => (
+                    <option key={d} value={d}>
+                      {formatDate(d)}
+                    </option>
+                  ))}
+                </select>
+              )}
+              <span className="text-sm text-slate-400 whitespace-nowrap">
+                {activeTab === "day"
+                  ? `${dayDeduped.length} ${t("posts", "posts")}`
+                  : `${congressDeduped.length} ${t("posts", "posts")}`}
+              </span>
+            </div>
           </div>
           <FilterSidebar onFilterChange={setFilters} />
         </div>
       )}
 
       {/* Tabs */}
-      <div className="border-b border-slate-200 mb-6">
-        <div className="flex gap-0 overflow-x-auto">
+      <div className="border-b border-slate-200 mb-6 -mx-4 sm:mx-0">
+        <div className="flex gap-0 overflow-x-auto px-4 sm:px-0 scrollbar-hide">
           {tabs.map((tab) => (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`px-4 py-2.5 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
+              className={`px-3 sm:px-4 py-3 sm:py-2.5 text-sm font-medium border-b-2 transition-colors whitespace-nowrap min-h-[44px] ${
                 activeTab === tab.key
                   ? "border-primary text-primary"
                   : "border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300"

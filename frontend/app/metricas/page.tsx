@@ -39,7 +39,7 @@ export default function MetricasPage() {
       <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-8">{"\uD83D\uDCCA"} Metricas</h1>
 
       {/* Tweets per day */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mb-6">
+      <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm mb-6">
         <h2 className="text-lg font-semibold text-slate-800 mb-4">Tweets por Dia</h2>
         <div className="flex items-end gap-2 h-48">
           {data.map((d) => (
@@ -56,7 +56,7 @@ export default function MetricasPage() {
       </div>
 
       {/* Engagement per day */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mb-6">
+      <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm mb-6">
         <h2 className="text-lg font-semibold text-slate-800 mb-4">Engagement por Dia</h2>
         <div className="flex items-end gap-2 h-48">
           {data.map((d) => (
@@ -72,7 +72,7 @@ export default function MetricasPage() {
             </div>
           ))}
         </div>
-        <div className="flex gap-4 mt-3 text-[11px] text-slate-500">
+        <div className="flex flex-wrap gap-3 sm:gap-4 mt-3 text-[11px] text-slate-500">
           <span className="flex items-center gap-1"><span className="w-3 h-3 bg-red-400 rounded-sm" /> Likes</span>
           <span className="flex items-center gap-1"><span className="w-3 h-3 bg-emerald-400 rounded-sm" /> Retweets</span>
           <span className="flex items-center gap-1"><span className="w-3 h-3 bg-blue-400 rounded-sm" /> Replies</span>
@@ -81,7 +81,7 @@ export default function MetricasPage() {
       </div>
 
       {/* Authors per day */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+      <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm">
         <h2 className="text-lg font-semibold text-slate-800 mb-4">Autores Unicos por Dia</h2>
         <div className="flex items-end gap-2 h-40">
           {data.map((d) => (

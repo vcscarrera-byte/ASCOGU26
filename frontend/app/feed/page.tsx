@@ -112,32 +112,34 @@ export default function FeedPage() {
       <FilterSidebar onFilterChange={setFilters} />
 
       {/* Controls */}
-      <div className="flex flex-wrap items-center gap-3 mb-6">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 mb-6">
         <input
           type="text"
           placeholder={t("Buscar tweets...", "Search tweets...")}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="px-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-64"
+          className="w-full sm:w-64 px-4 py-3 sm:py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
         />
-        <div className="flex border border-slate-200 rounded-lg overflow-hidden">
-          {sortOptions.map((opt) => (
-            <button
-              key={opt.value}
-              onClick={() => setSort(opt.value)}
-              className={`px-4 py-2 text-sm font-medium transition-colors ${
-                sort === opt.value
-                  ? "bg-primary text-white"
-                  : "bg-white text-slate-600 hover:bg-slate-50"
-              }`}
-            >
-              {opt.label}
-            </button>
-          ))}
+        <div className="flex items-center gap-3">
+          <div className="flex border border-slate-200 rounded-lg overflow-hidden">
+            {sortOptions.map((opt) => (
+              <button
+                key={opt.value}
+                onClick={() => setSort(opt.value)}
+                className={`px-3 sm:px-4 py-2.5 sm:py-2 text-sm font-medium transition-colors min-h-[44px] sm:min-h-0 ${
+                  sort === opt.value
+                    ? "bg-primary text-white"
+                    : "bg-white text-slate-600 hover:bg-slate-50"
+                }`}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+          <span className="text-sm text-slate-500 sm:ml-auto whitespace-nowrap">
+            {total.toLocaleString()} {t("posts", "posts")}
+          </span>
         </div>
-        <span className="text-sm text-slate-500 ml-auto">
-          {total.toLocaleString()} {t("posts", "posts")}
-        </span>
       </div>
 
       {/* Content */}

@@ -1,21 +1,20 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import { api } from "@/lib/api";
-import { Abstract, Tweet } from "@/lib/types";
+import { useRouter } from "next/navigation";
+import { Abstract } from "@/lib/types";
+import { useI18n } from "@/lib/i18n";
 import AbstractCard from "@/components/AbstractCard";
-import TweetCard from "@/components/TweetCard";
 import EmptyState from "@/components/EmptyState";
 import FilterSidebar, { ActiveFilters } from "@/components/FilterSidebar";
 
 export default function AbstractsPage() {
+  const router = useRouter();
+  const { t } = useI18n();
   const [allAbstracts, setAllAbstracts] = useState<Abstract[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [filters, setFilters] = useState<ActiveFilters>({ tumors: [], drugs: [], sessionTypes: [] });
-  const [selectedAbstract, setSelectedAbstract] = useState<Abstract | null>(null);
-  const [linkedTweets, setLinkedTweets] = useState<Tweet[]>([]);
-  const [dialogOpen, setDialogOpen] = useState(false);
 
   useEffect(() => {
     async function load() {
@@ -44,6 +43,7 @@ export default function AbstractsPage() {
           (a.presenter || "").toLowerCase().includes(q) ||
           (a.drugs || "").toLowerCase().includes(q) ||
           (a.tumor_type || "").toLowerCase().includes(q) ||
+          (a.subjects || "").toLowerCase().includes(q) ||
           (a.body || "").toLowerCase().includes(q)
       );
     }
@@ -51,7 +51,7 @@ export default function AbstractsPage() {
     // Tumor filter
     if (filters.tumors.length > 0) {
       filtered = filtered.filter((a) =>
-        filters.tumors.some((t) => (a.tumor_type || "").toLowerCase().includes(t.toLowerCase()))
+        filters.tumors.some((tt) => (a.tumor_type || "").toLowerCase().includes(tt.toLowerCase()))
       );
     }
 
@@ -75,39 +75,53 @@ export default function AbstractsPage() {
     return filtered;
   }, [allAbstracts, search, filters]);
 
-  async function openDetail(abstractNumber: string) {
-    try {
-      const res = await api.getAbstractDetail(abstractNumber);
-      setSelectedAbstract(res.abstract);
-      setLinkedTweets(res.linked_tweets);
-      setDialogOpen(true);
-    } catch (err) {
-      console.error(err);
-    }
+  function navigateToDetail(abstractNumber: string) {
+    router.push(`/abstracts/${abstractNumber}`);
   }
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-6">🔬 Abstracts &mdash; ASCO GU 2026</h1>
+      <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-6">
+        {t("Abstracts \u2014 ASCO GU 2026", "Abstracts \u2014 ASCO GU 2026")}
+      </h1>
 
       {/* Clinical Filters */}
       <FilterSidebar onFilterChange={setFilters} showSessionType />
 
       {/* Search */}
-      <div className="flex items-center gap-3 mb-6">
-        <input
-          type="text"
-          placeholder="Buscar abstracts..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="px-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-80"
-        />
-        <span className="text-sm text-slate-500">{abstracts.length} resultados</span>
+      <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
+        <div className="relative w-full sm:w-80">
+          <svg
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          <input
+            type="text"
+            placeholder={t("Buscar abstracts...", "Search abstracts...")}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="pl-10 pr-4 py-3 sm:py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-full"
+          />
+        </div>
+        <span className="text-sm text-slate-500">
+          {abstracts.length} {t("resultados", "results")}
+        </span>
       </div>
 
       {/* List */}
       {loading ? (
-        <div className="animate-pulse text-slate-400 py-10 text-center">Carregando...</div>
+        <div className="animate-pulse text-slate-400 py-10 text-center">
+          {t("Carregando dados...", "Loading data...")}
+        </div>
       ) : abstracts.length > 0 ? (
         <div className="space-y-4">
           {abstracts.map((a, i) => (
@@ -115,64 +129,19 @@ export default function AbstractsPage() {
               key={a.abstract_number}
               abstract={a}
               rank={i + 1}
-              onDetailClick={openDetail}
+              onDetailClick={navigateToDetail}
             />
           ))}
         </div>
       ) : (
-        <EmptyState icon="🔬" title="Nenhum abstract encontrado" subtitle="Tente outro termo de busca ou ajuste os filtros." />
-      )}
-
-      {/* Detail Modal */}
-      {dialogOpen && selectedAbstract && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setDialogOpen(false)}>
-          <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <h2 className="text-2xl font-bold text-slate-900">#{selectedAbstract.abstract_number}</h2>
-                <h3 className="text-lg font-semibold text-slate-800 mt-1">{selectedAbstract.title}</h3>
-              </div>
-              <button onClick={() => setDialogOpen(false)} className="text-slate-400 hover:text-slate-600 text-2xl leading-none">&times;</button>
-            </div>
-
-            {selectedAbstract.body && !selectedAbstract.body.toLowerCase().includes("full, final text") && (
-              <div className="prose prose-sm prose-slate max-w-none mb-6 border-t border-b border-slate-100 py-4">
-                <p>{selectedAbstract.body}</p>
-              </div>
-            )}
-
-            <div className="grid grid-cols-2 gap-4 text-sm mb-6">
-              {selectedAbstract.presenter && <div><strong>Apresentador:</strong> {selectedAbstract.presenter}</div>}
-              {selectedAbstract.session_title && <div><strong>Sessao:</strong> {selectedAbstract.session_title}</div>}
-              {selectedAbstract.tumor_type && <div><strong>Tumor:</strong> {selectedAbstract.tumor_type}</div>}
-              {selectedAbstract.genes && <div><strong>Genes:</strong> {selectedAbstract.genes}</div>}
-              {selectedAbstract.drugs && <div><strong>Drogas:</strong> {selectedAbstract.drugs}</div>}
-              {selectedAbstract.organizations && <div><strong>Instituicoes:</strong> {selectedAbstract.organizations}</div>}
-              {selectedAbstract.countries && <div><strong>Paises:</strong> {selectedAbstract.countries}</div>}
-              {selectedAbstract.doi && <div><strong>DOI:</strong> {selectedAbstract.doi}</div>}
-            </div>
-
-            {linkedTweets.length > 0 && (
-              <div>
-                <h4 className="font-semibold text-slate-700 mb-3">{linkedTweets.length} tweets linkados</h4>
-                <div className="space-y-3">
-                  {linkedTweets.slice(0, 5).map((t) => (
-                    <TweetCard key={t.tweet_id} tweet={t} compact />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {selectedAbstract.url && (
-              <div className="mt-6 pt-4 border-t border-slate-100">
-                <a href={selectedAbstract.url} target="_blank" rel="noopener noreferrer"
-                  className="text-primary hover:text-primary-dark font-medium hover:underline">
-                  Ver no site da ASCO &rarr;
-                </a>
-              </div>
-            )}
-          </div>
-        </div>
+        <EmptyState
+          icon="🔬"
+          title={t("Nenhum abstract encontrado", "No abstracts found")}
+          subtitle={t(
+            "Tente outro termo de busca ou ajuste os filtros.",
+            "Try another search term or adjust the filters."
+          )}
+        />
       )}
     </div>
   );

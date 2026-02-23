@@ -64,39 +64,41 @@ export default function AutoresPage() {
       </p>
 
       {/* Controls */}
-      <div className="flex flex-wrap items-center gap-3 mb-6">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 mb-6">
         <input
           type="text"
           placeholder={t("Buscar autor...", "Search author...")}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="px-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-64"
+          className="w-full sm:w-64 px-4 py-3 sm:py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
         />
-        <div className="flex border border-slate-200 rounded-lg overflow-hidden">
-          <button
-            onClick={() => setFilter("all")}
-            className={`px-4 py-2 text-sm font-medium transition-colors ${
-              filter === "all"
-                ? "bg-primary text-white"
-                : "bg-white text-slate-600 hover:bg-slate-50"
-            }`}
-          >
-            {t("Todos", "All")}
-          </button>
-          <button
-            onClick={() => setFilter("curated")}
-            className={`px-4 py-2 text-sm font-medium transition-colors ${
-              filter === "curated"
-                ? "bg-primary text-white"
-                : "bg-white text-slate-600 hover:bg-slate-50"
-            }`}
-          >
-            ⭐ {t("Líderes de Opinião", "Opinion Leaders")}
-          </button>
+        <div className="flex items-center gap-3">
+          <div className="flex border border-slate-200 rounded-lg overflow-hidden">
+            <button
+              onClick={() => setFilter("all")}
+              className={`px-4 py-2.5 sm:py-2 text-sm font-medium transition-colors min-h-[44px] sm:min-h-0 ${
+                filter === "all"
+                  ? "bg-primary text-white"
+                  : "bg-white text-slate-600 hover:bg-slate-50"
+              }`}
+            >
+              {t("Todos", "All")}
+            </button>
+            <button
+              onClick={() => setFilter("curated")}
+              className={`px-4 py-2.5 sm:py-2 text-sm font-medium transition-colors min-h-[44px] sm:min-h-0 ${
+                filter === "curated"
+                  ? "bg-primary text-white"
+                  : "bg-white text-slate-600 hover:bg-slate-50"
+              }`}
+            >
+              ⭐ {t("Líderes de Opinião", "Opinion Leaders")}
+            </button>
+          </div>
+          <span className="text-sm text-slate-400 sm:ml-auto whitespace-nowrap">
+            {filtered.length} {t("autores", "authors")}
+          </span>
         </div>
-        <span className="text-sm text-slate-400 ml-auto">
-          {filtered.length} {t("autores", "authors")}
-        </span>
       </div>
 
       {filtered.length > 0 ? (

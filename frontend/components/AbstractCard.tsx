@@ -14,7 +14,7 @@ export default function AbstractCard({ abstract, rank, compact, onDetailClick }:
   const drugs = abstract.drugs?.split("; ").filter(Boolean) || [];
 
   return (
-    <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-200 hover:border-slate-300">
+    <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-all duration-200 hover:border-slate-300">
       {/* Header */}
       <div className="flex items-center gap-2 text-sm mb-2 flex-wrap">
         {rank && <span className="font-bold text-primary text-base">#{rank}</span>}
@@ -31,9 +31,14 @@ export default function AbstractCard({ abstract, rank, compact, onDetailClick }:
       </div>
 
       {/* Title */}
-      <h3 className="text-base font-semibold text-slate-900 leading-snug mb-2">
-        {abstract.title.length > 200 ? abstract.title.slice(0, 200) + "..." : abstract.title}
-      </h3>
+      <h3
+        className="text-base font-semibold text-slate-900 leading-snug mb-2"
+        dangerouslySetInnerHTML={{
+          __html: abstract.title.length > 200
+            ? abstract.title.slice(0, 200) + "..."
+            : abstract.title,
+        }}
+      />
 
       {/* Presenter + tumor */}
       {(abstract.presenter || abstract.tumor_type) && (
@@ -53,14 +58,14 @@ export default function AbstractCard({ abstract, rank, compact, onDetailClick }:
       <div className="flex items-center gap-3">
         {!compact && abstract.url && (
           <a href={abstract.url} target="_blank" rel="noopener noreferrer"
-            className="text-sm text-primary hover:text-primary-dark font-medium hover:underline transition-colors">
+            className="text-sm text-primary hover:text-primary-dark font-medium hover:underline transition-colors py-1 min-h-[44px] flex items-center">
             Ver no ASCO &rarr;
           </a>
         )}
         {onDetailClick && (
           <button
             onClick={() => onDetailClick(abstract.abstract_number)}
-            className="text-sm text-slate-500 hover:text-primary font-medium transition-colors"
+            className="text-sm text-slate-500 hover:text-primary font-medium transition-colors py-1 min-h-[44px] flex items-center"
           >
             Ver detalhe
           </button>

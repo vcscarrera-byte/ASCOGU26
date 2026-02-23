@@ -57,7 +57,7 @@ export default function FilterSidebar({ onFilterChange, showSessionType = false 
       {/* Toggle button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg border transition-colors ${
+        className={`inline-flex items-center gap-2 px-3 py-2.5 sm:py-1.5 text-sm font-medium rounded-lg border transition-colors min-h-[44px] ${
           hasActive
             ? "border-primary bg-primary-50 text-primary"
             : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
@@ -81,7 +81,7 @@ export default function FilterSidebar({ onFilterChange, showSessionType = false 
             <span
               key={t}
               onClick={() => toggleItem(tumors, setTumors, t)}
-              className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-blue-50 text-blue-700 rounded-full cursor-pointer hover:bg-blue-100"
+              className="inline-flex items-center gap-1 px-2.5 py-1 sm:px-2 sm:py-0.5 text-xs font-medium bg-blue-50 text-blue-700 rounded-full cursor-pointer hover:bg-blue-100 min-h-[32px] sm:min-h-0"
             >
               {t} ✕
             </span>
@@ -90,7 +90,7 @@ export default function FilterSidebar({ onFilterChange, showSessionType = false 
             <span
               key={d}
               onClick={() => toggleItem(drugs, setDrugs, d)}
-              className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full cursor-pointer hover:bg-emerald-100"
+              className="inline-flex items-center gap-1 px-2.5 py-1 sm:px-2 sm:py-0.5 text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full cursor-pointer hover:bg-emerald-100 min-h-[32px] sm:min-h-0"
             >
               {d} ✕
             </span>
@@ -99,14 +99,14 @@ export default function FilterSidebar({ onFilterChange, showSessionType = false 
             <span
               key={s}
               onClick={() => toggleItem(sessionTypes, setSessionTypes, s)}
-              className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-violet-50 text-violet-700 rounded-full cursor-pointer hover:bg-violet-100"
+              className="inline-flex items-center gap-1 px-2.5 py-1 sm:px-2 sm:py-0.5 text-xs font-medium bg-violet-50 text-violet-700 rounded-full cursor-pointer hover:bg-violet-100 min-h-[32px] sm:min-h-0"
             >
               {s} ✕
             </span>
           ))}
           <button
             onClick={clearAll}
-            className="text-xs text-slate-400 hover:text-slate-600 ml-1"
+            className="text-xs text-slate-400 hover:text-slate-600 ml-1 py-1 min-h-[32px] sm:min-h-0"
           >
             Limpar todos
           </button>
@@ -126,7 +126,7 @@ export default function FilterSidebar({ onFilterChange, showSessionType = false 
                 <button
                   key={t}
                   onClick={() => toggleItem(tumors, setTumors, t)}
-                  className={`px-2.5 py-1 text-xs font-medium rounded-full transition-colors ${
+                  className={`px-3 py-1.5 sm:px-2.5 sm:py-1 text-xs font-medium rounded-full transition-colors min-h-[36px] sm:min-h-0 ${
                     tumors.includes(t)
                       ? "bg-blue-500 text-white"
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200"
@@ -143,12 +143,12 @@ export default function FilterSidebar({ onFilterChange, showSessionType = false 
             <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
               Medicação / Droga
             </label>
-            <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto">
+            <div className="flex flex-wrap gap-1.5 max-h-40 sm:max-h-32 overflow-y-auto">
               {options.drug_names.map((d) => (
                 <button
                   key={d}
                   onClick={() => toggleItem(drugs, setDrugs, d)}
-                  className={`px-2.5 py-1 text-xs font-medium rounded-full transition-colors ${
+                  className={`px-3 py-1.5 sm:px-2.5 sm:py-1 text-xs font-medium rounded-full transition-colors min-h-[36px] sm:min-h-0 ${
                     drugs.includes(d)
                       ? "bg-emerald-500 text-white"
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200"
@@ -171,7 +171,7 @@ export default function FilterSidebar({ onFilterChange, showSessionType = false 
                   <button
                     key={s}
                     onClick={() => toggleItem(sessionTypes, setSessionTypes, s)}
-                    className={`px-2.5 py-1 text-xs font-medium rounded-full transition-colors ${
+                    className={`px-3 py-1.5 sm:px-2.5 sm:py-1 text-xs font-medium rounded-full transition-colors min-h-[36px] sm:min-h-0 ${
                       sessionTypes.includes(s)
                         ? "bg-violet-500 text-white"
                         : "bg-slate-100 text-slate-600 hover:bg-slate-200"
