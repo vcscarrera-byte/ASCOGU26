@@ -16,3 +16,12 @@ data/briefs/
 
 # Temp
 tmp_abstracts/
+
+# Next.js frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# API
+api/__pycache__/
+api/routes/__pycache__/
