@@ -78,5 +78,15 @@
     "replies": 7,
     "quotes": 3,
     "engagement": 3860
+  },
+  {
+    "date": "2026-02-24",
+    "tweets": 237,
+    "authors": 125,
+    "likes": 468,
+    "retweets": 3569,
+    "replies": 14,
+    "quotes": 8,
+    "engagement": 4059
   }
 ]
