@@ -1,0 +1,74 @@
+[
+  {
+    "drug": "cisplatin",
+    "count": 25
+  },
+  {
+    "drug": "enzalutamide",
+    "count": 16
+  },
+  {
+    "drug": "radium-223",
+    "count": 14
+  },
+  {
+    "drug": "bacillus Calmette-Guerin",
+    "count": 13
+  },
+  {
+    "drug": "pembrolizumab",
+    "count": 11
+  },
+  {
+    "drug": "Lu-PSMA",
+    "count": 10
+  },
+  {
+    "drug": "enfortumab vedotin",
+    "count": 8
+  },
+  {
+    "drug": "durvalumab",
+    "count": 7
+  },
+  {
+    "drug": "nivolumab",
+    "count": 6
+  },
+  {
+    "drug": "disitamab vedotin",
+    "count": 6
+  },
+  {
+    "drug": "cabozantinib",
+    "count": 6
+  },
+  {
+    "drug": "ipilimumab",
+    "count": 5
+  },
+  {
+    "drug": "belzutifan",
+    "count": 4
+  },
+  {
+    "drug": "gemcitabine",
+    "count": 3
+  },
+  {
+    "drug": "olaparib",
+    "count": 2
+  },
+  {
+    "drug": "atezolizumab",
+    "count": 2
+  },
+  {
+    "drug": "abiraterone",
+    "count": 1
+  },
+  {
+    "drug": "docetaxel",
+    "count": 1
+  }
+]

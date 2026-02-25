@@ -71,13 +71,13 @@
   },
   {
     "date": "2026-02-23",
-    "tweets": 138,
-    "authors": 108,
-    "likes": 167,
-    "retweets": 3683,
-    "replies": 7,
-    "quotes": 3,
-    "engagement": 3860
+    "tweets": 196,
+    "authors": 131,
+    "likes": 529,
+    "retweets": 4706,
+    "replies": 27,
+    "quotes": 12,
+    "engagement": 5274
   },
   {
     "date": "2026-02-24",
@@ -88,5 +88,15 @@
     "replies": 14,
     "quotes": 8,
     "engagement": 4059
+  },
+  {
+    "date": "2026-02-25",
+    "tweets": 181,
+    "authors": 98,
+    "likes": 111,
+    "retweets": 2296,
+    "replies": 8,
+    "quotes": 1,
+    "engagement": 2416
   }
 ]

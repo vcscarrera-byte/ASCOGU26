@@ -174,6 +174,8 @@ export const api = {
     return limit ? abstracts.slice(0, limit) : abstracts;
   },
 
+  getDrugMentions: () => fetchJSON<{ drug: string; count: number }[]>("/data/drug_mentions.json"),
+
   getVolume: async (): Promise<VolumeDay[]> => {
     return fetchJSON<VolumeDay[]>("/data/metrics_volume.json");
   },

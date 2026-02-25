@@ -194,6 +194,25 @@ def export_abstracts_detail(conn) -> None:
     write_json("abstracts_detail.json", detail_map)
 
 
+def export_drug_mentions(conn) -> None:
+    """Count drug mentions across all tweets using clinical_filters."""
+    print("Exporting drug_mentions.json ...")
+    try:
+        rows = conn.execute("SELECT text FROM tweets").fetchall()
+        from collections import Counter
+        drug_counter: Counter[str] = Counter()
+        for row in rows:
+            tags = classify_tweet_text(row["text"])
+            for drug in tags.get("drugs", []):
+                drug_counter[drug] += 1
+        # Return sorted list of {drug, count}
+        mentions = [{"drug": d, "count": c} for d, c in drug_counter.most_common(20)]
+        write_json("drug_mentions.json", mentions)
+    except Exception as exc:
+        logger.warning(f"  [SKIP] drug_mentions: {exc}")
+        write_json("drug_mentions.json", [])
+
+
 def export_metrics_volume(conn) -> None:
     print("Exporting metrics_volume.json ...")
     volume = safe_query("get_volume_by_day", get_volume_by_day, conn, fallback=[])
@@ -248,6 +267,7 @@ def main() -> None:
     export_abstracts_buzz(conn)
     export_abstracts_all(conn)
     export_abstracts_detail(conn)
+    export_drug_mentions(conn)
     export_metrics_volume(conn)
     export_briefs(conn)
 
