@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: radar-oncology
+    runtime: node
+    region: oregon
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3000"
+    autoDeploy: true
