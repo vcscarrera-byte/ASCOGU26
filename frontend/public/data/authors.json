@@ -5,10 +5,10 @@
     "username": "OncoAlert",
     "profile_image_url": "https://pbs.twimg.com/profile_images/1215669650333323266/z8agvcHA_normal.jpg",
     "is_curated": 1,
-    "followers_count": 40895,
-    "tweet_count": 100,
-    "total_engagement": 1082,
-    "avg_engagement": 10.82
+    "followers_count": 40904,
+    "tweet_count": 175,
+    "total_engagement": 1735,
+    "avg_engagement": 9.914285714285715
   },
   {
     "user_id": "4761682514",
@@ -16,54 +16,10 @@
     "username": "neerajaiims",
     "profile_image_url": "https://pbs.twimg.com/profile_images/1179881343674654720/uWRt5o3R_normal.jpg",
     "is_curated": 1,
-    "followers_count": 16933,
-    "tweet_count": 38,
-    "total_engagement": 904,
-    "avg_engagement": 23.789473684210527
-  },
-  {
-    "user_id": "1001912023750529024",
-    "name": "Dra. María Natalia Gandur Quiroga",
-    "username": "nataliagandur",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/2007955173579071489/wlWInD01_normal.jpg",
-    "is_curated": 1,
-    "followers_count": 3069,
-    "tweet_count": 31,
-    "total_engagement": 466,
-    "avg_engagement": 15.03225806451613
-  },
-  {
-    "user_id": "124649482",
-    "name": "Ashish M. Kamat, MD, MBBS",
-    "username": "UroDocAsh",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1563055382725009409/tvdXARvu_normal.jpg",
-    "is_curated": 1,
-    "followers_count": 12265,
-    "tweet_count": 9,
-    "total_engagement": 447,
-    "avg_engagement": 49.666666666666664
-  },
-  {
-    "user_id": "21319494",
-    "name": "UroToday.com",
-    "username": "urotoday",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1993041073262776320/lg1mv48x_normal.jpg",
-    "is_curated": 1,
-    "followers_count": 30572,
-    "tweet_count": 48,
-    "total_engagement": 433,
-    "avg_engagement": 9.020833333333334
-  },
-  {
-    "user_id": "4794167714",
-    "name": "Shilpa Gupta",
-    "username": "shilpaonc",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1439611610092421126/NNouObVs_normal.jpg",
-    "is_curated": 1,
-    "followers_count": 8364,
-    "tweet_count": 34,
-    "total_engagement": 419,
-    "avg_engagement": 12.323529411764707
+    "followers_count": 16937,
+    "tweet_count": 43,
+    "total_engagement": 965,
+    "avg_engagement": 22.441860465116278
   },
   {
     "user_id": "3294266437",
@@ -71,10 +27,32 @@
     "username": "crisbergerot",
     "profile_image_url": "https://pbs.twimg.com/profile_images/1176315478697840640/CLP0OlP6_normal.jpg",
     "is_curated": 1,
-    "followers_count": 8283,
-    "tweet_count": 35,
-    "total_engagement": 406,
-    "avg_engagement": 11.6
+    "followers_count": 8290,
+    "tweet_count": 106,
+    "total_engagement": 896,
+    "avg_engagement": 8.452830188679245
+  },
+  {
+    "user_id": "21319494",
+    "name": "UroToday.com",
+    "username": "urotoday",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1993041073262776320/lg1mv48x_normal.jpg",
+    "is_curated": 1,
+    "followers_count": 30579,
+    "tweet_count": 114,
+    "total_engagement": 878,
+    "avg_engagement": 7.701754385964913
+  },
+  {
+    "user_id": "1001912023750529024",
+    "name": "Dra. María Natalia Gandur Quiroga",
+    "username": "nataliagandur",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/2007955173579071489/wlWInD01_normal.jpg",
+    "is_curated": 1,
+    "followers_count": 3070,
+    "tweet_count": 59,
+    "total_engagement": 772,
+    "avg_engagement": 13.084745762711865
   },
   {
     "user_id": "4827883464",
@@ -82,10 +60,32 @@
     "username": "DrChoueiri",
     "profile_image_url": "https://pbs.twimg.com/profile_images/693093012025561088/tgX3Norh_normal.jpg",
     "is_curated": 1,
-    "followers_count": 43992,
-    "tweet_count": 11,
-    "total_engagement": 387,
-    "avg_engagement": 35.18181818181818
+    "followers_count": 44011,
+    "tweet_count": 23,
+    "total_engagement": 594,
+    "avg_engagement": 25.82608695652174
+  },
+  {
+    "user_id": "4794167714",
+    "name": "Shilpa Gupta",
+    "username": "shilpaonc",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1439611610092421126/NNouObVs_normal.jpg",
+    "is_curated": 1,
+    "followers_count": 8369,
+    "tweet_count": 41,
+    "total_engagement": 514,
+    "avg_engagement": 12.536585365853659
+  },
+  {
+    "user_id": "124649482",
+    "name": "Ashish M. Kamat, MD, MBBS",
+    "username": "UroDocAsh",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1563055382725009409/tvdXARvu_normal.jpg",
+    "is_curated": 1,
+    "followers_count": 12266,
+    "tweet_count": 9,
+    "total_engagement": 447,
+    "avg_engagement": 49.666666666666664
   },
   {
     "user_id": "2025679483630653440",
@@ -93,10 +93,10 @@
     "username": "MattGalsky",
     "profile_image_url": "https://pbs.twimg.com/profile_images/2025679865077190656/Ys0MLq7q_normal.jpg",
     "is_curated": 1,
-    "followers_count": 56,
-    "tweet_count": 20,
-    "total_engagement": 351,
-    "avg_engagement": 17.55
+    "followers_count": 59,
+    "tweet_count": 23,
+    "total_engagement": 386,
+    "avg_engagement": 16.782608695652176
   },
   {
     "user_id": "3379037548",
@@ -104,10 +104,21 @@
     "username": "PGrivasMDPhD",
     "profile_image_url": "https://pbs.twimg.com/profile_images/621716813831892992/NEE05CnU_normal.jpg",
     "is_curated": 1,
-    "followers_count": 18789,
-    "tweet_count": 20,
-    "total_engagement": 271,
-    "avg_engagement": 13.55
+    "followers_count": 18795,
+    "tweet_count": 30,
+    "total_engagement": 321,
+    "avg_engagement": 10.7
+  },
+  {
+    "user_id": "20187065",
+    "name": "ASCO",
+    "username": "ASCO",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1768689771818188801/VfrMhROq_normal.png",
+    "is_curated": 1,
+    "followers_count": 149673,
+    "tweet_count": 39,
+    "total_engagement": 279,
+    "avg_engagement": 7.153846153846154
   },
   {
     "user_id": "1191086960527306752",
@@ -121,15 +132,26 @@
     "avg_engagement": 74.66666666666667
   },
   {
-    "user_id": "1148627277204340736",
-    "name": "𝐂𝐡𝐚𝐧𝐝𝐥𝐞𝐫 𝐏𝐚𝐫𝐤 𝐌𝐃 𝐅𝐀𝐂𝐏",
-    "username": "CParkMD",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1781352145964441600/wt8VW5xS_normal.jpg",
+    "user_id": "785607675832860672",
+    "name": "Stefania Colasanti",
+    "username": "Stefani19753108",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1080603645018849288/IR-t0iLe_normal.jpg",
     "is_curated": 0,
-    "followers_count": 20821,
-    "tweet_count": 7,
-    "total_engagement": 196,
-    "avg_engagement": 28.0
+    "followers_count": 849,
+    "tweet_count": 18,
+    "total_engagement": 220,
+    "avg_engagement": 12.222222222222221
+  },
+  {
+    "user_id": "2171015611",
+    "name": "Tian Zhang, MD, MHS, FASCO (@tiansterzhangmd.bsky)",
+    "username": "TiansterZhang",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1296562199218081793/ORO-FZyU_normal.jpg",
+    "is_curated": 1,
+    "followers_count": 8199,
+    "tweet_count": 9,
+    "total_engagement": 208,
+    "avg_engagement": 23.11111111111111
   },
   {
     "user_id": "791316394382090240",
@@ -137,10 +159,43 @@
     "username": "AarmstrongDuke",
     "profile_image_url": "https://pbs.twimg.com/profile_images/791321645709426688/W3A4Ah7e_normal.jpg",
     "is_curated": 1,
-    "followers_count": 2155,
-    "tweet_count": 6,
-    "total_engagement": 176,
-    "avg_engagement": 29.333333333333332
+    "followers_count": 2161,
+    "tweet_count": 7,
+    "total_engagement": 206,
+    "avg_engagement": 29.428571428571427
+  },
+  {
+    "user_id": "57367878",
+    "name": "Carlos Salazar",
+    "username": "DrSalazarMejia",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1969785485267480576/gUwg9US8_normal.jpg",
+    "is_curated": 0,
+    "followers_count": 940,
+    "tweet_count": 10,
+    "total_engagement": 205,
+    "avg_engagement": 20.5
+  },
+  {
+    "user_id": "1148627277204340736",
+    "name": "𝐂𝐡𝐚𝐧𝐝𝐥𝐞𝐫 𝐏𝐚𝐫𝐤 𝐌𝐃 𝐅𝐀𝐂𝐏",
+    "username": "CParkMD",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1781352145964441600/wt8VW5xS_normal.jpg",
+    "is_curated": 0,
+    "followers_count": 20823,
+    "tweet_count": 7,
+    "total_engagement": 196,
+    "avg_engagement": 28.0
+  },
+  {
+    "user_id": "1667191746185551873",
+    "name": "Dr Rishabh Jain",
+    "username": "DrRishabhOnco",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1962590923323514882/ptLIgbjZ_normal.jpg",
+    "is_curated": 0,
+    "followers_count": 6111,
+    "tweet_count": 8,
+    "total_engagement": 179,
+    "avg_engagement": 22.375
   },
   {
     "user_id": "1135941148378247168",
@@ -154,15 +209,26 @@
     "avg_engagement": 57.0
   },
   {
-    "user_id": "57367878",
-    "name": "Carlos Salazar",
-    "username": "DrSalazarMejia",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1969785485267480576/gUwg9US8_normal.jpg",
+    "user_id": "3054656171",
+    "name": "Joel YR",
+    "username": "YnfaYr",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/569690798946779136/JbrjW_ji_normal.jpeg",
     "is_curated": 0,
-    "followers_count": 940,
-    "tweet_count": 8,
+    "followers_count": 115,
+    "tweet_count": 4,
+    "total_engagement": 161,
+    "avg_engagement": 40.25
+  },
+  {
+    "user_id": "3187161747",
+    "name": "MedChem & ONCo&",
+    "username": "MedChem314",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1912232824955981824/gB4q_IYS_normal.jpg",
+    "is_curated": 0,
+    "followers_count": 603,
+    "tweet_count": 7,
     "total_engagement": 158,
-    "avg_engagement": 19.75
+    "avg_engagement": 22.571428571428573
   },
   {
     "user_id": "47785917",
@@ -171,9 +237,9 @@
     "profile_image_url": "https://pbs.twimg.com/profile_images/1985444007749492736/SeycVeBN_normal.jpg",
     "is_curated": 0,
     "followers_count": 685,
-    "tweet_count": 2,
-    "total_engagement": 140,
-    "avg_engagement": 70.0
+    "tweet_count": 3,
+    "total_engagement": 156,
+    "avg_engagement": 52.0
   },
   {
     "user_id": "1053573815522021376",
@@ -181,21 +247,21 @@
     "username": "PaulSargos",
     "profile_image_url": "https://pbs.twimg.com/profile_images/1200754588732841984/bTsqSOBv_normal.jpg",
     "is_curated": 0,
-    "followers_count": 2011,
-    "tweet_count": 3,
-    "total_engagement": 138,
-    "avg_engagement": 46.0
+    "followers_count": 2012,
+    "tweet_count": 4,
+    "total_engagement": 143,
+    "avg_engagement": 35.75
   },
   {
-    "user_id": "3054656171",
-    "name": "Joel YR",
-    "username": "YnfaYr",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/569690798946779136/JbrjW_ji_normal.jpeg",
+    "user_id": "2418052297",
+    "name": "ONCO BRUNO",
+    "username": "brunolarvol",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/2006677446054260737/u5pUNm8X_normal.jpg",
     "is_curated": 0,
-    "followers_count": 115,
-    "tweet_count": 3,
-    "total_engagement": 138,
-    "avg_engagement": 46.0
+    "followers_count": 7370,
+    "tweet_count": 12,
+    "total_engagement": 137,
+    "avg_engagement": 11.416666666666666
   },
   {
     "user_id": "1467486723009839106",
@@ -209,17 +275,6 @@
     "avg_engagement": 45.0
   },
   {
-    "user_id": "2418052297",
-    "name": "ONCO BRUNO",
-    "username": "brunolarvol",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/2006677446054260737/u5pUNm8X_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 7374,
-    "tweet_count": 11,
-    "total_engagement": 134,
-    "avg_engagement": 12.181818181818182
-  },
-  {
     "user_id": "2583431063",
     "name": "Cinthia",
     "username": "cinthiavgauna",
@@ -231,15 +286,37 @@
     "avg_engagement": 66.5
   },
   {
-    "user_id": "3187161747",
-    "name": "MedChem & ONCo&",
-    "username": "MedChem314",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1912232824955981824/gB4q_IYS_normal.jpg",
+    "user_id": "386490186",
+    "name": "Enrique Grande",
+    "username": "drenriquegrande",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1531913558233071617/FzsFKh9V_normal.jpg",
     "is_curated": 0,
-    "followers_count": 601,
-    "tweet_count": 3,
-    "total_engagement": 130,
-    "avg_engagement": 43.333333333333336
+    "followers_count": 12778,
+    "tweet_count": 6,
+    "total_engagement": 133,
+    "avg_engagement": 22.166666666666668
+  },
+  {
+    "user_id": "1623342626",
+    "name": "Zach Klaassen",
+    "username": "zklaassen_md",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1980171505993400320/zzTWp_0a_normal.jpg",
+    "is_curated": 1,
+    "followers_count": 4374,
+    "tweet_count": 34,
+    "total_engagement": 131,
+    "avg_engagement": 3.8529411764705883
+  },
+  {
+    "user_id": "353970033",
+    "name": "Alan Reyes-M.D",
+    "username": "dralanreyesonco",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1958907295112310784/Vqy74pLi_normal.jpg",
+    "is_curated": 0,
+    "followers_count": 1357,
+    "tweet_count": 8,
+    "total_engagement": 131,
+    "avg_engagement": 16.375
   },
   {
     "user_id": "2911466719",
@@ -264,28 +341,6 @@
     "avg_engagement": 42.333333333333336
   },
   {
-    "user_id": "20187065",
-    "name": "ASCO",
-    "username": "ASCO",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1768689771818188801/VfrMhROq_normal.png",
-    "is_curated": 1,
-    "followers_count": 149653,
-    "tweet_count": 17,
-    "total_engagement": 124,
-    "avg_engagement": 7.294117647058823
-  },
-  {
-    "user_id": "353970033",
-    "name": "Alan Reyes-M.D",
-    "username": "dralanreyesonco",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1958907295112310784/Vqy74pLi_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 1358,
-    "tweet_count": 7,
-    "total_engagement": 120,
-    "avg_engagement": 17.142857142857142
-  },
-  {
     "user_id": "41398991",
     "name": "Dan Pop",
     "username": "drdanpop",
@@ -295,6 +350,17 @@
     "tweet_count": 2,
     "total_engagement": 119,
     "avg_engagement": 59.5
+  },
+  {
+    "user_id": "577515907",
+    "name": "Elvis Lira",
+    "username": "ElvisLira3",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1269381823706083330/jPGcm37D_normal.jpg",
+    "is_curated": 0,
+    "followers_count": 325,
+    "tweet_count": 4,
+    "total_engagement": 117,
+    "avg_engagement": 29.25
   },
   {
     "user_id": "1138976195868090368",
@@ -330,17 +396,6 @@
     "avg_engagement": 58.0
   },
   {
-    "user_id": "577515907",
-    "name": "Elvis Lira",
-    "username": "ElvisLira3",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1269381823706083330/jPGcm37D_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 324,
-    "tweet_count": 3,
-    "total_engagement": 113,
-    "avg_engagement": 37.666666666666664
-  },
-  {
     "user_id": "3197850271",
     "name": "Sandy Srinivas",
     "username": "sandysrimd",
@@ -363,17 +418,6 @@
     "avg_engagement": 26.5
   },
   {
-    "user_id": "1667191746185551873",
-    "name": "Dr Rishabh Jain",
-    "username": "DrRishabhOnco",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1962590923323514882/ptLIgbjZ_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 6093,
-    "tweet_count": 4,
-    "total_engagement": 103,
-    "avg_engagement": 25.75
-  },
-  {
     "user_id": "1464194050765037569",
     "name": "Saray Galvan",
     "username": "SarayGalvanonco",
@@ -385,6 +429,28 @@
     "avg_engagement": 33.666666666666664
   },
   {
+    "user_id": "1616713908001329153",
+    "name": "Hema Baskarane",
+    "username": "hema_oncologist",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1905224787934453760/s1QQrpJc_normal.jpg",
+    "is_curated": 0,
+    "followers_count": 297,
+    "tweet_count": 2,
+    "total_engagement": 99,
+    "avg_engagement": 49.5
+  },
+  {
+    "user_id": "1986624801751130112",
+    "name": "Irving J Vendrell Falcón",
+    "username": "IrvingVF_Onco",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/2019087126437212160/I9AhxNlP_normal.jpg",
+    "is_curated": 0,
+    "followers_count": 18,
+    "tweet_count": 2,
+    "total_engagement": 98,
+    "avg_engagement": 49.0
+  },
+  {
     "user_id": "727333843",
     "name": "Adriana",
     "username": "Adrianapordios",
@@ -394,6 +460,28 @@
     "tweet_count": 6,
     "total_engagement": 97,
     "avg_engagement": 16.166666666666668
+  },
+  {
+    "user_id": "861635244956495873",
+    "name": "Pablo CASTRO PEÑA",
+    "username": "DrCastroPena",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1978416234296197120/BU3vYZRc_normal.jpg",
+    "is_curated": 0,
+    "followers_count": 544,
+    "tweet_count": 1,
+    "total_engagement": 94,
+    "avg_engagement": 94.0
+  },
+  {
+    "user_id": "1281045134860341248",
+    "name": "Sean Collins Prostate SBRT @ USF Health",
+    "username": "SbrtSean",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1281208572030914560/Ws14SpIw_normal.jpg",
+    "is_curated": 0,
+    "followers_count": 10143,
+    "tweet_count": 3,
+    "total_engagement": 93,
+    "avg_engagement": 31.0
   },
   {
     "user_id": "1314857055371563010",
@@ -412,7 +500,7 @@
     "username": "scserendipity1",
     "profile_image_url": "https://pbs.twimg.com/profile_images/792396361341800450/qHhJigwM_normal.jpg",
     "is_curated": 0,
-    "followers_count": 2806,
+    "followers_count": 2809,
     "tweet_count": 5,
     "total_engagement": 91,
     "avg_engagement": 18.2
@@ -460,93 +548,5 @@
     "tweet_count": 1,
     "total_engagement": 90,
     "avg_engagement": 90.0
-  },
-  {
-    "user_id": "1281045134860341248",
-    "name": "Sean Collins Prostate SBRT @ USF Health",
-    "username": "SbrtSean",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1281208572030914560/Ws14SpIw_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 10139,
-    "tweet_count": 2,
-    "total_engagement": 88,
-    "avg_engagement": 44.0
-  },
-  {
-    "user_id": "1378012579419721728",
-    "name": "MV Chandrakanth",
-    "username": "ChandrakanthMv",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1981430482354028544/VYr1dm2o_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 1377,
-    "tweet_count": 8,
-    "total_engagement": 86,
-    "avg_engagement": 10.75
-  },
-  {
-    "user_id": "147942759",
-    "name": "deniztural",
-    "username": "drdeniztural",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/698634808998518785/ebFudTUn_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 1901,
-    "tweet_count": 2,
-    "total_engagement": 84,
-    "avg_engagement": 42.0
-  },
-  {
-    "user_id": "1802847663404015616",
-    "name": "SignifyMD",
-    "username": "SignifyMD",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1833379910389534721/Kffc8n4B_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 161,
-    "tweet_count": 3,
-    "total_engagement": 84,
-    "avg_engagement": 28.0
-  },
-  {
-    "user_id": "996432302262669312",
-    "name": "Alfonso Gómez de Liaño",
-    "username": "Uro_Oncologist",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1917321893180289024/vBL8q1bv_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 528,
-    "tweet_count": 2,
-    "total_engagement": 84,
-    "avg_engagement": 42.0
-  },
-  {
-    "user_id": "1310524303474008064",
-    "name": "Nikhil Vasudeva",
-    "username": "DrNikhilvasudev",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1989424436236386304/0YDPjbaD_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 2228,
-    "tweet_count": 1,
-    "total_engagement": 83,
-    "avg_engagement": 83.0
-  },
-  {
-    "user_id": "131704670",
-    "name": "Kyaw Zin Thein, MD",
-    "username": "kyawzinthein86",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1680082179311927297/tql5H5zU_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 816,
-    "tweet_count": 1,
-    "total_engagement": 83,
-    "avg_engagement": 83.0
-  },
-  {
-    "user_id": "1490766319305867269",
-    "name": "Vinicius Carrera Souza",
-    "username": "CarreraSouza",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1712998815542730752/jcN4r70z_normal.jpg",
-    "is_curated": 0,
-    "followers_count": 9,
-    "tweet_count": 1,
-    "total_engagement": 83,
-    "avg_engagement": 83.0
   }
 ]

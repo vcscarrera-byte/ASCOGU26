@@ -17,7 +17,7 @@
     "is_curated": 1,
     "user_bio": "Endowed Professor, Surgeon, Former Fellowship Director @MDAndersonNews | President, IBCG | Assoc Editor @EurUrolOncol | Views my own",
     "verified": 0,
-    "followers_count": 12265,
+    "followers_count": 12266,
     "clinical_tags": {
       "tumor_types": [
         "Bladder / Urothelial"
@@ -46,7 +46,7 @@
     "is_curated": 1,
     "user_bio": "Endowed Professor, Surgeon, Former Fellowship Director @MDAndersonNews | President, IBCG | Assoc Editor @EurUrolOncol | Views my own",
     "verified": 0,
-    "followers_count": 12265,
+    "followers_count": 12266,
     "clinical_tags": {
       "tumor_types": [
         "Bladder / Urothelial"
@@ -73,7 +73,7 @@
     "is_curated": 1,
     "user_bio": "Chief GU Cancers @DanaFarber; Prof Medicine @HarvardMed; ⚽ lover; 🚲@PanMass rider.",
     "verified": 0,
-    "followers_count": 43992,
+    "followers_count": 44011,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -98,7 +98,7 @@
     "is_curated": 1,
     "user_bio": "Endowed Professor, Surgeon, Former Fellowship Director @MDAndersonNews | President, IBCG | Assoc Editor @EurUrolOncol | Views my own",
     "verified": 0,
-    "followers_count": 12265,
+    "followers_count": 12266,
     "clinical_tags": {
       "tumor_types": [
         "Bladder / Urothelial"
@@ -125,7 +125,7 @@
     "is_curated": 1,
     "user_bio": "Leader GU @InstitutoRoffo #GU #RCC #prostate #bladder #testis #GUcsm #clinicaltrials #Immunotherapy #PrecisionMedicine #OncoAlert #OncoReporte\nViews Mine",
     "verified": 0,
-    "followers_count": 3069,
+    "followers_count": 3070,
     "clinical_tags": {
       "tumor_types": [
         "Kidney / RCC"
@@ -177,7 +177,7 @@
     "is_curated": 0,
     "user_bio": "🩺 DM Medical Oncologist, AIIMS Delhi 🌍 . Let’s keep oncology interesting !",
     "verified": 0,
-    "followers_count": 6093,
+    "followers_count": 6111,
     "clinical_tags": {
       "tumor_types": [
         "Prostate"
@@ -207,7 +207,7 @@
     "is_curated": 1,
     "user_bio": "Professor of Medicine, Surgery, Pharmacology and Cancer Biology, Duke Cancer Institute, Durham NC",
     "verified": 0,
-    "followers_count": 2155,
+    "followers_count": 2161,
     "clinical_tags": {
       "tumor_types": [
         "Bladder / Urothelial"
@@ -288,7 +288,7 @@
     "is_curated": 1,
     "user_bio": "Largest global online community of #urological medical professionals & patients. #bladdercancer #menshealth #prostatecancer #kidneycancer #Urology",
     "verified": 0,
-    "followers_count": 30572,
+    "followers_count": 30579,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -313,7 +313,7 @@
     "is_curated": 1,
     "user_bio": "",
     "verified": 0,
-    "followers_count": 56,
+    "followers_count": 59,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -338,12 +338,62 @@
     "is_curated": 1,
     "user_bio": "#PsyOnc | Former Postdoc Fellow & Research Consultant @cityofhope | @IPOSPsychoOncol BOD 2021-2025 | FCOI: https://t.co/EOsx8e8h91",
     "verified": 0,
-    "followers_count": 8283,
+    "followers_count": 8290,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
     },
     "relevance_score": 2.4
+  },
+  {
+    "tweet_id": "2026977236130091284",
+    "text": "RT @DrChoueiri: ASCO GU 2026 – Top 15 Trials with Potential Practice Impact @ASCO #GU26 https://t.co/cLcQQeAiL6",
+    "created_at": "2026-02-26T11:06:47.000Z",
+    "author_id": "785607675832860672",
+    "like_count": 0,
+    "retweet_count": 94,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2026977236130091284",
+    "total_engagement": 94,
+    "name": "Stefania Colasanti",
+    "username": "Stefani19753108",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1080603645018849288/IR-t0iLe_normal.jpg",
+    "is_curated": 0,
+    "user_bio": "",
+    "verified": 0,
+    "followers_count": 849,
+    "clinical_tags": {
+      "tumor_types": [],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2026975632496705569",
+    "text": "RT @DrChoueiri: ASCO GU 2026 – Top 15 Trials with Potential Practice Impact @ASCO #GU26 https://t.co/cLcQQeAiL6",
+    "created_at": "2026-02-26T11:00:24.000Z",
+    "author_id": "861635244956495873",
+    "like_count": 0,
+    "retweet_count": 94,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2026975632496705569",
+    "total_engagement": 94,
+    "name": "Pablo CASTRO PEÑA",
+    "username": "DrCastroPena",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1978416234296197120/BU3vYZRc_normal.jpg",
+    "is_curated": 0,
+    "user_bio": "Radiation Oncologist - Master in clinical management, medical and care management - University Teacher - Vice_President Latam & Iberic Radiosurgical Society",
+    "verified": 0,
+    "followers_count": 544,
+    "clinical_tags": {
+      "tumor_types": [],
+      "drugs": []
+    },
+    "relevance_score": 0.0
   },
   {
     "tweet_id": "2026944574610907643",
@@ -563,7 +613,7 @@
     "is_curated": 0,
     "user_bio": "Medical Oncologist/ Int Medicine 🩺🧬🦀. Board Certified @TecdeMonterrey & @cuccuanl",
     "verified": 0,
-    "followers_count": 1358,
+    "followers_count": 1357,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -588,7 +638,7 @@
     "is_curated": 0,
     "user_bio": "🩺/ Médico Cirujano\n 🎓/ Médico Internista IVSS HMPC-UCV\n🔊 Creo en Dios// Instagram @liraelvis",
     "verified": 0,
-    "followers_count": 324,
+    "followers_count": 325,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -763,7 +813,7 @@
     "is_curated": 0,
     "user_bio": "Medical Oncology, MD. Istanbul-Turkey",
     "verified": 0,
-    "followers_count": 1901,
+    "followers_count": 1898,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -788,7 +838,7 @@
     "is_curated": 0,
     "user_bio": "MD medicine ( JIPMER), currently pursuing DM Medical oncology in AIIMS New Delhi ..",
     "verified": 0,
-    "followers_count": 296,
+    "followers_count": 297,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -913,7 +963,7 @@
     "is_curated": 0,
     "user_bio": "Medical oncologist. Views my own. Retweets are not an endorsement.",
     "verified": 0,
-    "followers_count": 2806,
+    "followers_count": 2809,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -1063,7 +1113,7 @@
     "is_curated": 0,
     "user_bio": "Postdoc GU Onc Research Fellow @DanaFarber | M.D. ’24 @LebaneseUni",
     "verified": 0,
-    "followers_count": 379,
+    "followers_count": 386,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -1088,7 +1138,7 @@
     "is_curated": 0,
     "user_bio": "🎗Oncologist|🧬Cancer Research|President Ky @ASCO|Advisory Dean/Professor @UofL Med School |Faculty @ASCO @NCCN | My Podcast 👉 https://t.co/Of3PVK4RFS",
     "verified": 0,
-    "followers_count": 20821,
+    "followers_count": 20823,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -1214,56 +1264,6 @@
     "user_bio": "Director, genitourinary oncology @intermountain",
     "verified": 0,
     "followers_count": 282,
-    "clinical_tags": {
-      "tumor_types": [],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2025695553737433206",
-    "text": "RT @DrChoueiri: ASCO GU 2026 – Top 15 Trials with Potential Practice Impact @ASCO #GU26 https://t.co/cLcQQeAiL6",
-    "created_at": "2026-02-22T22:13:50.000Z",
-    "author_id": "622473256",
-    "like_count": 0,
-    "retweet_count": 66,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2025695553737433206",
-    "total_engagement": 66,
-    "name": "Jeffrey Graham",
-    "username": "DrJeffreyGraham",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1987682268828360704/AMR3fKsk_normal.jpg",
-    "is_curated": 0,
-    "user_bio": "Medical Oncologist with a focus on GU oncology @CancerCareMB, Assistant Professor @UManitoba. Affiliate Scientist @CCMB_Research. MPH alumni @HarvardChanSPH",
-    "verified": 0,
-    "followers_count": 597,
-    "clinical_tags": {
-      "tumor_types": [],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2025694963493687767",
-    "text": "RT @DrChoueiri: ASCO GU 2026 – Top 15 Trials with Potential Practice Impact @ASCO #GU26 https://t.co/cLcQQeAiL6",
-    "created_at": "2026-02-22T22:11:29.000Z",
-    "author_id": "1269036710932787200",
-    "like_count": 0,
-    "retweet_count": 66,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2025694963493687767",
-    "total_engagement": 66,
-    "name": "Diego Lopez Oncologist",
-    "username": "DiegoLopezMD",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1859650838181888000/Bpr-gfi6_normal.jpg",
-    "is_curated": 0,
-    "user_bio": "Medical Oncologist, National Cancer Institute, Genitourinary Tumor Clinic",
-    "verified": 0,
-    "followers_count": 77,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []

@@ -1,35 +1,55 @@
 [
   {
-    "drug": "cisplatin",
-    "count": 39
+    "drug": "radium-223",
+    "count": 75
   },
   {
     "drug": "enzalutamide",
-    "count": 19
+    "count": 62
   },
   {
-    "drug": "radium-223",
-    "count": 17
-  },
-  {
-    "drug": "bacillus Calmette-Guerin",
-    "count": 13
-  },
-  {
-    "drug": "pembrolizumab",
-    "count": 11
+    "drug": "cisplatin",
+    "count": 46
   },
   {
     "drug": "Lu-PSMA",
-    "count": 10
+    "count": 27
+  },
+  {
+    "drug": "olaparib",
+    "count": 24
+  },
+  {
+    "drug": "abiraterone",
+    "count": 21
+  },
+  {
+    "drug": "darolutamide",
+    "count": 20
+  },
+  {
+    "drug": "pembrolizumab",
+    "count": 16
+  },
+  {
+    "drug": "bacillus Calmette-Guerin",
+    "count": 14
   },
   {
     "drug": "enfortumab vedotin",
-    "count": 8
+    "count": 12
+  },
+  {
+    "drug": "docetaxel",
+    "count": 11
   },
   {
     "drug": "durvalumab",
     "count": 7
+  },
+  {
+    "drug": "belzutifan",
+    "count": 6
   },
   {
     "drug": "nivolumab",
@@ -48,27 +68,15 @@
     "count": 5
   },
   {
-    "drug": "belzutifan",
-    "count": 4
-  },
-  {
     "drug": "gemcitabine",
     "count": 3
   },
   {
-    "drug": "olaparib",
-    "count": 2
+    "drug": "relugolix",
+    "count": 3
   },
   {
-    "drug": "atezolizumab",
-    "count": 2
-  },
-  {
-    "drug": "abiraterone",
-    "count": 1
-  },
-  {
-    "drug": "docetaxel",
-    "count": 1
+    "drug": "cabazitaxel",
+    "count": 3
   }
 ]
