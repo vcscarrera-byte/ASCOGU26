@@ -17,7 +17,7 @@
     "is_curated": 1,
     "user_bio": "Endowed Professor, Surgeon, Former Fellowship Director @MDAndersonNews | President, IBCG | Assoc Editor @EurUrolOncol | Views my own",
     "verified": 0,
-    "followers_count": 12263,
+    "followers_count": 12265,
     "clinical_tags": {
       "tumor_types": [
         "Bladder / Urothelial"
@@ -46,7 +46,7 @@
     "is_curated": 1,
     "user_bio": "Endowed Professor, Surgeon, Former Fellowship Director @MDAndersonNews | President, IBCG | Assoc Editor @EurUrolOncol | Views my own",
     "verified": 0,
-    "followers_count": 12263,
+    "followers_count": 12265,
     "clinical_tags": {
       "tumor_types": [
         "Bladder / Urothelial"
@@ -98,7 +98,7 @@
     "is_curated": 1,
     "user_bio": "Endowed Professor, Surgeon, Former Fellowship Director @MDAndersonNews | President, IBCG | Assoc Editor @EurUrolOncol | Views my own",
     "verified": 0,
-    "followers_count": 12263,
+    "followers_count": 12265,
     "clinical_tags": {
       "tumor_types": [
         "Bladder / Urothelial"
@@ -177,7 +177,7 @@
     "is_curated": 0,
     "user_bio": "🩺 DM Medical Oncologist, AIIMS Delhi 🌍 . Let’s keep oncology interesting !",
     "verified": 0,
-    "followers_count": 6078,
+    "followers_count": 6093,
     "clinical_tags": {
       "tumor_types": [
         "Prostate"
@@ -207,7 +207,7 @@
     "is_curated": 1,
     "user_bio": "Professor of Medicine, Surgery, Pharmacology and Cancer Biology, Duke Cancer Institute, Durham NC",
     "verified": 0,
-    "followers_count": 2153,
+    "followers_count": 2155,
     "clinical_tags": {
       "tumor_types": [
         "Bladder / Urothelial"
@@ -346,29 +346,29 @@
     "relevance_score": 2.4
   },
   {
-    "tweet_id": "2025694809717915750",
+    "tweet_id": "2026944574610907643",
     "text": "RT @DrChoueiri: ASCO GU 2026 – Top 15 Trials with Potential Practice Impact @ASCO #GU26 https://t.co/cLcQQeAiL6",
-    "created_at": "2026-02-22T22:10:52.000Z",
-    "author_id": "4794167714",
+    "created_at": "2026-02-26T08:57:00.000Z",
+    "author_id": "1464194050765037569",
     "like_count": 0,
-    "retweet_count": 66,
+    "retweet_count": 92,
     "reply_count": 0,
     "quote_count": 0,
     "impression_count": 0,
-    "conversation_id": "2025694809717915750",
-    "total_engagement": 66,
-    "name": "Shilpa Gupta",
-    "username": "shilpaonc",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1439611610092421126/NNouObVs_normal.jpg",
-    "is_curated": 1,
-    "user_bio": "GU oncologist, clinical trialist @CleclinicMD",
+    "conversation_id": "2026944574610907643",
+    "total_engagement": 92,
+    "name": "Saray Galvan",
+    "username": "SarayGalvanonco",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/2024962470914203648/gbdk9Ojv_normal.jpg",
+    "is_curated": 0,
+    "user_bio": "Oncóloga Médica. Hospital Universitario de Gran Canaria Dr. Negrin. Urooncology andGastrointestinalcancer.\n# Wanderlust",
     "verified": 0,
-    "followers_count": 8364,
+    "followers_count": 88,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
     },
-    "relevance_score": 2.4
+    "relevance_score": 0.0
   },
   {
     "tweet_id": "2026732320577737053",
@@ -913,7 +913,7 @@
     "is_curated": 0,
     "user_bio": "Medical oncologist. Views my own. Retweets are not an endorsement.",
     "verified": 0,
-    "followers_count": 2803,
+    "followers_count": 2806,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -1086,9 +1086,9 @@
     "username": "CParkMD",
     "profile_image_url": "https://pbs.twimg.com/profile_images/1781352145964441600/wt8VW5xS_normal.jpg",
     "is_curated": 0,
-    "user_bio": "🎗Oncologist|🧬Cancer Research|President Ky @ASCO|Advisory Dean/Professor @UofL Med School |Faculty @ASCO @NCCN | My Podcast 👉 https://t.co/4Rap5tkTMV",
+    "user_bio": "🎗Oncologist|🧬Cancer Research|President Ky @ASCO|Advisory Dean/Professor @UofL Med School |Faculty @ASCO @NCCN | My Podcast 👉 https://t.co/Of3PVK4RFS",
     "verified": 0,
-    "followers_count": 20823,
+    "followers_count": 20821,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
