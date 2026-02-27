@@ -1,82 +1,82 @@
 [
   {
     "drug": "radium-223",
-    "count": 75
+    "count": 104
   },
   {
     "drug": "enzalutamide",
-    "count": 62
+    "count": 95
   },
   {
     "drug": "cisplatin",
-    "count": 46
+    "count": 88
   },
   {
     "drug": "Lu-PSMA",
-    "count": 27
-  },
-  {
-    "drug": "olaparib",
-    "count": 24
-  },
-  {
-    "drug": "abiraterone",
-    "count": 21
+    "count": 46
   },
   {
     "drug": "darolutamide",
-    "count": 20
+    "count": 38
+  },
+  {
+    "drug": "abiraterone",
+    "count": 29
+  },
+  {
+    "drug": "olaparib",
+    "count": 27
   },
   {
     "drug": "pembrolizumab",
-    "count": 16
-  },
-  {
-    "drug": "bacillus Calmette-Guerin",
-    "count": 14
-  },
-  {
-    "drug": "enfortumab vedotin",
-    "count": 12
+    "count": 25
   },
   {
     "drug": "docetaxel",
-    "count": 11
-  },
-  {
-    "drug": "durvalumab",
-    "count": 7
-  },
-  {
-    "drug": "belzutifan",
-    "count": 6
-  },
-  {
-    "drug": "nivolumab",
-    "count": 6
+    "count": 25
   },
   {
     "drug": "disitamab vedotin",
-    "count": 6
+    "count": 20
+  },
+  {
+    "drug": "cabazitaxel",
+    "count": 20
+  },
+  {
+    "drug": "atezolizumab",
+    "count": 17
+  },
+  {
+    "drug": "bacillus Calmette-Guerin",
+    "count": 16
+  },
+  {
+    "drug": "enfortumab vedotin",
+    "count": 15
+  },
+  {
+    "drug": "talazoparib",
+    "count": 10
+  },
+  {
+    "drug": "apalutamide",
+    "count": 9
+  },
+  {
+    "drug": "durvalumab",
+    "count": 8
+  },
+  {
+    "drug": "nivolumab",
+    "count": 8
+  },
+  {
+    "drug": "belzutifan",
+    "count": 7
   },
   {
     "drug": "cabozantinib",
     "count": 6
-  },
-  {
-    "drug": "ipilimumab",
-    "count": 5
-  },
-  {
-    "drug": "gemcitabine",
-    "count": 3
-  },
-  {
-    "drug": "relugolix",
-    "count": 3
-  },
-  {
-    "drug": "cabazitaxel",
-    "count": 3
   }
 ]
