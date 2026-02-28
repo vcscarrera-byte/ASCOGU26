@@ -17,7 +17,7 @@
     "is_curated": 1,
     "user_bio": "Endowed Professor, Surgeon, Former Fellowship Director @MDAndersonNews | President, IBCG | Assoc Editor @EurUrolOncol | Views my own",
     "verified": 0,
-    "followers_count": 12269,
+    "followers_count": 12278,
     "clinical_tags": {
       "tumor_types": [
         "Bladder / Urothelial"
@@ -46,7 +46,7 @@
     "is_curated": 1,
     "user_bio": "Endowed Professor, Surgeon, Former Fellowship Director @MDAndersonNews | President, IBCG | Assoc Editor @EurUrolOncol | Views my own",
     "verified": 0,
-    "followers_count": 12269,
+    "followers_count": 12278,
     "clinical_tags": {
       "tumor_types": [
         "Bladder / Urothelial"
@@ -73,7 +73,7 @@
     "is_curated": 1,
     "user_bio": "Chief GU Cancers @DanaFarber; Prof Medicine @HarvardMed; ⚽ lover; 🚲@PanMass rider.",
     "verified": 0,
-    "followers_count": 44015,
+    "followers_count": 44027,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -98,7 +98,7 @@
     "is_curated": 1,
     "user_bio": "Leader GU @InstitutoRoffo #GU #RCC #prostate #bladder #testis #GUcsm #clinicaltrials #Immunotherapy #PrecisionMedicine #OncoAlert #OncoReporte\nViews Mine",
     "verified": 0,
-    "followers_count": 3077,
+    "followers_count": 3082,
     "clinical_tags": {
       "tumor_types": [
         "Kidney / RCC"
@@ -206,7 +206,7 @@
     "is_curated": 1,
     "user_bio": "Largest global online community of #urological medical professionals & patients. #bladdercancer #menshealth #prostatecancer #kidneycancer #Urology",
     "verified": 0,
-    "followers_count": 30585,
+    "followers_count": 30592,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -231,7 +231,7 @@
     "is_curated": 1,
     "user_bio": "",
     "verified": 0,
-    "followers_count": 71,
+    "followers_count": 85,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -306,7 +306,7 @@
     "is_curated": 0,
     "user_bio": "",
     "verified": 0,
-    "followers_count": 850,
+    "followers_count": 853,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -331,9 +331,306 @@
     "is_curated": 0,
     "user_bio": "Radiation Oncologist - Master in clinical management, medical and care management - University Teacher - Vice_President Latam & Iberic Radiosurgical Society",
     "verified": 0,
-    "followers_count": 544,
+    "followers_count": 545,
     "clinical_tags": {
       "tumor_types": [],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2027780193989927232",
+    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
+    "created_at": "2026-02-28T16:17:27.000Z",
+    "author_id": "785451298313342976",
+    "like_count": 0,
+    "retweet_count": 93,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2027780193989927232",
+    "total_engagement": 93,
+    "name": "Sarah George",
+    "username": "fgoorh321",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/2023441127722946560/X21nNg6c_normal.jpg",
+    "is_curated": 0,
+    "user_bio": "PhD. Financial Management & Digital Asset Manager",
+    "verified": 0,
+    "followers_count": 230,
+    "clinical_tags": {
+      "tumor_types": [
+        "Bladder / Urothelial"
+      ],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2027768835344945452",
+    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
+    "created_at": "2026-02-28T15:32:19.000Z",
+    "author_id": "2004974079707951104",
+    "like_count": 0,
+    "retweet_count": 93,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2027768835344945452",
+    "total_engagement": 93,
+    "name": "Tony MR",
+    "username": "MitchelRup8676",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/2025399168940793857/j1wiQnri_normal.jpg",
+    "is_curated": 0,
+    "user_bio": "",
+    "verified": 0,
+    "followers_count": 2318,
+    "clinical_tags": {
+      "tumor_types": [
+        "Bladder / Urothelial"
+      ],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2027752493162045722",
+    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
+    "created_at": "2026-02-28T14:27:22.000Z",
+    "author_id": "1650291055",
+    "like_count": 0,
+    "retweet_count": 93,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2027752493162045722",
+    "total_engagement": 93,
+    "name": "Vika tisandra",
+    "username": "Vktsndr",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1821198537855475712/T_aR4RSi_normal.jpg",
+    "is_curated": 0,
+    "user_bio": "",
+    "verified": 0,
+    "followers_count": 41,
+    "clinical_tags": {
+      "tumor_types": [
+        "Bladder / Urothelial"
+      ],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2027688977877049391",
+    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
+    "created_at": "2026-02-28T10:14:59.000Z",
+    "author_id": "2739350504",
+    "like_count": 0,
+    "retweet_count": 93,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2027688977877049391",
+    "total_engagement": 93,
+    "name": "GERBITS",
+    "username": "RAnchoETH1x",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1993669313304154112/8ZgZyqkd_normal.jpg",
+    "is_curated": 0,
+    "user_bio": "I am the owner of a small ranch \nand actively grow testnet).",
+    "verified": 0,
+    "followers_count": 1655,
+    "clinical_tags": {
+      "tumor_types": [
+        "Bladder / Urothelial"
+      ],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2027674163570225341",
+    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
+    "created_at": "2026-02-28T09:16:07.000Z",
+    "author_id": "1416096800184832001",
+    "like_count": 0,
+    "retweet_count": 93,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2027674163570225341",
+    "total_engagement": 93,
+    "name": "Brett Wilson",
+    "username": "Snapsh0tSn1per",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/2014090286499241984/D4GcEugk_normal.jpg",
+    "is_curated": 0,
+    "user_bio": "Governance briber 🗳️ Voting on proposals for profit 💰 Curve Wars veteran ⚔️",
+    "verified": 0,
+    "followers_count": 1268,
+    "clinical_tags": {
+      "tumor_types": [
+        "Bladder / Urothelial"
+      ],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2027656009762934996",
+    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
+    "created_at": "2026-02-28T08:03:59.000Z",
+    "author_id": "1807232903392501760",
+    "like_count": 0,
+    "retweet_count": 93,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2027656009762934996",
+    "total_engagement": 93,
+    "name": "DDoc 壟",
+    "username": "d_doc980",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1813165883491053568/2alhFtpP_normal.jpg",
+    "is_curated": 0,
+    "user_bio": "Embracing creativity in a digital realm. NFT enthusiast navigating the wonders of Web3. 🎨",
+    "verified": 0,
+    "followers_count": 25,
+    "clinical_tags": {
+      "tumor_types": [
+        "Bladder / Urothelial"
+      ],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2027635995462779184",
+    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
+    "created_at": "2026-02-28T06:44:27.000Z",
+    "author_id": "1972150116779020288",
+    "like_count": 0,
+    "retweet_count": 93,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2027635995462779184",
+    "total_engagement": 93,
+    "name": "ムツミ✨.10/26.11/30、11/1.9.16.23.12/7ライブ",
+    "username": "sueehbi",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1972150476440588289/0jxdy1a-_normal.png",
+    "is_curated": 0,
+    "user_bio": "早期退職を計画中、健康志向、文化的、話し上手人です。特にブログ執筆、パン作り、スキーが好きで、日々充実した生活を送っています。",
+    "verified": 0,
+    "followers_count": 5,
+    "clinical_tags": {
+      "tumor_types": [
+        "Bladder / Urothelial"
+      ],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2027556818805772329",
+    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
+    "created_at": "2026-02-28T01:29:50.000Z",
+    "author_id": "1957955015680618497",
+    "like_count": 0,
+    "retweet_count": 93,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2027556818805772329",
+    "total_engagement": 93,
+    "name": "Amy Spear",
+    "username": "spear_amy85563",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1957955135784554496/WTDbW8i0_normal.png",
+    "is_curated": 0,
+    "user_bio": "",
+    "verified": 0,
+    "followers_count": 978,
+    "clinical_tags": {
+      "tumor_types": [
+        "Bladder / Urothelial"
+      ],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2027556415687041095",
+    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
+    "created_at": "2026-02-28T01:28:14.000Z",
+    "author_id": "1759951509041602562",
+    "like_count": 0,
+    "retweet_count": 93,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2027556415687041095",
+    "total_engagement": 93,
+    "name": "Hannah Wilson",
+    "username": "HannahWilson418",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/2027464924264275968/xcZpBNr4_normal.jpg",
+    "is_curated": 0,
+    "user_bio": "Living between ambition and aesthetics. Coffee lover, world explorer, heart still curious.           🚫Ban robots🚫No pornography",
+    "verified": 0,
+    "followers_count": 84,
+    "clinical_tags": {
+      "tumor_types": [
+        "Bladder / Urothelial"
+      ],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2027550122993651984",
+    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
+    "created_at": "2026-02-28T01:03:14.000Z",
+    "author_id": "1852744583605633024",
+    "like_count": 0,
+    "retweet_count": 93,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2027550122993651984",
+    "total_engagement": 93,
+    "name": "Melissa Lanier",
+    "username": "MelissaLan52602",
+    "profile_image_url": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+    "is_curated": 0,
+    "user_bio": "",
+    "verified": 0,
+    "followers_count": 4953,
+    "clinical_tags": {
+      "tumor_types": [
+        "Bladder / Urothelial"
+      ],
+      "drugs": []
+    },
+    "relevance_score": 0.0
+  },
+  {
+    "tweet_id": "2027548116962975948",
+    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
+    "created_at": "2026-02-28T00:55:15.000Z",
+    "author_id": "1043131630989271041",
+    "like_count": 0,
+    "retweet_count": 93,
+    "reply_count": 0,
+    "quote_count": 0,
+    "impression_count": 0,
+    "conversation_id": "2027548116962975948",
+    "total_engagement": 93,
+    "name": "LadyLisaCan2",
+    "username": "LadyLisaDCantu1",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/2017810113583562752/Ez-498Ag_normal.jpg",
+    "is_curated": 0,
+    "user_bio": "Mother of 4 beautiful kids and New Grandchild Brilliantly Independent., Co Creator, Businesswoman, Analyst and Author in Real Time",
+    "verified": 0,
+    "followers_count": 3158,
+    "clinical_tags": {
+      "tumor_types": [
+        "Bladder / Urothelial"
+      ],
       "drugs": []
     },
     "relevance_score": 0.0
@@ -506,7 +803,7 @@
     "is_curated": 0,
     "user_bio": "GU medical oncologist. Personal Views Only. RTs ≠ Endorsement. He/Him. #MAMC #UofL",
     "verified": 0,
-    "followers_count": 411,
+    "followers_count": 412,
     "clinical_tags": {
       "tumor_types": [],
       "drugs": []
@@ -990,303 +1287,6 @@
     "user_bio": "",
     "verified": 0,
     "followers_count": 32,
-    "clinical_tags": {
-      "tumor_types": [
-        "Bladder / Urothelial"
-      ],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2027376852965146724",
-    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
-    "created_at": "2026-02-27T13:34:43.000Z",
-    "author_id": "1970114804842127360",
-    "like_count": 0,
-    "retweet_count": 80,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2027376852965146724",
-    "total_engagement": 80,
-    "name": "Chase Hill",
-    "username": "hill_chase6911",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1970115196195590144/8r8pwVwO_normal.png",
-    "is_curated": 0,
-    "user_bio": "Developing A Mobile Game. My sustainability-focused nature drives me to pursue writing, skiing, videography, wine making in my free time.",
-    "verified": 0,
-    "followers_count": 3,
-    "clinical_tags": {
-      "tumor_types": [
-        "Bladder / Urothelial"
-      ],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2027371869368692778",
-    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
-    "created_at": "2026-02-27T13:14:55.000Z",
-    "author_id": "1684708850945986560",
-    "like_count": 0,
-    "retweet_count": 80,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2027371869368692778",
-    "total_engagement": 80,
-    "name": "James Joseph Silva Sandoval",
-    "username": "majiztec0",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/2016300229692174336/rK1sIFW__normal.jpg",
-    "is_curated": 0,
-    "user_bio": "Severe Victim: Location: 110 Burt St, Shelbyville, TN: https://t.co/cg4nA1KUnw",
-    "verified": 0,
-    "followers_count": 438,
-    "clinical_tags": {
-      "tumor_types": [
-        "Bladder / Urothelial"
-      ],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2027367730333040675",
-    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
-    "created_at": "2026-02-27T12:58:28.000Z",
-    "author_id": "165456580",
-    "like_count": 0,
-    "retweet_count": 80,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2027367730333040675",
-    "total_engagement": 80,
-    "name": "なつきち",
-    "username": "Boerche",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/2004477301799727104/jHp4QHb7_normal.jpg",
-    "is_curated": 0,
-    "user_bio": "",
-    "verified": 0,
-    "followers_count": 90,
-    "clinical_tags": {
-      "tumor_types": [
-        "Bladder / Urothelial"
-      ],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2027354219976524064",
-    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
-    "created_at": "2026-02-27T12:04:47.000Z",
-    "author_id": "1954491533446549504",
-    "like_count": 0,
-    "retweet_count": 80,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2027354219976524064",
-    "total_engagement": 80,
-    "name": "2wenty20",
-    "username": "Obed__karled",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1954491845699936256/VFlMWITQ_normal.jpg",
-    "is_curated": 0,
-    "user_bio": "MLS || Barcelona top fun || God 1st",
-    "verified": 0,
-    "followers_count": 55,
-    "clinical_tags": {
-      "tumor_types": [
-        "Bladder / Urothelial"
-      ],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2027340810383942066",
-    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
-    "created_at": "2026-02-27T11:11:30.000Z",
-    "author_id": "2018120493551767552",
-    "like_count": 0,
-    "retweet_count": 80,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2027340810383942066",
-    "total_engagement": 80,
-    "name": "CaptKyle Patriots",
-    "username": "ClevelandB52191",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/2022728014002356224/8kZLn-yS_normal.jpg",
-    "is_curated": 0,
-    "user_bio": "3D to 5D Matrix Warrior A member of the family of light!! Warriors for altering systems of consciousness within the free will universe !!",
-    "verified": 0,
-    "followers_count": 107,
-    "clinical_tags": {
-      "tumor_types": [
-        "Bladder / Urothelial"
-      ],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2027316747091812467",
-    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
-    "created_at": "2026-02-27T09:35:52.000Z",
-    "author_id": "1316385958011396098",
-    "like_count": 0,
-    "retweet_count": 80,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2027316747091812467",
-    "total_engagement": 80,
-    "name": "NK",
-    "username": "NK62478068",
-    "profile_image_url": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
-    "is_curated": 0,
-    "user_bio": "",
-    "verified": 0,
-    "followers_count": 406,
-    "clinical_tags": {
-      "tumor_types": [
-        "Bladder / Urothelial"
-      ],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2027315723308036562",
-    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
-    "created_at": "2026-02-27T09:31:48.000Z",
-    "author_id": "2844198101",
-    "like_count": 0,
-    "retweet_count": 80,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2027315723308036562",
-    "total_engagement": 80,
-    "name": "TrccoiseFi.network",
-    "username": "TeeiouseFi_io",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/2027315439983058944/qwPMdQbI_normal.jpg",
-    "is_curated": 0,
-    "user_bio": "",
-    "verified": 0,
-    "followers_count": 1,
-    "clinical_tags": {
-      "tumor_types": [
-        "Bladder / Urothelial"
-      ],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2027311907535995061",
-    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
-    "created_at": "2026-02-27T09:16:39.000Z",
-    "author_id": "1173455449",
-    "like_count": 0,
-    "retweet_count": 80,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2027311907535995061",
-    "total_engagement": 80,
-    "name": "Pancaelwap.gg",
-    "username": "PnioacSvvap_gg",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/2027311846483759104/-3HD-Ord_normal.jpg",
-    "is_curated": 0,
-    "user_bio": "",
-    "verified": 0,
-    "followers_count": 3,
-    "clinical_tags": {
-      "tumor_types": [
-        "Bladder / Urothelial"
-      ],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2027220915705319729",
-    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
-    "created_at": "2026-02-27T03:15:04.000Z",
-    "author_id": "1895204184695148544",
-    "like_count": 0,
-    "retweet_count": 80,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2027220915705319729",
-    "total_engagement": 80,
-    "name": "Thao Vang",
-    "username": "thao33979",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1992025733355446272/CrFvaVeF_normal.jpg",
-    "is_curated": 0,
-    "user_bio": "I Am So,  Sexxxy.",
-    "verified": 0,
-    "followers_count": 54,
-    "clinical_tags": {
-      "tumor_types": [
-        "Bladder / Urothelial"
-      ],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2027216237336449337",
-    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
-    "created_at": "2026-02-27T02:56:29.000Z",
-    "author_id": "1718189392421081088",
-    "like_count": 0,
-    "retweet_count": 80,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2027216237336449337",
-    "total_engagement": 80,
-    "name": "Isabella",
-    "username": "KaronKori1771",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1961208579878428672/vtsuR6sl_normal.jpg",
-    "is_curated": 0,
-    "user_bio": "💖 Soft heart, strong mind",
-    "verified": 0,
-    "followers_count": 403,
-    "clinical_tags": {
-      "tumor_types": [
-        "Bladder / Urothelial"
-      ],
-      "drugs": []
-    },
-    "relevance_score": 0.0
-  },
-  {
-    "tweet_id": "2027199063695732888",
-    "text": "RT @LillyOncMed: ASCO GU 2026 is almost here! We’re excited to attend and discuss the latest research in urothelial carcinoma with colleagu…",
-    "created_at": "2026-02-27T01:48:14.000Z",
-    "author_id": "1967431573797572609",
-    "like_count": 0,
-    "retweet_count": 80,
-    "reply_count": 0,
-    "quote_count": 0,
-    "impression_count": 0,
-    "conversation_id": "2027199063695732888",
-    "total_engagement": 80,
-    "name": "Ahsieyah Khywaun",
-    "username": "khywaun89359",
-    "profile_image_url": "https://pbs.twimg.com/profile_images/1967431793214124032/zZL5lPwW_normal.png",
-    "is_curated": 0,
-    "user_bio": "",
-    "verified": 0,
-    "followers_count": 7,
     "clinical_tags": {
       "tumor_types": [
         "Bladder / Urothelial"

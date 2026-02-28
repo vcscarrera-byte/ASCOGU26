@@ -1,1 +1,1645 @@
-{}
+{
+  "2027534934836146452": [
+    {
+      "media_key": "3_2027534929702322176",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNARraagAAySg8.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027534934836146452_3_2027534929702322176.jpg",
+      "width": 2048,
+      "height": 1929,
+      "alt_text": null,
+      "local_url": "/data/images/2027534934836146452_3_2027534929702322176.jpg"
+    },
+    {
+      "media_key": "3_2027534929777790976",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNARrsaEAA4k9U.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027534934836146452_3_2027534929777790976.jpg",
+      "width": 2048,
+      "height": 1710,
+      "alt_text": null,
+      "local_url": "/data/images/2027534934836146452_3_2027534929777790976.jpg"
+    }
+  ],
+  "2027537794235830496": [
+    {
+      "media_key": "3_2027535813475786752",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNBFHubYAATqVh.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027537794235830496_3_2027535813475786752.jpg",
+      "width": 720,
+      "height": 1456,
+      "alt_text": null,
+      "local_url": "/data/images/2027537794235830496_3_2027535813475786752.jpg"
+    }
+  ],
+  "2027537855762075703": [
+    {
+      "media_key": "3_2027537850334646272",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNC7rnbEAAf_Dr.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027537855762075703_3_2027537850334646272.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027537855762075703_3_2027537850334646272.jpg"
+    },
+    {
+      "media_key": "3_2027537850330451968",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNC7rmbEAAW_58.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027537855762075703_3_2027537850330451968.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027537855762075703_3_2027537850330451968.jpg"
+    },
+    {
+      "media_key": "3_2027537850326257666",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNC7rlbEAIxHSE.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027537855762075703_3_2027537850326257666.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027537855762075703_3_2027537850326257666.jpg"
+    },
+    {
+      "media_key": "3_2027537850359812096",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNC7rtbEAAFjHN.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027537855762075703_3_2027537850359812096.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027537855762075703_3_2027537850359812096.jpg"
+    }
+  ],
+  "2027538082409443579": [
+    {
+      "media_key": "3_2027537998800211968",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNDEUsX0AAu_Ok.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027538082409443579_3_2027537998800211968.jpg",
+      "width": 571,
+      "height": 265,
+      "alt_text": null,
+      "local_url": "/data/images/2027538082409443579_3_2027537998800211968.jpg"
+    },
+    {
+      "media_key": "3_2027538019754889217",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNDFiwW0AEDPOW.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027538082409443579_3_2027538019754889217.jpg",
+      "width": 545,
+      "height": 313,
+      "alt_text": null,
+      "local_url": "/data/images/2027538082409443579_3_2027538019754889217.jpg"
+    },
+    {
+      "media_key": "3_2027538040718082048",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNDGw2XwAAVN6W.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027538082409443579_3_2027538040718082048.jpg",
+      "width": 555,
+      "height": 312,
+      "alt_text": null,
+      "local_url": "/data/images/2027538082409443579_3_2027538040718082048.jpg"
+    },
+    {
+      "media_key": "3_2027538061739888640",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNDH_KXEAAOpzI.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027538082409443579_3_2027538061739888640.jpg",
+      "width": 543,
+      "height": 230,
+      "alt_text": null,
+      "local_url": "/data/images/2027538082409443579_3_2027538061739888640.jpg"
+    }
+  ],
+  "2027540403436900859": [
+    {
+      "media_key": "3_2027539361852702720",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNETqdaQAAWUIN.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027540403436900859_3_2027539361852702720.jpg",
+      "width": 1536,
+      "height": 2048,
+      "alt_text": null,
+      "local_url": "/data/images/2027540403436900859_3_2027539361852702720.jpg"
+    },
+    {
+      "media_key": "3_2027539361835978757",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNETqZbEAUkOkD.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027540403436900859_3_2027539361835978757.jpg",
+      "width": 1536,
+      "height": 2048,
+      "alt_text": null,
+      "local_url": "/data/images/2027540403436900859_3_2027539361835978757.jpg"
+    },
+    {
+      "media_key": "3_2027539361861144579",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNETqfbEAMiJR7.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027540403436900859_3_2027539361861144579.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027540403436900859_3_2027539361861144579.jpg"
+    },
+    {
+      "media_key": "3_2027539361848561668",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNETqcbEAQFPaN.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027540403436900859_3_2027539361848561668.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027540403436900859_3_2027539361848561668.jpg"
+    }
+  ],
+  "2027540735252435060": [
+    {
+      "media_key": "3_2027540603198967809",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNFb61bEAEjO81.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027540735252435060_3_2027540603198967809.jpg",
+      "width": 1536,
+      "height": 2048,
+      "alt_text": null,
+      "local_url": "/data/images/2027540735252435060_3_2027540603198967809.jpg"
+    },
+    {
+      "media_key": "3_2027540603198935040",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNFb61akAAJ85f.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027540735252435060_3_2027540603198935040.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027540735252435060_3_2027540603198935040.jpg"
+    },
+    {
+      "media_key": "3_2027540603198992384",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNFb61bcAAI_Q8.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027540735252435060_3_2027540603198992384.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027540735252435060_3_2027540603198992384.jpg"
+    },
+    {
+      "media_key": "3_2027540603194773507",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNFb60bEAM7azU.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027540735252435060_3_2027540603194773507.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027540735252435060_3_2027540603194773507.jpg"
+    }
+  ],
+  "2027541862781727176": [
+    {
+      "media_key": "3_2027541778845319169",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNGgWdWwAEele7.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027541862781727176_3_2027541778845319169.jpg",
+      "width": 568,
+      "height": 302,
+      "alt_text": null,
+      "local_url": "/data/images/2027541862781727176_3_2027541778845319169.jpg"
+    },
+    {
+      "media_key": "3_2027541799816892416",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNGhklXkAA890k.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027541862781727176_3_2027541799816892416.jpg",
+      "width": 562,
+      "height": 224,
+      "alt_text": null,
+      "local_url": "/data/images/2027541862781727176_3_2027541799816892416.jpg"
+    },
+    {
+      "media_key": "3_2027541820809351168",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNGiyyXEAAMG_e.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027541862781727176_3_2027541820809351168.jpg",
+      "width": 580,
+      "height": 209,
+      "alt_text": null,
+      "local_url": "/data/images/2027541862781727176_3_2027541820809351168.jpg"
+    },
+    {
+      "media_key": "3_2027541841701220353",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNGkAnXsAEKBxe.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027541862781727176_3_2027541841701220353.jpg",
+      "width": 570,
+      "height": 317,
+      "alt_text": null,
+      "local_url": "/data/images/2027541862781727176_3_2027541841701220353.jpg"
+    }
+  ],
+  "2027544670914678996": [
+    {
+      "media_key": "3_2027544665378148352",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNJIXoaUAAU6yt.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027544670914678996_3_2027544665378148352.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027544670914678996_3_2027544665378148352.jpg"
+    },
+    {
+      "media_key": "3_2027544665399185408",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNJIXtbUAA0Egr.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027544670914678996_3_2027544665399185408.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027544670914678996_3_2027544665399185408.jpg"
+    },
+    {
+      "media_key": "3_2027544665374003202",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNJIXnbEAI8m6V.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027544670914678996_3_2027544665374003202.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027544670914678996_3_2027544665374003202.jpg"
+    },
+    {
+      "media_key": "3_2027544665378234368",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNJIXoboAAunuT.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027544670914678996_3_2027544665378234368.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027544670914678996_3_2027544665378234368.jpg"
+    }
+  ],
+  "2027545629224779889": [
+    {
+      "media_key": "3_2027545545502314496",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNJ7mWXUAAdrDt.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027545629224779889_3_2027545545502314496.jpg",
+      "width": 562,
+      "height": 224,
+      "alt_text": null,
+      "local_url": "/data/images/2027545629224779889_3_2027545545502314496.jpg"
+    },
+    {
+      "media_key": "3_2027545566440251392",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNJ80WW4AA1Kr5.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027545629224779889_3_2027545566440251392.jpg",
+      "width": 566,
+      "height": 188,
+      "alt_text": null,
+      "local_url": "/data/images/2027545629224779889_3_2027545566440251392.jpg"
+    },
+    {
+      "media_key": "3_2027545587692806144",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNJ-DhXIAAXlXT.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027545629224779889_3_2027545587692806144.jpg",
+      "width": 566,
+      "height": 200,
+      "alt_text": null,
+      "local_url": "/data/images/2027545629224779889_3_2027545587692806144.jpg"
+    },
+    {
+      "media_key": "3_2027545608475574272",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNJ_Q8XAAAVSkb.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027545629224779889_3_2027545608475574272.jpg",
+      "width": 559,
+      "height": 263,
+      "alt_text": null,
+      "local_url": "/data/images/2027545629224779889_3_2027545608475574272.jpg"
+    }
+  ],
+  "2027549444892139863": [
+    {
+      "media_key": "3_2027549382187286528",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNNa7HWAAAcKEo.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027549444892139863_3_2027549382187286528.jpg",
+      "width": 1098,
+      "height": 738,
+      "alt_text": null,
+      "local_url": "/data/images/2027549444892139863_3_2027549382187286528.jpg"
+    },
+    {
+      "media_key": "3_2027549403142139904",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNNcJLXsAAvVUp.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027549444892139863_3_2027549403142139904.jpg",
+      "width": 1142,
+      "height": 340,
+      "alt_text": null,
+      "local_url": "/data/images/2027549444892139863_3_2027549403142139904.jpg"
+    },
+    {
+      "media_key": "3_2027549424172277760",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNNdXhWIAATnvN.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027549444892139863_3_2027549424172277760.jpg",
+      "width": 1138,
+      "height": 1150,
+      "alt_text": null,
+      "local_url": "/data/images/2027549444892139863_3_2027549424172277760.jpg"
+    }
+  ],
+  "2027553183648624926": [
+    {
+      "media_key": "3_2027553099921891328",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNQzUwWIAAPPkA.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027553183648624926_3_2027553099921891328.jpg",
+      "width": 1124,
+      "height": 686,
+      "alt_text": null,
+      "local_url": "/data/images/2027553183648624926_3_2027553099921891328.jpg"
+    },
+    {
+      "media_key": "3_2027553120717320192",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNQ0iOXMAApmNr.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027553183648624926_3_2027553120717320192.jpg",
+      "width": 1116,
+      "height": 696,
+      "alt_text": null,
+      "local_url": "/data/images/2027553183648624926_3_2027553120717320192.jpg"
+    },
+    {
+      "media_key": "3_2027553141672058880",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNQ1wSXIAA0ovP.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027553183648624926_3_2027553141672058880.jpg",
+      "width": 1132,
+      "height": 856,
+      "alt_text": null,
+      "local_url": "/data/images/2027553183648624926_3_2027553141672058880.jpg"
+    },
+    {
+      "media_key": "3_2027553162610069504",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNQ2-SX0AAW21W.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027553183648624926_3_2027553162610069504.jpg",
+      "width": 1142,
+      "height": 456,
+      "alt_text": null,
+      "local_url": "/data/images/2027553183648624926_3_2027553162610069504.jpg"
+    }
+  ],
+  "2027553312254693785": [
+    {
+      "media_key": "3_2027553307250880512",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNQ_ZHbcAA6fG-.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027553312254693785_3_2027553307250880512.jpg",
+      "width": 2048,
+      "height": 1351,
+      "alt_text": null,
+      "local_url": "/data/images/2027553312254693785_3_2027553307250880512.jpg"
+    }
+  ],
+  "2027553465531044254": [
+    {
+      "media_key": "3_2027553462272040960",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNRIanWoAA6C45.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027553465531044254_3_2027553462272040960.jpg",
+      "width": 2400,
+      "height": 1350,
+      "alt_text": null,
+      "local_url": "/data/images/2027553465531044254_3_2027553462272040960.jpg"
+    }
+  ],
+  "2027554288596357451": [
+    {
+      "media_key": "3_2027554280677511172",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNR4DabEAQWzdA.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027554288596357451_3_2027554280677511172.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027554288596357451_3_2027554280677511172.jpg"
+    },
+    {
+      "media_key": "3_2027554280694235136",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNR4DeaQAAIJOx.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027554288596357451_3_2027554280694235136.jpg",
+      "width": 1536,
+      "height": 2048,
+      "alt_text": null,
+      "local_url": "/data/images/2027554288596357451_3_2027554280694235136.jpg"
+    },
+    {
+      "media_key": "3_2027554280694317056",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNR4DebgAA37Cn.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027554288596357451_3_2027554280694317056.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027554288596357451_3_2027554280694317056.jpg"
+    }
+  ],
+  "2027556965044351443": [
+    {
+      "media_key": "3_2027556881690980352",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNUPc8W8AAofmo.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027556965044351443_3_2027556881690980352.jpg",
+      "width": 1120,
+      "height": 752,
+      "alt_text": null,
+      "local_url": "/data/images/2027556965044351443_3_2027556881690980352.jpg"
+    },
+    {
+      "media_key": "3_2027556902469570561",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNUQqWXEAEkKme.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027556965044351443_3_2027556902469570561.jpg",
+      "width": 1098,
+      "height": 640,
+      "alt_text": null,
+      "local_url": "/data/images/2027556965044351443_3_2027556902469570561.jpg"
+    },
+    {
+      "media_key": "3_2027556923621408768",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNUR5JWgAAOMyv.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027556965044351443_3_2027556923621408768.jpg",
+      "width": 1110,
+      "height": 666,
+      "alt_text": null,
+      "local_url": "/data/images/2027556965044351443_3_2027556923621408768.jpg"
+    },
+    {
+      "media_key": "3_2027556944366411776",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNUTGbWIAAYMpj.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027556965044351443_3_2027556944366411776.jpg",
+      "width": 1142,
+      "height": 608,
+      "alt_text": null,
+      "local_url": "/data/images/2027556965044351443_3_2027556944366411776.jpg"
+    }
+  ],
+  "2027564529228333209": [
+    {
+      "media_key": "3_2027564445476466688",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNbHuPWMAAQu_c.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027564529228333209_3_2027564445476466688.jpg",
+      "width": 1026,
+      "height": 394,
+      "alt_text": null,
+      "local_url": "/data/images/2027564529228333209_3_2027564445476466688.jpg"
+    },
+    {
+      "media_key": "3_2027564466892599296",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNbI-BWcAA9VI2.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027564529228333209_3_2027564466892599296.jpg",
+      "width": 1032,
+      "height": 540,
+      "alt_text": null,
+      "local_url": "/data/images/2027564529228333209_3_2027564466892599296.jpg"
+    },
+    {
+      "media_key": "3_2027564487507603457",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNbKK0WcAE7Cyl.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027564529228333209_3_2027564487507603457.jpg",
+      "width": 1018,
+      "height": 556,
+      "alt_text": null,
+      "local_url": "/data/images/2027564529228333209_3_2027564487507603457.jpg"
+    },
+    {
+      "media_key": "3_2027564508932141056",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNbLaoW8AAUr9s.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027564529228333209_3_2027564508932141056.jpg",
+      "width": 1046,
+      "height": 568,
+      "alt_text": null,
+      "local_url": "/data/images/2027564529228333209_3_2027564508932141056.jpg"
+    }
+  ],
+  "2027570851764441284": [
+    {
+      "media_key": "3_2027570839730925569",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCNg76saMAEzJl8.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027570851764441284_3_2027570839730925569.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027570851764441284_3_2027570839730925569.jpg"
+    }
+  ],
+  "2027572073665532364": [
+    {
+      "media_key": "7_2027572006812622848",
+      "media_type": "video",
+      "url": null,
+      "preview_image_url": "https://pbs.twimg.com/ext_tw_video_thumb/2027572006812622848/pu/img/COZbGK6oP_TzsEgE.jpg",
+      "local_path": null,
+      "width": 1080,
+      "height": 1920,
+      "alt_text": null
+    }
+  ],
+  "2027611919931346965": [
+    {
+      "media_key": "3_2027611916781457408",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCOGS6obkAA1ba9.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027611919931346965_3_2027611916781457408.jpg",
+      "width": 1536,
+      "height": 1024,
+      "alt_text": null,
+      "local_url": "/data/images/2027611919931346965_3_2027611916781457408.jpg"
+    }
+  ],
+  "2027616461410472021": [
+    {
+      "media_key": "3_2027616458826805248",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCOKbTEbcAAlZFJ.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027616461410472021_3_2027616458826805248.jpg",
+      "width": 1179,
+      "height": 676,
+      "alt_text": null,
+      "local_url": "/data/images/2027616461410472021_3_2027616458826805248.jpg"
+    }
+  ],
+  "2027627362062590432": [
+    {
+      "media_key": "3_2027627295754883075",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCOUSFxbEAMMBF9.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027627362062590432_3_2027627295754883075.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt_text": null,
+      "local_url": "/data/images/2027627362062590432_3_2027627295754883075.jpg"
+    }
+  ],
+  "2027631419191922927": [
+    {
+      "media_key": "13_2027631179864936448",
+      "media_type": "video",
+      "url": null,
+      "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2027631179864936448/img/DrjdQbN2wCLW9Ger.jpg",
+      "local_path": null,
+      "width": 1080,
+      "height": 1920,
+      "alt_text": null
+    }
+  ],
+  "2027645689526992948": [
+    {
+      "media_key": "3_2027645683524849664",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCOlAZjaUAAnXRC.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027645689526992948_3_2027645683524849664.jpg",
+      "width": 873,
+      "height": 485,
+      "alt_text": null,
+      "local_url": "/data/images/2027645689526992948_3_2027645683524849664.jpg"
+    },
+    {
+      "media_key": "3_2027645683529076736",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCOlAZka0AASBfI.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027645689526992948_3_2027645683529076736.jpg",
+      "width": 857,
+      "height": 487,
+      "alt_text": null,
+      "local_url": "/data/images/2027645689526992948_3_2027645683529076736.jpg"
+    },
+    {
+      "media_key": "3_2027645683587813383",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCOlAZybEAczOv3.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027645689526992948_3_2027645683587813383.jpg",
+      "width": 868,
+      "height": 496,
+      "alt_text": null,
+      "local_url": "/data/images/2027645689526992948_3_2027645683587813383.jpg"
+    },
+    {
+      "media_key": "3_2027645683910774785",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCOlAa_bEAEkMLs.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027645689526992948_3_2027645683910774785.jpg",
+      "width": 878,
+      "height": 491,
+      "alt_text": null,
+      "local_url": "/data/images/2027645689526992948_3_2027645683910774785.jpg"
+    }
+  ],
+  "2027647912260612424": [
+    {
+      "media_key": "3_2027645197698666499",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCOkkHtbEAMy-iG.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027647912260612424_3_2027645197698666499.jpg",
+      "width": 3456,
+      "height": 2304,
+      "alt_text": null,
+      "local_url": "/data/images/2027647912260612424_3_2027645197698666499.jpg"
+    }
+  ],
+  "2027652238731034670": [
+    {
+      "media_key": "3_2027652222746824707",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCOq9CDbEAMZtm0.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027652238731034670_3_2027652222746824707.jpg",
+      "width": 928,
+      "height": 1152,
+      "alt_text": null,
+      "local_url": "/data/images/2027652238731034670_3_2027652222746824707.jpg"
+    }
+  ],
+  "2027657844523249717": [
+    {
+      "media_key": "3_2027657603975954432",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCOv2QsbQAAy-RL.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027657844523249717_3_2027657603975954432.jpg",
+      "width": 2160,
+      "height": 2700,
+      "alt_text": null,
+      "local_url": "/data/images/2027657844523249717_3_2027657603975954432.jpg"
+    }
+  ],
+  "2027664102798098902": [
+    {
+      "media_key": "3_2027663882093735936",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCO1jsgWMAAjfy8.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027664102798098902_3_2027663882093735936.jpg",
+      "width": 2160,
+      "height": 2700,
+      "alt_text": null,
+      "local_url": "/data/images/2027664102798098902_3_2027663882093735936.jpg"
+    }
+  ],
+  "2027665891278651733": [
+    {
+      "media_key": "3_2027665688517603328",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCO3M19W8AA6d77.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027665891278651733_3_2027665688517603328.jpg",
+      "width": 2160,
+      "height": 2700,
+      "alt_text": null,
+      "local_url": "/data/images/2027665891278651733_3_2027665688517603328.jpg"
+    }
+  ],
+  "2027708916466127291": [
+    {
+      "media_key": "3_2027708908937297920",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPegmkaQAAhZC_.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027708916466127291_3_2027708908937297920.jpg",
+      "width": 1024,
+      "height": 1362,
+      "alt_text": null,
+      "local_url": "/data/images/2027708916466127291_3_2027708908937297920.jpg"
+    }
+  ],
+  "2027709424295719154": [
+    {
+      "media_key": "3_2027709414812356615",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPe-DGbEAclvzq.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027709424295719154_3_2027709414812356615.jpg",
+      "width": 1023,
+      "height": 1440,
+      "alt_text": null,
+      "local_url": "/data/images/2027709424295719154_3_2027709414812356615.jpg"
+    }
+  ],
+  "2027722957758361719": [
+    {
+      "media_key": "3_2026690457585975296",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCBAO7oWAAA1AWy.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027722957758361719_3_2026690457585975296.jpg",
+      "width": 1200,
+      "height": 675,
+      "alt_text": null,
+      "local_url": "/data/images/2027722957758361719_3_2026690457585975296.jpg"
+    }
+  ],
+  "2027723053124194805": [
+    {
+      "media_key": "3_2027722969447833600",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPrTCDWoAA6DSF.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027723053124194805_3_2027722969447833600.jpg",
+      "width": 1128,
+      "height": 544,
+      "alt_text": null,
+      "local_url": "/data/images/2027723053124194805_3_2027722969447833600.jpg"
+    },
+    {
+      "media_key": "3_2027722990373294080",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPrUQAX0AA1lJ-.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027723053124194805_3_2027722990373294080.jpg",
+      "width": 1118,
+      "height": 600,
+      "alt_text": null,
+      "local_url": "/data/images/2027723053124194805_3_2027722990373294080.jpg"
+    },
+    {
+      "media_key": "3_2027723011424419841",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPrVebWgAEv8T5.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027723053124194805_3_2027723011424419841.jpg",
+      "width": 1130,
+      "height": 492,
+      "alt_text": null,
+      "local_url": "/data/images/2027723053124194805_3_2027723011424419841.jpg"
+    },
+    {
+      "media_key": "3_2027723032307904512",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPrWsOXMAAgdNy.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027723053124194805_3_2027723032307904512.jpg",
+      "width": 1126,
+      "height": 718,
+      "alt_text": null,
+      "local_url": "/data/images/2027723053124194805_3_2027723032307904512.jpg"
+    }
+  ],
+  "2027726731935711556": [
+    {
+      "media_key": "3_2027726727078674432",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPutwUXAAAWli-.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027726731935711556_3_2027726727078674432.jpg",
+      "width": 1536,
+      "height": 2048,
+      "alt_text": null,
+      "local_url": "/data/images/2027726731935711556_3_2027726727078674432.jpg"
+    }
+  ],
+  "2027726819890200995": [
+    {
+      "media_key": "3_2027726736155144192",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPuuSIW8AAYrGk.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027726819890200995_3_2027726736155144192.jpg",
+      "width": 1114,
+      "height": 684,
+      "alt_text": null,
+      "local_url": "/data/images/2027726819890200995_3_2027726736155144192.jpg"
+    },
+    {
+      "media_key": "3_2027726757416054784",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPuvhVWsAApNkm.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027726819890200995_3_2027726757416054784.jpg",
+      "width": 1112,
+      "height": 602,
+      "alt_text": null,
+      "local_url": "/data/images/2027726819890200995_3_2027726757416054784.jpg"
+    },
+    {
+      "media_key": "3_2027726778114949120",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPuwucWwAAEQtH.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027726819890200995_3_2027726778114949120.jpg",
+      "width": 1122,
+      "height": 998,
+      "alt_text": null,
+      "local_url": "/data/images/2027726819890200995_3_2027726778114949120.jpg"
+    },
+    {
+      "media_key": "3_2027726799166197760",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPux83XUAA1box.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027726819890200995_3_2027726799166197760.jpg",
+      "width": 1116,
+      "height": 406,
+      "alt_text": null,
+      "local_url": "/data/images/2027726819890200995_3_2027726799166197760.jpg"
+    }
+  ],
+  "2027730624220483634": [
+    {
+      "media_key": "3_2027730561758842880",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPyM9nW0AA7Ucq.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027730624220483634_3_2027730561758842880.jpg",
+      "width": 1138,
+      "height": 898,
+      "alt_text": null,
+      "local_url": "/data/images/2027730624220483634_3_2027730561758842880.jpg"
+    },
+    {
+      "media_key": "3_2027730582466183168",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPyOKwXwAAiA0I.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027730624220483634_3_2027730582466183168.jpg",
+      "width": 1056,
+      "height": 1058,
+      "alt_text": null,
+      "local_url": "/data/images/2027730624220483634_3_2027730582466183168.jpg"
+    },
+    {
+      "media_key": "3_2027730603408228352",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCPyPYxWAAAL_qX.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027730624220483634_3_2027730603408228352.jpg",
+      "width": 1124,
+      "height": 474,
+      "alt_text": null,
+      "local_url": "/data/images/2027730624220483634_3_2027730603408228352.jpg"
+    }
+  ],
+  "2027734373970202896": [
+    {
+      "media_key": "3_2027734290058911744",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCP1l-nXIAAdVPm.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027734373970202896_3_2027734290058911744.jpg",
+      "width": 1130,
+      "height": 488,
+      "alt_text": null,
+      "local_url": "/data/images/2027734373970202896_3_2027734290058911744.jpg"
+    },
+    {
+      "media_key": "3_2027734311185649664",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCP1nNUXkAA1Uyn.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027734373970202896_3_2027734311185649664.jpg",
+      "width": 1130,
+      "height": 490,
+      "alt_text": null,
+      "local_url": "/data/images/2027734373970202896_3_2027734311185649664.jpg"
+    },
+    {
+      "media_key": "3_2027734332261994497",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCP1ob1XEAEKWaq.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027734373970202896_3_2027734332261994497.jpg",
+      "width": 1130,
+      "height": 504,
+      "alt_text": null,
+      "local_url": "/data/images/2027734373970202896_3_2027734332261994497.jpg"
+    },
+    {
+      "media_key": "3_2027734353149652992",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCP1pppXcAA75bP.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027734373970202896_3_2027734353149652992.jpg",
+      "width": 1128,
+      "height": 1134,
+      "alt_text": null,
+      "local_url": "/data/images/2027734373970202896_3_2027734353149652992.jpg"
+    }
+  ],
+  "2027738058271961255": [
+    {
+      "media_key": "13_2027474225011798016",
+      "media_type": "video",
+      "url": null,
+      "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2027474225011798016/img/8XGqwNui4_8CeRZo.jpg",
+      "local_path": null,
+      "width": 640,
+      "height": 360,
+      "alt_text": null
+    }
+  ],
+  "2027741878020432071": [
+    {
+      "media_key": "3_2027741836492595200",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCP8dPRW4AA_NPL.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027741878020432071_3_2027741836492595200.jpg",
+      "width": 1128,
+      "height": 768,
+      "alt_text": null,
+      "local_url": "/data/images/2027741878020432071_3_2027741836492595200.jpg"
+    },
+    {
+      "media_key": "3_2027741857548009473",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCP8edtXAAEHaC-.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027741878020432071_3_2027741857548009473.jpg",
+      "width": 1096,
+      "height": 552,
+      "alt_text": null,
+      "local_url": "/data/images/2027741878020432071_3_2027741857548009473.jpg"
+    }
+  ],
+  "2027745671747411982": [
+    {
+      "media_key": "3_2027745665321689088",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCP_8GxWYAAIyaq.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027745671747411982_3_2027745665321689088.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt_text": null,
+      "local_url": "/data/images/2027745671747411982_3_2027745665321689088.jpg"
+    },
+    {
+      "media_key": "3_2027745666462593024",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCP_8LBXMAAgnQG.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027745671747411982_3_2027745666462593024.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt_text": null,
+      "local_url": "/data/images/2027745671747411982_3_2027745666462593024.jpg"
+    },
+    {
+      "media_key": "3_2027745668366811136",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCP_8SHXQAAe3bV.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027745671747411982_3_2027745668366811136.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt_text": null,
+      "local_url": "/data/images/2027745671747411982_3_2027745668366811136.jpg"
+    },
+    {
+      "media_key": "3_2027745665883766784",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCP_8I3XAAAQ66q.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027745671747411982_3_2027745665883766784.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt_text": null,
+      "local_url": "/data/images/2027745671747411982_3_2027745665883766784.jpg"
+    }
+  ],
+  "2027745755591577772": [
+    {
+      "media_key": "3_2027745734833934336",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQAAJuXEAANPTv.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027745755591577772_3_2027745734833934336.jpg",
+      "width": 1200,
+      "height": 675,
+      "alt_text": null,
+      "local_url": "/data/images/2027745755591577772_3_2027745734833934336.jpg"
+    }
+  ],
+  "2027749479521079371": [
+    {
+      "media_key": "3_2027749395806957568",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQDVP6WMAAWMER.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027749479521079371_3_2027749395806957568.jpg",
+      "width": 1130,
+      "height": 558,
+      "alt_text": null,
+      "local_url": "/data/images/2027749479521079371_3_2027749395806957568.jpg"
+    },
+    {
+      "media_key": "3_2027749416690503684",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQDWdtX0AQs8Xy.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027749479521079371_3_2027749416690503684.jpg",
+      "width": 1134,
+      "height": 910,
+      "alt_text": null,
+      "local_url": "/data/images/2027749479521079371_3_2027749416690503684.jpg"
+    },
+    {
+      "media_key": "3_2027749437783609344",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQDXsSXEAAGeBi.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027749479521079371_3_2027749437783609344.jpg",
+      "width": 1126,
+      "height": 460,
+      "alt_text": null,
+      "local_url": "/data/images/2027749479521079371_3_2027749437783609344.jpg"
+    },
+    {
+      "media_key": "3_2027749458755096577",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQDY6aWkAEyTbi.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027749479521079371_3_2027749458755096577.jpg",
+      "width": 1128,
+      "height": 452,
+      "alt_text": null,
+      "local_url": "/data/images/2027749479521079371_3_2027749458755096577.jpg"
+    }
+  ],
+  "2027753216113356807": [
+    {
+      "media_key": "7_2027753176430948352",
+      "media_type": "video",
+      "url": null,
+      "preview_image_url": "https://pbs.twimg.com/ext_tw_video_thumb/2027753176430948352/pu/img/lhTnUwug8T2Nfop-.jpg",
+      "local_path": null,
+      "width": 1080,
+      "height": 1920,
+      "alt_text": null
+    }
+  ],
+  "2027759278187299074": [
+    {
+      "media_key": "3_2027758400805945344",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQLhaJaQAAcgZB.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027759278187299074_3_2027758400805945344.jpg",
+      "width": 1950,
+      "height": 841,
+      "alt_text": null,
+      "local_url": "/data/images/2027759278187299074_3_2027758400805945344.jpg"
+    },
+    {
+      "media_key": "3_2027758428308062208",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQLjAmbQAAK073.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027759278187299074_3_2027758428308062208.jpg",
+      "width": 1636,
+      "height": 901,
+      "alt_text": null,
+      "local_url": "/data/images/2027759278187299074_3_2027758428308062208.jpg"
+    },
+    {
+      "media_key": "3_2027758460360921090",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQLk4AbEAIIOPi.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027759278187299074_3_2027758460360921090.jpg",
+      "width": 1950,
+      "height": 934,
+      "alt_text": null,
+      "local_url": "/data/images/2027759278187299074_3_2027758460360921090.jpg"
+    },
+    {
+      "media_key": "3_2027758485761626116",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQLmWobEAQscN9.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027759278187299074_3_2027758485761626116.jpg",
+      "width": 1950,
+      "height": 960,
+      "alt_text": null,
+      "local_url": "/data/images/2027759278187299074_3_2027758485761626116.jpg"
+    }
+  ],
+  "2027760165081256050": [
+    {
+      "media_key": "3_2027760162971521024",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQNH-ubEAACNE9.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027760165081256050_3_2027760162971521024.jpg",
+      "width": 1392,
+      "height": 768,
+      "alt_text": null,
+      "local_url": "/data/images/2027760165081256050_3_2027760162971521024.jpg"
+    }
+  ],
+  "2027760844608610716": [
+    {
+      "media_key": "3_2027760760466616320",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQNqwkWsAAOVlD.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027760844608610716_3_2027760760466616320.jpg",
+      "width": 1080,
+      "height": 1080,
+      "alt_text": "Promotional graphic for ASCO Genitourinary Cancers Symposium Day 3: Featured Sessions and Connections at #GU26. Includes a colorful abstract design. Website link: asco.org/gu-program.",
+      "local_url": "/data/images/2027760844608610716_3_2027760760466616320.jpg"
+    },
+    {
+      "media_key": "3_2027760781429805056",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQNr-qXkAA6xYx.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027760844608610716_3_2027760781429805056.jpg",
+      "width": 1080,
+      "height": 1080,
+      "alt_text": null,
+      "local_url": "/data/images/2027760844608610716_3_2027760781429805056.jpg"
+    },
+    {
+      "media_key": "3_2027760802376069121",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQNtMsWMAE-yjV.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027760844608610716_3_2027760802376069121.jpg",
+      "width": 1080,
+      "height": 1080,
+      "alt_text": null,
+      "local_url": "/data/images/2027760844608610716_3_2027760802376069121.jpg"
+    },
+    {
+      "media_key": "3_2027760823423078400",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQNubGWEAA3gdI.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027760844608610716_3_2027760823423078400.jpg",
+      "width": 1080,
+      "height": 1080,
+      "alt_text": null,
+      "local_url": "/data/images/2027760844608610716_3_2027760823423078400.jpg"
+    }
+  ],
+  "2027760878611833216": [
+    {
+      "media_key": "3_2027760794755063808",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQNswTW4AAErwn.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027760878611833216_3_2027760794755063808.jpg",
+      "width": 1004,
+      "height": 452,
+      "alt_text": null,
+      "local_url": "/data/images/2027760878611833216_3_2027760794755063808.jpg"
+    },
+    {
+      "media_key": "3_2027760815680438272",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQNt-QWwAA6aX5.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027760878611833216_3_2027760815680438272.jpg",
+      "width": 1002,
+      "height": 462,
+      "alt_text": null,
+      "local_url": "/data/images/2027760878611833216_3_2027760815680438272.jpg"
+    },
+    {
+      "media_key": "3_2027760836693884928",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQNvMiWgAA_Ng-.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027760878611833216_3_2027760836693884928.jpg",
+      "width": 1008,
+      "height": 460,
+      "alt_text": null,
+      "local_url": "/data/images/2027760878611833216_3_2027760836693884928.jpg"
+    },
+    {
+      "media_key": "3_2027760857648705540",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQNwamXsAQ-4uf.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027760878611833216_3_2027760857648705540.jpg",
+      "width": 1002,
+      "height": 462,
+      "alt_text": null,
+      "local_url": "/data/images/2027760878611833216_3_2027760857648705540.jpg"
+    }
+  ],
+  "2027761532566966616": [
+    {
+      "media_key": "13_2027756884242141188",
+      "media_type": "video",
+      "url": null,
+      "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2027756884242141188/img/zPA-U9-h948dHnQd.jpg",
+      "local_path": null,
+      "width": 1920,
+      "height": 1080,
+      "alt_text": null
+    }
+  ],
+  "2027764474028126327": [
+    {
+      "media_key": "3_2027764465270489088",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQRCaCbgAADAjT.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027764474028126327_3_2027764465270489088.jpg",
+      "width": 2048,
+      "height": 1536,
+      "alt_text": null,
+      "local_url": "/data/images/2027764474028126327_3_2027764465270489088.jpg"
+    }
+  ],
+  "2027764530327994438": [
+    {
+      "media_key": "3_2027764527983460353",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQRGDqXgAEscPQ.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027764530327994438_3_2027764527983460353.jpg",
+      "width": 788,
+      "height": 443,
+      "alt_text": null,
+      "local_url": "/data/images/2027764530327994438_3_2027764527983460353.jpg"
+    }
+  ],
+  "2027764564650062136": [
+    {
+      "media_key": "3_2027764501957738496",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQREitWgAARhid.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027764564650062136_3_2027764501957738496.jpg",
+      "width": 1000,
+      "height": 504,
+      "alt_text": null,
+      "local_url": "/data/images/2027764564650062136_3_2027764501957738496.jpg"
+    },
+    {
+      "media_key": "3_2027764523025747968",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQRFxMW0AAAJio.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027764564650062136_3_2027764523025747968.jpg",
+      "width": 978,
+      "height": 528,
+      "alt_text": null,
+      "local_url": "/data/images/2027764564650062136_3_2027764523025747968.jpg"
+    },
+    {
+      "media_key": "3_2027764543984672768",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQRG_RWoAA3RnA.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027764564650062136_3_2027764543984672768.jpg",
+      "width": 1018,
+      "height": 466,
+      "alt_text": null,
+      "local_url": "/data/images/2027764564650062136_3_2027764543984672768.jpg"
+    }
+  ],
+  "2027764859291533618": [
+    {
+      "media_key": "13_2027764557733621760",
+      "media_type": "video",
+      "url": null,
+      "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2027764557733621760/img/0BBid-prQEwQkqVa.jpg",
+      "local_path": null,
+      "width": 1080,
+      "height": 1920,
+      "alt_text": null
+    }
+  ],
+  "2027764862261027138": [
+    {
+      "media_key": "3_2027764856879775744",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQRZM5XAAA-6u9.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027764862261027138_3_2027764856879775744.jpg",
+      "width": 1284,
+      "height": 823,
+      "alt_text": null,
+      "local_url": "/data/images/2027764862261027138_3_2027764856879775744.jpg"
+    },
+    {
+      "media_key": "3_2027764857014259714",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQRZNZbEAIGW8g.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027764862261027138_3_2027764857014259714.jpg",
+      "width": 1217,
+      "height": 842,
+      "alt_text": null,
+      "local_url": "/data/images/2027764862261027138_3_2027764857014259714.jpg"
+    },
+    {
+      "media_key": "3_2027764856888172544",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQRZM7XIAAmEQe.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027764862261027138_3_2027764856888172544.jpg",
+      "width": 1283,
+      "height": 815,
+      "alt_text": null,
+      "local_url": "/data/images/2027764862261027138_3_2027764856888172544.jpg"
+    },
+    {
+      "media_key": "3_2027764856846155776",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQRZMxWAAAtxjM.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027764862261027138_3_2027764856846155776.jpg",
+      "width": 1259,
+      "height": 819,
+      "alt_text": null,
+      "local_url": "/data/images/2027764862261027138_3_2027764856846155776.jpg"
+    }
+  ],
+  "2027768340328980743": [
+    {
+      "media_key": "7_2027768277045235712",
+      "media_type": "video",
+      "url": null,
+      "preview_image_url": "https://pbs.twimg.com/media/HCQUiswX0AEmegh.jpg",
+      "local_path": null,
+      "width": 720,
+      "height": 1280,
+      "alt_text": null
+    }
+  ],
+  "2027768344598761754": [
+    {
+      "media_key": "3_2027768282078392320",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQUgkwWMAAzHWV.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027768344598761754_3_2027768282078392320.jpg",
+      "width": 1016,
+      "height": 434,
+      "alt_text": null,
+      "local_url": "/data/images/2027768344598761754_3_2027768282078392320.jpg"
+    },
+    {
+      "media_key": "3_2027768303003811840",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQUhytWwAA40U9.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027768344598761754_3_2027768303003811840.jpg",
+      "width": 996,
+      "height": 186,
+      "alt_text": null,
+      "local_url": "/data/images/2027768344598761754_3_2027768303003811840.jpg"
+    },
+    {
+      "media_key": "3_2027768323782455296",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQUjAHXsAA9b79.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027768344598761754_3_2027768323782455296.jpg",
+      "width": 996,
+      "height": 396,
+      "alt_text": null,
+      "local_url": "/data/images/2027768344598761754_3_2027768323782455296.jpg"
+    }
+  ],
+  "2027770698567983523": [
+    {
+      "media_key": "3_2027770693103063045",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQWs6hbEAUHpak.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027770698567983523_3_2027770693103063045.jpg",
+      "width": 1365,
+      "height": 763,
+      "alt_text": null,
+      "local_url": "/data/images/2027770698567983523_3_2027770693103063045.jpg"
+    },
+    {
+      "media_key": "3_2027770692981145601",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQWs6EWwAEQNsq.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027770698567983523_3_2027770692981145601.jpg",
+      "width": 1425,
+      "height": 795,
+      "alt_text": null,
+      "local_url": "/data/images/2027770698567983523_3_2027770692981145601.jpg"
+    },
+    {
+      "media_key": "3_2027770693140811779",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQWs6qbEAMMrft.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027770698567983523_3_2027770693140811779.jpg",
+      "width": 1359,
+      "height": 772,
+      "alt_text": null,
+      "local_url": "/data/images/2027770698567983523_3_2027770693140811779.jpg"
+    },
+    {
+      "media_key": "3_2027770693132423174",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQWs6obEAYmMbx.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027770698567983523_3_2027770693132423174.jpg",
+      "width": 1439,
+      "height": 802,
+      "alt_text": null,
+      "local_url": "/data/images/2027770698567983523_3_2027770693132423174.jpg"
+    }
+  ],
+  "2027775524076970162": [
+    {
+      "media_key": "3_2027775519539007501",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQbF2ZbEA0p5X2.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027775524076970162_3_2027775519539007501.jpg",
+      "width": 1376,
+      "height": 768,
+      "alt_text": null,
+      "local_url": "/data/images/2027775524076970162_3_2027775519539007501.jpg"
+    }
+  ],
+  "2027776009358000612": [
+    {
+      "media_key": "3_2027775925702496256",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQbdfeWEAA8w6Z.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027776009358000612_3_2027775925702496256.jpg",
+      "width": 1006,
+      "height": 562,
+      "alt_text": null,
+      "local_url": "/data/images/2027776009358000612_3_2027775925702496256.jpg"
+    },
+    {
+      "media_key": "3_2027775946703380480",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQbettWIAAD2Ov.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027776009358000612_3_2027775946703380480.jpg",
+      "width": 1004,
+      "height": 524,
+      "alt_text": null,
+      "local_url": "/data/images/2027776009358000612_3_2027775946703380480.jpg"
+    },
+    {
+      "media_key": "3_2027775967599489024",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQbf7jXcAAsvWg.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027776009358000612_3_2027775967599489024.jpg",
+      "width": 1008,
+      "height": 436,
+      "alt_text": null,
+      "local_url": "/data/images/2027776009358000612_3_2027775967599489024.jpg"
+    },
+    {
+      "media_key": "3_2027775988600373248",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQbhJyXgAA36cg.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027776009358000612_3_2027775988600373248.jpg",
+      "width": 1000,
+      "height": 636,
+      "alt_text": null,
+      "local_url": "/data/images/2027776009358000612_3_2027775988600373248.jpg"
+    }
+  ],
+  "2027776310534193538": [
+    {
+      "media_key": "13_2027776045173379072",
+      "media_type": "video",
+      "url": null,
+      "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2027776045173379072/img/bHcS-YwdAnhueNgl.jpg",
+      "local_path": null,
+      "width": 720,
+      "height": 1280,
+      "alt_text": null
+    }
+  ],
+  "2027777347014037876": [
+    {
+      "media_key": "3_2027775439071285253",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQbBKobEAU-uQK.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027777347014037876_3_2027775439071285253.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt_text": null,
+      "local_url": "/data/images/2027777347014037876_3_2027775439071285253.jpg"
+    }
+  ],
+  "2027779620167131237": [
+    {
+      "media_key": "3_2027779599589871616",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQezVxWkAA_Wr2.jpg",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027779620167131237_3_2027779599589871616.jpg",
+      "width": 982,
+      "height": 506,
+      "alt_text": null,
+      "local_url": "/data/images/2027779620167131237_3_2027779599589871616.jpg"
+    }
+  ],
+  "2027780174398562366": [
+    {
+      "media_key": "3_2027780165011673088",
+      "media_type": "photo",
+      "url": "https://pbs.twimg.com/media/HCQfUQIakAAdEGA.png",
+      "preview_image_url": null,
+      "local_path": "/Users/vcscarrera/dev/ASCOGU26/data/images/2027780174398562366_3_2027780165011673088.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt_text": null,
+      "local_url": "/data/images/2027780174398562366_3_2027780165011673088.jpg"
+    }
+  ]
+}
