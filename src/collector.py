@@ -13,6 +13,7 @@ from src.db import (
     create_tables,
     finish_collection_run,
     get_connection,
+    insert_media,
     insert_tweet,
     upsert_user,
 )
@@ -102,6 +103,8 @@ class XApiClient:
             "user.fields": self.api_config["user_fields"],
             "expansions": self.api_config["expansions"],
         }
+        if self.api_config.get("media_fields"):
+            params["media.fields"] = self.api_config["media_fields"]
         if next_token:
             params["next_token"] = next_token
 
@@ -112,10 +115,11 @@ class XApiClient:
         query: str,
         start_time: str,
         end_time: str,
-    ) -> tuple[list[dict], list[dict]]:
-        """Paginate through all results for a query. Returns (tweets, users)."""
+    ) -> tuple[list[dict], list[dict], list[dict]]:
+        """Paginate through all results for a query. Returns (tweets, users, media)."""
         all_tweets: list[dict] = []
         all_users: list[dict] = []
+        all_media: list[dict] = []
         next_token = None
         page = 0
 
@@ -127,8 +131,10 @@ class XApiClient:
 
             tweets = data.get("data", [])
             users = data.get("includes", {}).get("users", [])
+            media = data.get("includes", {}).get("media", [])
             all_tweets.extend(tweets)
             all_users.extend(users)
+            all_media.extend(media)
 
             meta = data.get("meta", {})
             logger.info(f"  Got {len(tweets)} tweets (total so far: {meta.get('result_count', 0)})")
@@ -137,7 +143,7 @@ class XApiClient:
             if not next_token:
                 break
 
-        return all_tweets, all_users
+        return all_tweets, all_users, all_media
 
 
 def collect_daily(date_str: str, start_time: str, end_time: str) -> dict:
@@ -181,7 +187,14 @@ def collect_daily(date_str: str, start_time: str, end_time: str) -> dict:
     try:
         for i, query in enumerate(queries, 1):
             logger.info(f"Query {i}/{len(queries)}: {query[:80]}...")
-            tweets, users = client.search_all_pages(query, start_time, end_time)
+            tweets, users, media_items = client.search_all_pages(query, start_time, end_time)
+
+            # Build media map: media_key -> media object
+            media_map: dict[str, dict] = {}
+            for m in media_items:
+                mk = m.get("media_key")
+                if mk:
+                    media_map[mk] = m
 
             # Upsert users
             for user_data in users:
@@ -197,6 +210,23 @@ def collect_daily(date_str: str, start_time: str, end_time: str) -> dict:
                 total_fetched += 1
                 if insert_tweet(conn, tweet, run_id):
                     batch_new += 1
+
+                # Insert media for this tweet
+                attachments = tweet.get("attachments", {})
+                media_keys = attachments.get("media_keys", [])
+                for mk in media_keys:
+                    m = media_map.get(mk, {})
+                    insert_media(
+                        conn,
+                        media_key=mk,
+                        tweet_id=tid,
+                        media_type=m.get("type", "photo"),
+                        url=m.get("url"),
+                        preview_image_url=m.get("preview_image_url"),
+                        width=m.get("width"),
+                        height=m.get("height"),
+                        alt_text=m.get("alt_text"),
+                    )
 
             conn.commit()
             total_new += batch_new

@@ -193,7 +193,7 @@ def get_top_authors(
     """Get top authors by total engagement."""
     query = """
         SELECT u.user_id, u.name, u.username, u.profile_image_url, u.is_curated,
-               u.followers_count,
+               u.followers_count, u.description,
                COUNT(t.tweet_id) as tweet_count,
                SUM(t.like_count + t.retweet_count + t.reply_count + t.quote_count) as total_engagement,
                AVG(t.like_count + t.retweet_count + t.reply_count + t.quote_count) as avg_engagement

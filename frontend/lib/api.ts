@@ -1,4 +1,4 @@
-import type { Stats, Tweet, Abstract, Author, VolumeDay, FilterOptions, AbstractDetail, Briefs } from "./types";
+import type { Stats, Tweet, Abstract, Author, VolumeDay, FilterOptions, AbstractDetail, Briefs, KolSummaries } from "./types";
 
 async function fetchJSON<T>(path: string): Promise<T> {
   const res = await fetch(path);
@@ -186,5 +186,17 @@ export const api = {
     if (!entry) return null;
     const language = lang || "pt";
     return entry[language as keyof typeof entry] || null;
+  },
+
+  getKolSummaries: () => fetchJSON<KolSummaries>("/data/kol_summaries.json"),
+
+  getTweetsByAuthor: async (username: string): Promise<Tweet[]> => {
+    const tweets = await fetchJSON<Tweet[]>("/data/tweets_all.json");
+    return tweets.filter((t) => t.username.toLowerCase() === username.toLowerCase());
+  },
+
+  getAuthorByUsername: async (username: string): Promise<Author | null> => {
+    const authors = await fetchJSON<Author[]>("/data/authors.json");
+    return authors.find((a) => a.username.toLowerCase() === username.toLowerCase()) || null;
   },
 };

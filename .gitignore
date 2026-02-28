@@ -10,9 +10,13 @@ build/
 # Streamlit — keep config.toml, exclude secrets
 .streamlit/secrets.toml
 
-# Data — keep db for deploy, exclude exports/briefs
+# Data — keep db for deploy, exclude exports/briefs/images
 data/exports/
 data/briefs/
+data/images/
+
+# Frontend generated images
+frontend/public/data/images/
 
 # Temp
 tmp_abstracts/

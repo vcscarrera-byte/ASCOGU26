@@ -135,6 +135,34 @@ def create_tables(conn: sqlite3.Connection) -> None:
             generated_at        TEXT NOT NULL,
             PRIMARY KEY (date, language)
         );
+
+        CREATE TABLE IF NOT EXISTS tweet_media (
+            media_key           TEXT PRIMARY KEY,
+            tweet_id            TEXT NOT NULL,
+            media_type          TEXT DEFAULT 'photo',
+            url                 TEXT,
+            preview_image_url   TEXT,
+            local_path          TEXT,
+            width               INTEGER,
+            height              INTEGER,
+            alt_text            TEXT,
+            downloaded_at       TEXT,
+            FOREIGN KEY (tweet_id) REFERENCES tweets(tweet_id)
+        );
+        CREATE INDEX IF NOT EXISTS idx_tweet_media_tweet_id ON tweet_media(tweet_id);
+
+        CREATE TABLE IF NOT EXISTS kol_summaries (
+            user_id             TEXT NOT NULL,
+            date                TEXT NOT NULL,
+            language            TEXT DEFAULT 'en',
+            summary_markdown    TEXT NOT NULL,
+            tweet_count         INTEGER DEFAULT 0,
+            model_used          TEXT,
+            prompt_tokens       INTEGER DEFAULT 0,
+            completion_tokens   INTEGER DEFAULT 0,
+            generated_at        TEXT NOT NULL,
+            PRIMARY KEY (user_id, date, language)
+        );
     """)
     conn.commit()
 
@@ -416,5 +444,101 @@ def get_linked_abstracts(conn: sqlite3.Connection, tweet_id: str) -> list[dict]:
            WHERE tal.tweet_id = ?
            ORDER BY a.session_rank DESC""",
         (tweet_id,),
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+# --- Tweet media ---
+
+def insert_media(
+    conn: sqlite3.Connection,
+    media_key: str,
+    tweet_id: str,
+    media_type: str = "photo",
+    url: str | None = None,
+    preview_image_url: str | None = None,
+    width: int | None = None,
+    height: int | None = None,
+    alt_text: str | None = None,
+) -> None:
+    """Insert a media record (ignore if duplicate)."""
+    conn.execute(
+        """INSERT OR IGNORE INTO tweet_media
+           (media_key, tweet_id, media_type, url, preview_image_url, width, height, alt_text)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+        (media_key, tweet_id, media_type, url, preview_image_url, width, height, alt_text),
+    )
+
+
+def get_media_for_tweet(conn: sqlite3.Connection, tweet_id: str) -> list[dict]:
+    """Get all media items for a tweet."""
+    rows = conn.execute(
+        "SELECT * FROM tweet_media WHERE tweet_id = ?", (tweet_id,)
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_undownloaded_media(conn: sqlite3.Connection, limit: int = 200) -> list[dict]:
+    """Get media items that haven't been downloaded yet."""
+    rows = conn.execute(
+        """SELECT * FROM tweet_media
+           WHERE local_path IS NULL AND url IS NOT NULL AND media_type = 'photo'
+           LIMIT ?""",
+        (limit,),
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def update_media_local_path(
+    conn: sqlite3.Connection, media_key: str, local_path: str
+) -> None:
+    """Update the local path after downloading."""
+    conn.execute(
+        "UPDATE tweet_media SET local_path = ?, downloaded_at = ? WHERE media_key = ?",
+        (local_path, _now_iso(), media_key),
+    )
+
+
+# --- KOL summaries ---
+
+def save_kol_summary(
+    conn: sqlite3.Connection,
+    user_id: str,
+    date: str,
+    language: str,
+    summary_markdown: str,
+    tweet_count: int = 0,
+    model_used: str = "",
+    prompt_tokens: int = 0,
+    completion_tokens: int = 0,
+) -> None:
+    conn.execute(
+        """INSERT OR REPLACE INTO kol_summaries
+           (user_id, date, language, summary_markdown, tweet_count,
+            model_used, prompt_tokens, completion_tokens, generated_at)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+        (user_id, date, language, summary_markdown, tweet_count,
+         model_used, prompt_tokens, completion_tokens, _now_iso()),
+    )
+    conn.commit()
+
+
+def get_kol_summary(
+    conn: sqlite3.Connection, user_id: str, date: str, language: str = "en"
+) -> str | None:
+    row = conn.execute(
+        "SELECT summary_markdown FROM kol_summaries WHERE user_id=? AND date=? AND language=?",
+        (user_id, date, language),
+    ).fetchone()
+    return row["summary_markdown"] if row else None
+
+
+def get_all_kol_summaries(conn: sqlite3.Connection) -> list[dict]:
+    """Get all KOL summaries."""
+    rows = conn.execute(
+        """SELECT ks.*, u.username, u.name
+           FROM kol_summaries ks
+           JOIN users u ON ks.user_id = u.user_id
+           ORDER BY ks.date DESC, u.username"""
     ).fetchall()
     return [dict(r) for r in rows]

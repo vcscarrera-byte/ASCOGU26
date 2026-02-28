@@ -1,3 +1,14 @@
+export interface TweetMedia {
+  media_key: string;
+  media_type: string;
+  url?: string;
+  preview_image_url?: string;
+  local_url?: string;
+  width?: number;
+  height?: number;
+  alt_text?: string;
+}
+
 export interface Tweet {
   tweet_id: string;
   text: string;
@@ -22,6 +33,7 @@ export interface Tweet {
     tumor_types: string[];
     drugs: string[];
   };
+  media?: TweetMedia[];
 }
 
 export interface Abstract {
@@ -54,6 +66,7 @@ export interface Author {
   tweet_count: number;
   total_engagement: number;
   avg_engagement: number;
+  description?: string;
 }
 
 export interface Stats {
@@ -89,5 +102,17 @@ export interface Briefs {
   [date: string]: {
     pt: string;
     en: string;
+  };
+}
+
+export interface KolSummaryEntry {
+  en?: string;
+  pt?: string;
+  tweet_count: number;
+}
+
+export interface KolSummaries {
+  [username: string]: {
+    [date: string]: KolSummaryEntry;
   };
 }

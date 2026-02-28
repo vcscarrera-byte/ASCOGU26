@@ -18,7 +18,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.config import get_db_path
-from src.db import get_connection, create_tables, get_daily_brief, get_linked_tweets
+from src.db import get_connection, create_tables, get_daily_brief, get_linked_tweets, get_all_kol_summaries
 from src.aggregator import (
     get_available_dates,
     get_quick_stats,
@@ -79,6 +79,38 @@ def add_clinical_tags(tweets: list[dict]) -> list[dict]:
     return tweets
 
 
+def _get_all_media_map(conn) -> dict[str, list[dict]]:
+    """Build a map of tweet_id -> list of media items."""
+    try:
+        rows = conn.execute(
+            """SELECT tweet_id, media_key, media_type, url, preview_image_url,
+                      local_path, width, height, alt_text
+               FROM tweet_media ORDER BY tweet_id"""
+        ).fetchall()
+        media_map: dict[str, list[dict]] = {}
+        for r in rows:
+            d = dict(r)
+            tid = d.pop("tweet_id")
+            # Use public path for frontend
+            if d.get("local_path"):
+                import os
+                basename = os.path.basename(d["local_path"])
+                d["local_url"] = f"/data/images/{basename}"
+            media_map.setdefault(tid, []).append(d)
+        return media_map
+    except Exception:
+        return {}
+
+
+def _add_media_to_tweets(tweets: list[dict], media_map: dict[str, list[dict]]) -> list[dict]:
+    """Attach media array to each tweet."""
+    for t in tweets:
+        tid = t.get("tweet_id")
+        if tid and tid in media_map:
+            t["media"] = media_map[tid]
+    return tweets
+
+
 # ---------------------------------------------------------------------------
 # Export functions — one per JSON file
 # ---------------------------------------------------------------------------
@@ -117,28 +149,32 @@ def export_filters(conn) -> None:
     })
 
 
-def export_tweets_top(conn) -> None:
+def export_tweets_top(conn, media_map: dict | None = None) -> None:
     print("Exporting tweets_top.json ...")
     tweets = safe_query("get_top_tweets", get_top_tweets, conn, limit=50, fallback=[])
     if tweets is None:
         tweets = []
     tweets = add_clinical_tags(tweets)
     tweets = rank_tweets_by_relevance(tweets)
+    if media_map:
+        tweets = _add_media_to_tweets(tweets, media_map)
     write_json("tweets_top.json", tweets)
 
 
-def export_tweets_all(conn) -> None:
+def export_tweets_all(conn, media_map: dict | None = None) -> None:
     print("Exporting tweets_all.json ...")
     tweets = safe_query("get_all_tweets", get_all_tweets, conn, limit=500, offset=0, fallback=[])
     if tweets is None:
         tweets = []
     tweets = add_clinical_tags(tweets)
+    if media_map:
+        tweets = _add_media_to_tweets(tweets, media_map)
     write_json("tweets_all.json", tweets)
 
 
 def export_authors(conn) -> None:
     print("Exporting authors.json ...")
-    authors = safe_query("get_top_authors", get_top_authors, conn, limit=50, fallback=[])
+    authors = safe_query("get_top_authors", get_top_authors, conn, limit=200, fallback=[])
     if authors is None:
         authors = []
     write_json("authors.json", authors)
@@ -221,6 +257,50 @@ def export_metrics_volume(conn) -> None:
     write_json("metrics_volume.json", volume)
 
 
+def export_tweet_media(conn) -> None:
+    """Copy images to frontend public dir and export tweet_media.json."""
+    print("Exporting tweet_media.json ...")
+    import shutil
+
+    src_images_dir = PROJECT_ROOT / "data" / "images"
+    dst_images_dir = OUT_DIR / "images"
+
+    if src_images_dir.exists():
+        dst_images_dir.mkdir(parents=True, exist_ok=True)
+        count = 0
+        for img in src_images_dir.glob("*.jpg"):
+            shutil.copy2(img, dst_images_dir / img.name)
+            count += 1
+        logger.info(f"  Copied {count} images to {dst_images_dir}")
+
+    media_map = _get_all_media_map(conn)
+    write_json("tweet_media.json", media_map)
+
+
+def export_kol_summaries(conn) -> None:
+    """Export KOL summaries as JSON."""
+    print("Exporting kol_summaries.json ...")
+    summaries = safe_query("get_all_kol_summaries", get_all_kol_summaries, conn, fallback=[])
+    if not summaries:
+        write_json("kol_summaries.json", {})
+        return
+
+    # Structure: { username: { date: { en: ..., pt: ..., tweet_count: ... } } }
+    result: dict[str, dict] = {}
+    for s in summaries:
+        username = s.get("username", "")
+        date = s.get("date", "")
+        lang = s.get("language", "en")
+        if not username or not date:
+            continue
+        if username not in result:
+            result[username] = {}
+        if date not in result[username]:
+            result[username][date] = {"tweet_count": s.get("tweet_count", 0)}
+        result[username][date][lang] = s.get("summary_markdown", "")
+    write_json("kol_summaries.json", result)
+
+
 def export_briefs(conn) -> None:
     print("Exporting briefs.json ...")
     dates = safe_query("get_available_dates", get_available_dates, conn, fallback=[])
@@ -257,11 +337,14 @@ def main() -> None:
     conn = get_connection(db_path)
     create_tables(conn)
 
+    # Build media map once for reuse
+    media_map = _get_all_media_map(conn)
+
     export_stats(conn)
     export_dates(conn)
     export_filters(conn)
-    export_tweets_top(conn)
-    export_tweets_all(conn)
+    export_tweets_top(conn, media_map)
+    export_tweets_all(conn, media_map)
     export_authors(conn)
     export_abstracts_stats(conn)
     export_abstracts_buzz(conn)
@@ -270,6 +353,8 @@ def main() -> None:
     export_drug_mentions(conn)
     export_metrics_volume(conn)
     export_briefs(conn)
+    export_tweet_media(conn)
+    export_kol_summaries(conn)
 
     conn.close()
 

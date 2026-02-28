@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Tweet } from "@/lib/types";
 import { formatNumber, relativeTime } from "@/lib/utils";
 import Badge from "./Badge";
@@ -18,8 +19,12 @@ export default function TweetCard({ tweet, rank, compact, showRelevance }: Tweet
       {/* Header */}
       <div className="flex items-start sm:items-center gap-2 text-sm text-slate-600 mb-3 flex-wrap">
         {rank && <span className="font-bold text-primary text-base">#{rank}</span>}
-        <span className="font-semibold text-slate-900 break-all">{tweet.name}</span>
-        <span className="text-slate-400 break-all">@{tweet.username}</span>
+        <Link href={`/autores/${tweet.username}`} className="font-semibold text-slate-900 break-all hover:text-primary transition-colors">
+          {tweet.name}
+        </Link>
+        <Link href={`/autores/${tweet.username}`} className="text-slate-400 break-all hover:text-primary transition-colors">
+          @{tweet.username}
+        </Link>
         {tweet.is_curated === 1 && <span title="KOL Curado">&#11088;</span>}
         {tweet.verified === 1 && <span title="Verificado" className="text-blue-500">&#10003;</span>}
         <span className="hidden sm:inline text-slate-400">&middot;</span>
@@ -45,6 +50,26 @@ export default function TweetCard({ tweet, rank, compact, showRelevance }: Tweet
       <p className={`text-sm sm:text-base leading-relaxed text-slate-800 mb-3 break-words ${isRT ? "italic" : ""}`}>
         {tweet.text}
       </p>
+
+      {/* Media */}
+      {tweet.media && tweet.media.length > 0 && (
+        <div className={`mb-3 grid gap-2 ${tweet.media.length === 1 ? "grid-cols-1" : "grid-cols-2"}`}>
+          {tweet.media.map((m) => {
+            const imgSrc = m.local_url || m.url || m.preview_image_url;
+            if (!imgSrc) return null;
+            return (
+              <a key={m.media_key} href={imgSrc} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={imgSrc}
+                  alt={m.alt_text || "Tweet image"}
+                  className="rounded-lg w-full object-cover max-h-72 border border-slate-200"
+                  loading="lazy"
+                />
+              </a>
+            );
+          })}
+        </div>
+      )}
 
       {/* Metrics */}
       <div className="flex items-center flex-wrap gap-x-3 gap-y-1 text-xs sm:text-sm text-slate-500">

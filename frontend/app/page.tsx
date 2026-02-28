@@ -284,8 +284,16 @@ export default function Home() {
       {/* Tab: Day highlights */}
       {activeTab === "day" && (
         <div className="space-y-4">
-          <h2 className="text-lg font-semibold text-slate-700">
+          <h2 className="text-lg font-semibold text-slate-700 flex items-center gap-2">
             {t(`Destaques de ${formatDate(selectedDate)}`, `Highlights from ${formatDate(selectedDate)}`)}
+            {selectedDate === dates[dates.length - 1] && (
+              <span className="bg-green-100 text-green-800 text-[11px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                {t("Últimas 24h", "Last 24h")}
+              </span>
+            )}
+            <span className="text-sm font-normal text-slate-400">
+              {dayDeduped.length} {t("posts", "posts")}
+            </span>
           </h2>
           {dayDeduped.length > 0 ? (
             dayDeduped.map((item, i) => (
